@@ -33,3 +33,7 @@ run  [429948, 'CIS', '2022-08-01 23:58:32,2022-08-02 00:00:07']
 run  [430406, 'CIS', '2022-08-05 15:31:08,2022-08-05 15:32:38']
 
 run  [430444, 'CIS', '2022-08-05 16:17:23,2022-08-05 16:18:35']
+
+**AmpQ and Timing Plots:**
+All of the AmpQ plots look realtively flat. There are no outliers that I can see, so all runs should be included from this perspective.
+All of the Timing plots do not have the standard timing range $[-10,15]$ (or even shifted by $\pm25$ ns). The timing range is roughly $[-5,20]$.
