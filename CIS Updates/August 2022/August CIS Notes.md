@@ -37,3 +37,5 @@ run  [430444, 'CIS', '2022-08-05 16:17:23,2022-08-05 16:18:35']
 **AmpQ and Timing Plots:**
 All of the AmpQ plots look realtively flat. There are no outliers that I can see, so all runs should be included from this perspective.
 All of the Timing plots do not have the standard timing range $[-10,15]$ (or even shifted by $\pm25$ ns). The timing range is roughly $[-5,20]$ or $[0,25]$ (not consistent even within a run for most cases). We should **email Henric and/or Sasha** about this ASAP and confirm our understanding of what the timing plots actually mean! What is most concerning is actually that LBA mean is consistently around $\approx15$, while mean timing for LBC, EBA, and EBC is $\approx10$.
+
+**Channels in Update:** We should probably use all channels. Based on `CIS_DB_Update.txt` there are very few channels in this update compared to last: 25 in update, 7 good, 2 with greater than 5 percent change, 8 masked, and 10 affected.
