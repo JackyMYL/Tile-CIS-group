@@ -39,3 +39,10 @@ All of the AmpQ plots look realtively flat. There are no outliers that I can see
 All of the Timing plots do not have the standard timing range $[-10,15]$ (or even shifted by $\pm25$ ns). The timing range is roughly $[-5,20]$ or $[0,25]$ (not consistent even within a run for most cases). We should **email Henric and/or Sasha** about this ASAP and confirm our understanding of what the timing plots actually mean! What is most concerning is actually that LBA mean is consistently around $\approx15$, while mean timing for LBC, EBA, and EBC is $\approx10$.
 
 **Channels in Update:** We should probably use all channels. Based on `CIS_DB_Update.txt` there are very few channels in this update compared to last: 25 in update, 7 good, 2 with greater than 5 percent change, 8 masked, and 10 affected.
+
+**Odd Behaviour:** See `Odd Channel Behavior.xlsx` for catalogue of odd channel behavior. Please double check.
+
+**Flag Updates:** See `Flag Updates.xlsx` for list of flags that need to be updated. They are taken from the `Odd Channel Behavior.xlsx` spreadsheet and marked in red.
+
+**Recalibration:** See `Channels to Recalibrate.xlsx` for a list of channels that need to be recalibrated. They are taken from the `Odd Channel Behavior.xlsx` spreadsheet and marked in yellow. This spreadsheet provides the proper formatting to be read into the `toRecalibrate.txt` file.
+
