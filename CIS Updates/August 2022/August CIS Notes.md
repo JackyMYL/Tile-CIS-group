@@ -46,3 +46,5 @@ All of the Timing plots do not have the standard timing range $[-10,15]$ (or eve
 
 **Recalibration:** See `Channels to Recalibrate.xlsx` for a list of channels that need to be recalibrated. They are taken from the `Odd Channel Behavior.xlsx` spreadsheet and marked in yellow. This spreadsheet provides the proper formatting to be read into the `toRecalibrate.txt` file.
 
+**Summary Plots:** See folder `Summary-Plots`. We're including all dates, so there's not much to change here.
+
