@@ -1,6 +1,6 @@
 # triggerHistory.py
 
-[9-10] Import files \n
+[9-10] Import files  
 [11-12] Change directories to access TUCS framework, executed program
 [14-53] Define parser arguments, read in to use later in code (use dates or list of run numbers). It can optionally produce plots 
 [56-78] Formats date or run number arguments
