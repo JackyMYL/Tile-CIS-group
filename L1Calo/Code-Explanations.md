@@ -19,3 +19,6 @@
 -- how does it interface with the plotting scripts?    
 
 Need to still look at all of the subdependencies to see how they operate   
+
+# DefineTriggerCuts.py
+I'm not sure what the units are in the histogram x-axes. What is it plotting? Canwe somehow add a summary statistics box, or is this information somehow otherwise accessible?
