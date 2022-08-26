@@ -22,3 +22,6 @@ Need to still look at all of the subdependencies to see how they operate
 
 # DefineTriggerCuts.py
 I'm not sure what the units are in the histogram x-axes. What is it plotting? Canwe somehow add a summary statistics box, or is this information somehow otherwise accessible?
+
+# PrintBadChannels.py
+These plot histograms of the channels under different gain conditions and whether they are bad in L1Calo or Tile or both, for example. This has been edited to display gridlines for readability.
