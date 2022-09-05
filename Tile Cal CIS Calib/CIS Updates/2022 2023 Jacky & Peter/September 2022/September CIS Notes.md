@@ -1,6 +1,4 @@
-# September
-
-# August CIS Notes
+# September CIS Notes
 
 **Initial Command**: macros/cis/CIS_DB_Update.py --date 'August 9, 2022' 'September 5, 2022'|&tee August_SeptemberCIS.txt
 
@@ -33,9 +31,13 @@ run  [433116, 'CIS', '2022-09-01 12:31:04,2022-09-01 12:32:42']
 
 
 
-**AmpQ and Timing Plots:**
+**AmpQ and Timing Plots:** CIS run 431591 is bad for low gain (there are some outliers). 
 
-**Channels in Update:** 
+**Final Runs in Update:** 430900, 431285, 431304, 431313, 431374, 431570, 431991, 432218, 432548, 432824, 433072, 433116
+
+**Final Command:** macros/cis/CIS_DB_Update.py --date '-31 days' --ldate 430900 431285 431304 431313 431374 431570 431991 432218 432548 432824 433072 433116|&tee August_SeptemberCIS_FINAL.txt
+
+**Channels in Update:**
 
 **Odd Behaviour:** See `Odd Channel Behavior.xlsx` for catalogue of odd channel behavior. Please double check.
 
