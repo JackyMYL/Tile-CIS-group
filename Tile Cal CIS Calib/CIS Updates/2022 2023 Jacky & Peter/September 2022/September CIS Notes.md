@@ -35,6 +35,12 @@ run  [433116, 'CIS', '2022-09-01 12:31:04,2022-09-01 12:32:42']
 
 **Channel Plots:** Recurring issue in runs 433072, 433116 where the calibration constants are significantly lower for the last runs in the month, where otherwsie very stable. There was probably something wrong with the calibration. CHECK ELISA MESSAGES!
 
+**Problems from Scripts:** 
+Problem with mean_trunc in SetLowCISThreshold.py (TILECAL_LBA_m14_c37_highgain)
+Problem with mean_trunc in SetLowCISThreshold.py (TILECAL_LBA_m14_c39_lowgain)
+Module LBC_m49 has ymax = 0 (TILECAL_LBC_m49_c27_lowgain)
+Calibration values:[0.0] (not filtered out by the script, even though it should be) This seems to be a known issue fro DQ [cite]
+LBC_m52 legend covers last two datapoints and getting rid of the legend does not work. Here are raw values for one of the channels: LBC_m52 [0.619210422039032, 0.6193860173225403, 0.6190910935401917, 0.6191729307174683, 0.619414210319519, 0.6191526055335999, 0.619326114654541, 0.6192055344581604, 1.2734897136688232, 1.273591160774231]
 
 
 **Final Runs in Update:** 430900, 431285, 431304, 431313, 431374, 431570, 431991, 432218, 432548, 432824
