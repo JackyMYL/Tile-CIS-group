@@ -33,13 +33,18 @@ run  [433116, 'CIS', '2022-09-01 12:31:04,2022-09-01 12:32:42']
 
 **AmpQ and Timing Plots:** CIS run 431591 is bad for low gain (there are some outliers). 
 
-**Final Runs in Update:** 430900, 431285, 431304, 431313, 431374, 431570, 431991, 432218, 432548, 432824, 433072, 433116
+**Channel Plots:** Recurring issue in runs 433072, 433116 where the calibration constants are significantly lower for the last runs in the month, where otherwsie very stable. There was probably something wrong with the calibration. CHECK ELISA MESSAGES!
 
-**Final Command:** macros/cis/CIS_DB_Update.py --date '-31 days' --ldate 430900 431285 431304 431313 431374 431570 431991 432218 432548 432824 433072 433116|&tee August_SeptemberCIS_FINAL.txt
+
+
+**Final Runs in Update:** 430900, 431285, 431304, 431313, 431374, 431570, 431991, 432218, 432548, 432824
+
+**Final Command:** macros/cis/CIS_DB_Update.py --date '-31 days' --ldate 430900 431285 431304 431313 431374 431570 431991 432218 432548 432824|&tee August_SeptemberCIS_FINAL.txt
+
 
 **Channels in Update:**
 
-**Odd Behaviour:** See `Odd Channel Behavior.xlsx` for catalogue of odd channel behavior. Please double check.
+**Odd Behaviour:** See `Odd Channel Behavior.xlsx` for catalogue of odd channel behavior. Please double check. **LBC 52** half-gain for some time; may need to recalibrate from the time when it is returned to low gain properly.
 
 **Flag Updates:** See `Flag Updates.xlsx` for list of flags that need to be updated. They are taken from the `Odd Channel Behavior.xlsx` spreadsheet and marked in red.
 
