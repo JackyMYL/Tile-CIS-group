@@ -45,7 +45,7 @@ LBC_m52 legend covers last two datapoints and getting rid of the legend does not
 
 **Final Runs in Update:** 430900, 431285, 431304, 431313, 431374, 431570, 431991, 432218, 432548, 432824
 
-**Final Command:** macros/cis/CIS_DB_Update.py --date '-31 days' --ldate 430900 431285 431304 431313 431374 431570 431991 432218 432548 432824|&tee August_SeptemberCIS_FINAL.txt
+**Final Command:** macros/cis/CIS_DB_Update.py --date '-31 days' --ldate 430900 431285 431304 431313 431374 431570 431991 432218 432548 432824 |&tee results/August_SeptemberCIS_FINAL.txt
 
 
 **Channels in Update:**
