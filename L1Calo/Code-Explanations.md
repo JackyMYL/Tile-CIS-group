@@ -75,3 +75,11 @@ Traceback (most recent call last):
     raise CalledProcessError(retcode, cmd)
 subprocess.CalledProcessError: Command 'cmt co -r TileCalibAlgs-00-05-52-branch TileCalorimeter/TileCalib/TileCalibAlgs' returned non-zero exit status 1
 [pcampore@lxplus767 Tucs]$
+      * `athena.py -c 'OutputDirectory=".";TileL1CaloRun=True; doTileNtuple=True; doTileCalib=True; doTileMon=False; FileName="root://eosatlas//eos/atlas/atlastier0/rucio/data16_calib/calibration_L1CaloPmtScan/00306779/data16_calib.00307771.calibration_L1CaloPmtScan.daq.RAW/data16_calib.00307771.calibration_L1CaloPmtScan.daq.RAW._lb0000._SFO-1._0001.data"; RunNumber=307771; ' jobOptions_TileCalibRec.py`: AttributeError: '_TileInfoConfigurator' object has no attribute 'TileCondToolTiming'
+      
+# To Do
+      * `atlas-tile-offline`: check this version
+      * Take any run and make the necessary changes
+      * Look in detail at version numbers of everything and make sure they are the most up-to-date (and that they still run on 2022 data) -- look at git 
+      * Look at thrresholds applied
+      * Will add to slides next week
