@@ -75,7 +75,9 @@ Traceback (most recent call last):
     raise CalledProcessError(retcode, cmd)
 subprocess.CalledProcessError: Command 'cmt co -r TileCalibAlgs-00-05-52-branch TileCalorimeter/TileCalib/TileCalibAlgs' returned non-zero exit status 1
 [pcampore@lxplus767 Tucs]$
-      * `athena.py -c 'OutputDirectory=".";TileL1CaloRun=True; doTileNtuple=True; doTileCalib=True; doTileMon=False; FileName="root://eosatlas//eos/atlas/atlastier0/rucio/data16_calib/calibration_L1CaloPmtScan/00306779/data16_calib.00307771.calibration_L1CaloPmtScan.daq.RAW/data16_calib.00307771.calibration_L1CaloPmtScan.daq.RAW._lb0000._SFO-1._0001.data"; RunNumber=307771; ' jobOptions_TileCalibRec.py`: AttributeError: '_TileInfoConfigurator' object has no attribute 'TileCondToolTiming'
+      * `athena.py -c 'OutputDirectory=".";TileL1CaloRun=True; doTileNtuple=True; doTileCalib=True; doTileMon=False; FileName="root://eosatlas//eos/atlas/atlastier0/rucio/data16_calib/calibration_L1CaloPmtScan/00306779/data16_calib.00307771.calibration_L1CaloPmtScan.daq.RAW/data16_calib.00307771.calibration_L1CaloPmtScan.daq.RAW._lb0000._SFO-1._0001.data"; RunNumber=307771; ' jobOptions_TileCalibRec.py`: AttributeError: '_TileInfoConfigurator' object has no attribute 'TileCondToolTiming'`
+      
+     
       
 # To Do
       * `atlas-tile-offline`: check this version
@@ -83,3 +85,33 @@ subprocess.CalledProcessError: Command 'cmt co -r TileCalibAlgs-00-05-52-branch 
       * Look in detail at version numbers of everything and make sure they are the most up-to-date (and that they still run on 2022 data) -- look at git 
       * Look at thrresholds applied
       * Will add to slides next week
+ # Major Problems
+ **1**
+ The first step is the reconstruction of the raw data files. This is done with the Athena package offline/TileCalorimeter/TileCalib/TileCalibAlgs svn link
+
+In particular, the code to reconstruct the Tile+L1Calo calibration runs is:
+
+offline/TileCalorimeter/TileCalib/TileCalibAlgs/src/TileTriggerDefaultCalibTool.cxx
+offline/TileCalorimeter/TileCalib/TileCalibAlgs/TileCalibAlgs/TileTriggerDefaultCalibTool.h
+      
+**2** Out of date, depends on the above code being accessible 
+ Have a look at how the L1Calo energy for a trigger tower is retrieved. We use the same reconstruction method used by the L1Calo method in reconstructing the Energy scans (see code):
+energy = (ADC peak value - pedestal ) /4.
+Where the pedestal is taken to be 32 ADC counts (the pedestal varies very little between channels, with values around 32 +- 1).
+Until recently (July 2014) we were using a different method:
+int LVL1::TriggerTower::hadEnergy()
+
+**3** Local setup commands not easily fixed, file structure has changed too much, some packagaes are also out of date
+      To check out the trunk version of the TileCalibAlgs package do:
+
+pkgco.py TileCalibAlgs-00-05-52-branch
+You will need to compile the package (these commands are out-of-date 2022):
+
+setupWorkArea.py
+cd WorkArea/cmt
+cmt config
+cmt broadcast make
+
+**4** Error in the code itself
+      
+      * `athena.py -c 'OutputDirectory=".";TileL1CaloRun=True; doTileNtuple=True; doTileCalib=True; doTileMon=False; FileName="root://eosatlas//eos/atlas/atlastier0/rucio/data16_calib/calibration_L1CaloPmtScan/00306779/data16_calib.00307771.calibration_L1CaloPmtScan.daq.RAW/data16_calib.00307771.calibration_L1CaloPmtScan.daq.RAW._lb0000._SFO-1._0001.data"; RunNumber=307771; ' jobOptions_TileCalibRec.py`: AttributeError: '_TileInfoConfigurator' object has no attribute 'TileCondToolTiming'`
