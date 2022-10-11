@@ -1,0 +1,47 @@
+Command line parameters used: 
+ ['--sqlfn=tileSqlite.db', '--folder=/TILE/OFL02/CALIB/CIS/LIN', '--tag=TileOfl02CalibCisLin-RUN2-HLT-UPD1-00', '--tag2=TileOfl02CalibCisLin-RUN2-UPD4-18', '--maxdiffpercent=0.1', '--run=435722'] 
+---- Object header for ros=4 drawer=63 
+ObjType        : 10 
+ObjVersion     : 1 
+ObjSize[4bytes]: 1 
+NObjs          : 96 
+NChannels      : 48 
+NGains         : 2 
+LBA02 chann  6 adc 0 ind 0 val1 1.2139 val2 1.2206  diff -0.0066 -0.54%
+LBA02 chann  6 adc 1 ind 0 val1 74.9366 val2 75.4838  diff -0.5471 -0.72%
+LBA03 chann 17 adc 0 ind 0 val1 1.2555 val2 1.2694  diff -0.0139 -1.09%
+LBA06 chann 40 adc 1 ind 0 val1 73.6443 val2 75.4939  diff -1.8495 -2.45%
+LBA35 chann  8 adc 1 ind 0 val1 78.1383 val2 80.1600  diff -2.0217 -2.52%
+LBA37 chann 21 adc 1 ind 0 val1 76.4791 val2 74.9142  diff 1.5648 2.09%
+LBA45 chann  6 adc 1 ind 0 val1 76.6567 val2 77.0475  diff -0.3908 -0.51%
+LBA51 chann 12 adc 1 ind 0 val1 77.5036 val2 79.0856  diff -1.5821 -2.00%
+LBA52 chann  1 adc 0 ind 0 val1 1.2516 val2 1.2100  diff 0.0416 3.44%
+LBA64 chann 29 adc 1 ind 0 val1 73.5652 val2 74.3445  diff -0.7793 -1.05%
+LBC01 chann 25 adc 1 ind 0 val1 74.4160 val2 75.6799  diff -1.2639 -1.67%
+LBC03 chann  7 adc 1 ind 0 val1 83.1728 val2 83.7411  diff -0.5683 -0.68%
+LBC10 chann 37 adc 1 ind 0 val1 79.6643 val2 80.1088  diff -0.4445 -0.55%
+LBC13 chann 15 adc 0 ind 0 val1 1.2646 val2 1.2900  diff -0.0254 -1.97%
+LBC16 chann 29 adc 1 ind 0 val1 74.2345 val2 78.5230  diff -4.2885 -5.46%
+LBC23 chann 20 adc 0 ind 0 val1 1.3795 val2 1.4163  diff -0.0368 -2.60%
+LBC28 chann  4 adc 0 ind 0 val1 1.3230 val2 1.3144  diff 0.0086 0.65%
+LBC43 chann 24 adc 1 ind 0 val1 84.9518 val2 84.4821  diff 0.4697 0.56%
+LBC44 chann 12 adc 1 ind 0 val1 78.3658 val2 81.1615  diff -2.7956 -3.44%
+LBC47 chann 35 adc 0 ind 0 val1 0.6463 val2 1.1700  diff -0.5237 -44.76%
+LBC48 chann  0 adc 0 ind 0 val1 1.2799 val2 1.2881  diff -0.0082 -0.63%
+LBC52 chann 18 adc 1 ind 0 val1 93.9918 val2 103.5006  diff -9.5088 -9.19%
+LBC55 chann 29 adc 0 ind 0 val1 1.3175 val2 1.3242  diff -0.0066 -0.50%
+LBC57 chann  6 adc 1 ind 0 val1 77.1382 val2 78.4622  diff -1.3240 -1.69%
+LBC60 chann 14 adc 0 ind 0 val1 1.3007 val2 1.3074  diff -0.0068 -0.52%
+LBC62 chann  8 adc 1 ind 0 val1 77.5590 val2 78.3752  diff -0.8162 -1.04%
+EBA07 chann 31 adc 0 ind 0 val1 0.9208 val2 0.9390  diff -0.0182 -1.94%
+EBA13 chann  4 adc 0 ind 0 val1 1.2629 val2 1.2564  diff 0.0066 0.52%
+EBA42 chann 30 adc 1 ind 0 val1 72.9674 val2 74.3324  diff -1.3650 -1.84%
+EBA49 chann  0 adc 1 ind 0 val1 75.2279 val2 76.4106  diff -1.1827 -1.55%
+EBA50 chann 20 adc 1 ind 0 val1 74.8593 val2 76.8764  diff -2.0171 -2.62%
+EBA51 chann 10 adc 0 ind 0 val1 1.2639 val2 1.2704  diff -0.0065 -0.51%
+EBA61 chann 15 adc 0 ind 0 val1 1.2844 val2 1.2500  diff 0.0344 2.75%
+EBC13 chann  3 adc 0 ind 0 val1 1.3285 val2 1.3395  diff -0.0110 -0.82%
+EBC20 chann 10 adc 0 ind 0 val1 1.2524 val2 1.2642  diff -0.0118 -0.93%
+EBC22 chann 16 adc 0 ind 0 val1 1.0621 val2 1.0811  diff -0.0190 -1.75%
+EBC23 chann 36 adc 1 ind 0 val1 69.1743 val2 68.7974  diff 0.3769 0.55%
+EBC61 chann  8 adc 0 ind 0 val1 1.1555 val2 1.1670  diff -0.0115 -0.99%

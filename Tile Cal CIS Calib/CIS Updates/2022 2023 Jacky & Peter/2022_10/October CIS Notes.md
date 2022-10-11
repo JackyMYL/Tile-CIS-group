@@ -18,6 +18,6 @@ run  [435290, 'CIS', '2022-09-26 10:49:27,2022-09-26 10:50:56']
 run  [435469, 'CIS', '2022-09-28 09:04:22,2022-09-28 09:05:52']
 run  [435722, 'CIS', '2022-09-30 11:45:14,2022-09-30 11:47:13']
 
-**Final Command:** macros/cis/CIS_DB_Update --date 'September 1, 2022' 'October 1, 2022' --ldate 433072 433116 433430 433655 433937 434229 434572 434584 435091 435269 435290 435722 |&tee OctoberCIS.txt
+**Final Command:** macros/cis/CIS_DB_Update.py --date 'September 1, 2022' 'October 1, 2022' --ldate 433072 433116 433430 433655 433937 434229 434572 434584 435091 435269 435290 435722 |&tee OctoberCIS.txt
 
 **Runs Exluded:** 435469 (bad timing)
