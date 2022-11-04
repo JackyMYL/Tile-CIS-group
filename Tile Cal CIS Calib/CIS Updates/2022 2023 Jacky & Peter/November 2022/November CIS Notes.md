@@ -44,6 +44,10 @@ run  [438156, 'CIS', '2022-10-26 17:34:50,2022-10-26 17:36:16']
 run  [438209, 'CIS', '2022-10-27 13:18:06,2022-10-27 13:19:36']
 run  [438370, 'CIS', '2022-10-31 10:25:35,2022-10-31 10:26:50']
 
-Note that there were test runs for missing pules in the elogs (https://atlasop.cern.ch/elisa/display/479762, https://atlasop.cern.ch/elisa/display/480787), so we exclude at least these test runs
+Note that there were test runs for missing pules in the elogs (https://atlasop.cern.ch/elisa/display/479762, https://atlasop.cern.ch/elisa/display/480787), so we exclude at least these test runs (have not hearn back from Andrey, so just exlucde any runs whose dates are shared with others)
+**Bad AmpQ:** 436189
 
-**Run List (excluding test runs):** 4358866 436189 436813 436852 436813 437309 437563 437792 438802 438209 438370
+**Run List (excluding test runs):** 435886 436536 436813 436852 437309 437563 437792 438209 438370
+
+**Final Command:** macros/cis/CIS_DB_Update.py --date 'October 1, 2022' 'November 1, 2022' --ldate 435886 436536 436813 436852 437309 437563 437792 438209 438370|&tee results/NovemberCIS.txt
+
