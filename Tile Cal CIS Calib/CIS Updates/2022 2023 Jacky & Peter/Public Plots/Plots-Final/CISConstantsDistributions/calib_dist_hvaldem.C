@@ -1,0 +1,106 @@
+void calib_dist_hvaldem()
+{
+//=========Macro generated from canvas: c1_n1/c1
+//=========  (Fri Mar  3 00:55:06 2023) by ROOT version 6.24/00
+   TCanvas *c1_n1 = new TCanvas("c1_n1", "c1",1,1,800,578);
+   gStyle->SetOptStat(0);
+   c1_n1->SetHighLightColor(2);
+   c1_n1->Range(38.91667,-6.075949,43.08333,31.89873);
+   c1_n1->SetFillColor(0);
+   c1_n1->SetBorderMode(0);
+   c1_n1->SetBorderSize(0);
+   c1_n1->SetTickx(1);
+   c1_n1->SetTicky(1);
+   c1_n1->SetLeftMargin(0.14);
+   c1_n1->SetRightMargin(0.14);
+   c1_n1->SetTopMargin(0.05);
+   c1_n1->SetBottomMargin(0.16);
+   c1_n1->SetFrameBorderMode(0);
+   c1_n1->SetFrameBorderMode(0);
+   
+   TH1D *hvaldem__7 = new TH1D("hvaldem__7","",15,39.5,42.5);
+   hvaldem__7->SetBinContent(0,2);
+   hvaldem__7->SetBinContent(1,2);
+   hvaldem__7->SetBinContent(3,2);
+   hvaldem__7->SetBinContent(5,4);
+   hvaldem__7->SetBinContent(6,7);
+   hvaldem__7->SetBinContent(7,9);
+   hvaldem__7->SetBinContent(8,4);
+   hvaldem__7->SetBinContent(9,7);
+   hvaldem__7->SetBinContent(10,4);
+   hvaldem__7->SetBinContent(11,3);
+   hvaldem__7->SetBinContent(12,2);
+   hvaldem__7->SetBinContent(13,1);
+   hvaldem__7->SetMinimum(0);
+   hvaldem__7->SetMaximum(30);
+   hvaldem__7->SetEntries(47);
+   hvaldem__7->SetStats(0);
+
+   Int_t ci;      // for color index setting
+   TColor *color; // for color definition with alpha
+   ci = TColor::GetColor("#000099");
+   hvaldem__7->SetLineColor(ci);
+   hvaldem__7->SetLineWidth(2);
+   hvaldem__7->SetMarkerStyle(20);
+   hvaldem__7->SetMarkerSize(1.2);
+   hvaldem__7->GetXaxis()->SetTitle("Mean Dem. High-GainCIS Constant [ADC counts / pC]");
+   hvaldem__7->GetXaxis()->CenterTitle(true);
+   hvaldem__7->GetXaxis()->SetNdivisions(509);
+   hvaldem__7->GetXaxis()->SetLabelFont(42);
+   hvaldem__7->GetXaxis()->SetTitleOffset(1);
+   hvaldem__7->GetXaxis()->SetTitleFont(42);
+   hvaldem__7->GetYaxis()->SetTitle("Number of ADC Channels");
+   hvaldem__7->GetYaxis()->SetNdivisions(305);
+   hvaldem__7->GetYaxis()->SetLabelFont(42);
+   hvaldem__7->GetYaxis()->SetTitleOffset(1.4);
+   hvaldem__7->GetYaxis()->SetTitleFont(42);
+   hvaldem__7->GetZaxis()->SetLabelFont(42);
+   hvaldem__7->GetZaxis()->SetTitleOffset(1);
+   hvaldem__7->GetZaxis()->SetTitleFont(42);
+   hvaldem__7->Draw("");
+   TLatex *   tex = new TLatex(0.18,0.865,"ATLAS");
+tex->SetNDC();
+   tex->SetTextFont(72);
+   tex->SetTextSize(0.035);
+   tex->SetLineWidth(2);
+   tex->Draw();
+      tex = new TLatex(0.27,0.865,"Preliminary");
+tex->SetNDC();
+   tex->SetTextFont(42);
+   tex->SetTextSize(0.035);
+   tex->SetLineWidth(2);
+   tex->Draw();
+      tex = new TLatex(0.18,0.785,"Dem. High-Gain");
+tex->SetNDC();
+   tex->SetTextFont(42);
+   tex->SetTextSize(0.035);
+   tex->SetLineWidth(2);
+   tex->Draw();
+      tex = new TLatex(0.18,0.825,"Tile Calorimeter");
+tex->SetNDC();
+   tex->SetTextFont(42);
+   tex->SetTextSize(0.035);
+   tex->SetLineWidth(2);
+   tex->Draw();
+      tex = new TLatex(0.18,0.745,"July 1 - December 1, 2022");
+tex->SetNDC();
+   tex->SetTextFont(42);
+   tex->SetTextSize(0.035);
+   tex->SetLineWidth(2);
+   tex->Draw();
+      tex = new TLatex(0.59,0.865,"Mean  40.8");
+tex->SetNDC();
+   tex->SetTextFont(42);
+   tex->SetTextSize(0.035);
+   tex->SetLineWidth(2);
+   tex->Draw();
+      tex = new TLatex(0.59,0.825,"RMS/Mean  1.47%");
+tex->SetNDC();
+   tex->SetTextFont(42);
+   tex->SetTextSize(0.035);
+   tex->SetLineWidth(2);
+   tex->Draw();
+   c1_n1->Modified();
+   c1_n1->cd();
+   c1_n1->SetSelected(c1_n1);
+}
