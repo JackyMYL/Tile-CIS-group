@@ -1,0 +1,157 @@
+void time_spread_rms_dem()
+{
+//=========Macro generated from canvas: c1_n6/c1
+//=========  (Fri Mar  3 19:51:01 2023) by ROOT version 6.24/00
+   TCanvas *c1_n6 = new TCanvas("c1_n6", "c1",1,1,800,578);
+   gStyle->SetOptStat(0);
+   c1_n6->SetHighLightColor(2);
+   c1_n6->Range(-0.04324324,-1.810127,0.227027,3.253165);
+   c1_n6->SetFillColor(0);
+   c1_n6->SetBorderMode(0);
+   c1_n6->SetBorderSize(0);
+   c1_n6->SetLogy();
+   c1_n6->SetTickx(1);
+   c1_n6->SetTicky(1);
+   c1_n6->SetLeftMargin(0.16);
+   c1_n6->SetTopMargin(0.05);
+   c1_n6->SetBottomMargin(0.16);
+   c1_n6->SetFrameBorderMode(0);
+   c1_n6->SetFrameBorderMode(0);
+   
+   TH1F *demonstrator__3 = new TH1F("demonstrator__3","",8,0,0.2);
+   demonstrator__3->SetBinContent(9,1);
+   demonstrator__3->SetMinimum(0.1);
+   demonstrator__3->SetMaximum(1000);
+   demonstrator__3->SetEntries(1);
+
+   Int_t ci;      // for color index setting
+   TColor *color; // for color definition with alpha
+   ci = TColor::GetColor("#0000ff");
+   demonstrator__3->SetLineColor(ci);
+   demonstrator__3->SetLineWidth(2);
+   demonstrator__3->SetMarkerStyle(20);
+   demonstrator__3->SetMarkerSize(1.2);
+   demonstrator__3->GetXaxis()->SetTitle("CIS Calibration RMS / Mean [%]");
+   demonstrator__3->GetXaxis()->SetNdivisions(509);
+   demonstrator__3->GetXaxis()->SetLabelFont(42);
+   demonstrator__3->GetXaxis()->SetTitleOffset(1);
+   demonstrator__3->GetXaxis()->SetTitleFont(42);
+   demonstrator__3->GetYaxis()->SetTitle("Number of ADC Channels");
+   demonstrator__3->GetYaxis()->SetNdivisions(305);
+   demonstrator__3->GetYaxis()->SetLabelFont(42);
+   demonstrator__3->GetYaxis()->SetTitleOffset(1);
+   demonstrator__3->GetYaxis()->SetTitleFont(42);
+   demonstrator__3->GetZaxis()->SetLabelFont(42);
+   demonstrator__3->GetZaxis()->SetTitleOffset(1);
+   demonstrator__3->GetZaxis()->SetTitleFont(42);
+   demonstrator__3->Draw("");
+   
+   TH1F *demonstratorlo__4 = new TH1F("demonstratorlo__4","",8,0,0.2);
+   demonstratorlo__4->SetBinContent(9,35);
+   demonstratorlo__4->SetMinimum(0.1);
+   demonstratorlo__4->SetMaximum(1000);
+   demonstratorlo__4->SetEntries(35);
+
+   ci = TColor::GetColor("#ff0000");
+   demonstratorlo__4->SetLineColor(ci);
+   demonstratorlo__4->SetLineStyle(2);
+   demonstratorlo__4->SetLineWidth(2);
+   demonstratorlo__4->SetMarkerStyle(20);
+   demonstratorlo__4->SetMarkerSize(1.2);
+   demonstratorlo__4->GetXaxis()->SetTitle("CIS Calibration RMS / Mean [%]");
+   demonstratorlo__4->GetXaxis()->SetNdivisions(509);
+   demonstratorlo__4->GetXaxis()->SetLabelFont(42);
+   demonstratorlo__4->GetXaxis()->SetTitleOffset(1);
+   demonstratorlo__4->GetXaxis()->SetTitleFont(42);
+   demonstratorlo__4->GetYaxis()->SetTitle("Number of ADC Channels");
+   demonstratorlo__4->GetYaxis()->SetNdivisions(305);
+   demonstratorlo__4->GetYaxis()->SetLabelFont(42);
+   demonstratorlo__4->GetYaxis()->SetTitleOffset(1);
+   demonstratorlo__4->GetYaxis()->SetTitleFont(42);
+   demonstratorlo__4->GetZaxis()->SetLabelFont(42);
+   demonstratorlo__4->GetZaxis()->SetTitleOffset(1);
+   demonstratorlo__4->GetZaxis()->SetTitleFont(42);
+   demonstratorlo__4->Draw("SAME");
+   TLatex *   tex = new TLatex(0.66,0.88," HG Mean    100.000%");
+tex->SetNDC();
+   tex->SetTextFont(42);
+   tex->SetTextSize(0.032);
+   tex->SetLineWidth(2);
+   tex->Draw();
+      tex = new TLatex(0.66,0.84," HG RMS      0.000%");
+tex->SetNDC();
+   tex->SetTextFont(42);
+   tex->SetTextSize(0.032);
+   tex->SetLineWidth(2);
+   tex->Draw();
+      tex = new TLatex(0.66,0.8," LG Mean    100.000%");
+tex->SetNDC();
+   tex->SetTextFont(42);
+   tex->SetTextSize(0.032);
+   tex->SetLineWidth(2);
+   tex->Draw();
+      tex = new TLatex(0.66,0.76," LG RMS       0.000%");
+tex->SetNDC();
+   tex->SetTextFont(42);
+   tex->SetTextSize(0.032);
+   tex->SetLineWidth(2);
+   tex->Draw();
+   
+   TLegend *leg = new TLegend(0.6,0.5,0.7,0.6,NULL,"brNDC");
+   leg->SetBorderSize(0);
+   leg->SetTextFont(62);
+   leg->SetTextSize(0.032);
+   leg->SetLineColor(1);
+   leg->SetLineStyle(1);
+   leg->SetLineWidth(1);
+   leg->SetFillColor(0);
+   leg->SetFillStyle(1001);
+   TLegendEntry *entry=leg->AddEntry("demonstrator","Dem. High Gain","l");
+
+   ci = TColor::GetColor("#0000ff");
+   entry->SetLineColor(ci);
+   entry->SetLineStyle(1);
+   entry->SetLineWidth(2);
+   entry->SetMarkerColor(1);
+   entry->SetMarkerStyle(21);
+   entry->SetMarkerSize(1);
+   entry->SetTextFont(62);
+   entry=leg->AddEntry("demonstratorlo","Dem. Low Gain","l");
+
+   ci = TColor::GetColor("#ff0000");
+   entry->SetLineColor(ci);
+   entry->SetLineStyle(2);
+   entry->SetLineWidth(2);
+   entry->SetMarkerColor(1);
+   entry->SetMarkerStyle(21);
+   entry->SetMarkerSize(1);
+   entry->SetTextFont(62);
+   leg->Draw();
+      tex = new TLatex(0.22,0.863,"ATLAS");
+tex->SetNDC();
+   tex->SetTextFont(72);
+   tex->SetTextSize(0.035);
+   tex->SetLineWidth(2);
+   tex->Draw();
+      tex = new TLatex(0.35,0.863,"Preliminary");
+tex->SetNDC();
+   tex->SetTextFont(42);
+   tex->SetTextSize(0.035);
+   tex->SetLineWidth(2);
+   tex->Draw();
+      tex = new TLatex(0.22,0.807,"Tile Calorimeter");
+tex->SetNDC();
+   tex->SetTextFont(42);
+   tex->SetTextSize(0.035);
+   tex->SetLineWidth(2);
+   tex->Draw();
+      tex = new TLatex(0.22,0.751,"February 2022");
+tex->SetNDC();
+   tex->SetTextFont(42);
+   tex->SetTextSize(0.035);
+   tex->SetLineWidth(2);
+   tex->Draw();
+   c1_n6->Modified();
+   c1_n6->cd();
+   c1_n6->SetSelected(c1_n6);
+}

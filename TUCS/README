@@ -1,0 +1,29 @@
+The best source of information at present is:
+
+https://twiki.cern.ch/twiki/bin/view/Atlas/TileCalibrationTucs
+
+The only two directories you should ever have to edit are:
+
+workers - where you define 'workers' or processors to process data
+macros - the script that calls whichever workers you want
+
+And you may want to look in:
+
+plots - where your plots will be stored
+
+But please do not modify the 'src' directory without discussing it with
+all authors.  The 'src' directory contains the basic framework of Tucs, 
+and any modifications to this could potentially break everybody else's code.  
+
+
+File GIT_HOWTO.md in this package gives some instructions how to work with
+GIT repository
+
+## To check out the code and setup the framework:
+
+```
+git clone ssh://git@gitlab.cern.ch:7999/atlas-tile-offline/tucs.git Tucs
+cd Tucs
+source setup.sh
+
+```

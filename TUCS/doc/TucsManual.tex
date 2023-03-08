@@ -1,0 +1,94 @@
+\documentclass[11pt,a4paper]{atlasnote} 
+
+\usepackage{atlasphysics} % Contains useful shortcuts. Uncomment to use
+                           % See instruction.pdf for details
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           Title page             % 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\skipbeforetitle{100pt}
+
+% Title
+\title{TUCS: Tile Unified Calibration Software}
+
+% Author
+\usepackage{authblk}
+\renewcommand\Authands{, } % avoid ``. and'' for last author
+\renewcommand\Affilfont{\itshape\small} % affiliation formatting
+
+\author[a]{Chris Tunnell}
+\author[b]{Brian Thomas Martin}
+\author[c]{Marius Cornelis Van Woerden}
+\author[d]{Henric Wilkens}
+
+\affil[a]{University of Chicago}
+\affil[b]{Michigan State University}
+\affil[c]{Universiteit van Amsterdam}
+\affil[d]{CERN}
+
+% Date: if not given, uses current date
+%\date{\today}
+
+% Draft version: if given, adds draft version on front page, a
+% 'DRAFT' box on top of each other page, and line numbers to easy
+% commenting. Comment or remove in final version.
+\draftversion{0.1}
+
+% Abstract
+\abstracttext{
+The Tile hadronic calorimeter has several interdependent calibration systems used to ensure accurate data is being produced.  These systems govern calibration of the detector in relation to: data quality, charge injection, cesium source, laser, electronic and pile up noise, and trigger.  TUCS is used as an interface to process the calibration data from dedicated calibration runs, read and write calibration constants to the ATLAS database, and monitor these constants over time.  In this document, the architecture of the TUCS software is documented and instructions for usage are given.
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            Content               % 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\section{Introduction}
+
+\section{Architecture}
+The fundamental data structure in TUCS is the detector tree.  This detector tree comes in two flavors a readout detector tree, which holds the individual readout channels, and a physical detector tree, which is made up at its finest levels of calorimeter towers and cells.  Portions of these trees are shown in figures and.  Note that from the calorimeter to the module level, these trees are identical.  Further, TUCS knows which channels in the detector tree belong to which channels in the physical tree, allowing cross-referencing between levels.
+
+\par The basic principle behind TUCS is to be able to run a detector tree through a series of tools (python classes) that read data to the tree, process data in the tree, and write the data contained in the tree to other formats.  Each tool is called a 'worker' and can be general to all calibration systems or specific to an individual system.  General workers can be found in the top-level 'workers' directory while specific workers are in the various sub-directories (ex. workers/CIS for CIS-specific tasks).  Usually a sequence of manipulations is needed to perform a desired calibration task.  This is accomplished in TUCS by creating the detector tree and feeding it to a series of workers that process each element of the tree in a similar fashion. 
+
+\section{ROOT input to TUCS}
+Calibration data is made available to TUCS in the form of ROOT n-tuples.  These calibration n-tuples are produced via the standard Tile Calorimeter reconstruction using the {\tt TileCalibAlgs} ATHENA package and stored in the directory {\tt /afs/cern.ch/user/t/tilecali/w0/ntuples/}.  These files are produced for noise calibration, CIS calibration, and LASER calibration.
+
+\section{Database input/output with TUCS}
+TUCS can be used to read and write to the ATLAS COOL conditions database.  For most of the calibration tasks TUCS interacts with the Tile Calorimeter portion of this database.  There are two versions of this database: online (accessible via {\tt COOLONL\_TILE}) and offline (accessible via {\tt COOLOFL\_TILE} ).  Additionally there are separate databases one for MC ({\tt OFLP200}) and another for data ({\tt CONDBR2}).  Finally, for the cell noise calibration constants, the global Calorimeter database is used:  {\tt COOLONL\_CALO} or  {\tt COOLOFL\_CALO}.
+
+\par Within these databases, there is a directory structure containing the various calibration system's constants.  For example, the per ADC electronics noise can be found in the folder {\tt /TILE/OFL02/NOISE/SAMPLE}.  The full set of tile calibration constant folders is shown in table \ref{tab:COOLfolders}
+
+
+\begin{table}[htbp]
+   \centering
+   \begin{tabular}{c l l}
+   \hline \hline
+     Purpose & Online Folder & Offline Folder \\
+     \hline
+     Channel Status (Data Quality) & {\tt /TILE/STATUS/ADC} & {\tt /TILE/OFL02/STATUS/ADC} \\
+     ADC Noise & {\tt /TILE/NOISE/SAMPLE} & {\tt /TILE/OFL02/NOISE/SAMPLE} \\
+     Channel Noise (Fit Method) &  {\tt /TILE/NOISE/FIT} & {\tt /TILE/OFL02/NOISE/FIT} \\
+     Cell Noise (in CALO Db) & {\tt /CALO/Noise/CellNoise} & {\tt /CALO/Ofl/Noise/CellNoise} \\
+     \hline \hline
+   \end{tabular}
+      \caption{Commonly used TileCal calibration folders  for online and offline}
+   \label{tab:COOLfolders}
+\end{table}
+
+
+\section{Noise Calibration}
+The accuracy of reconstructed particle energies at both the channel-level and the cell-level depends on a good understanding and parametrization of the electronic noise associated with the front-end readout electronics.  Details about this noise can be found in \cite{Tile-noise}.  This section will describe operationally how TUCS is used to manage the TileCalorimeter noise description.
+
+\par The Tile Calorimeter noise is stored in two separate COOL databases: the TileCalorimeter database and the combined ATLAS Calorimeter database.  These databases can be access
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{atlasnote}
+\bibliography{TucsManual}
+
+\end{document}

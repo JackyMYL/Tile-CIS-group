@@ -1,0 +1,400 @@
+2020-10-20 Henric <Henric.Wilkens@cern.ch>
+	* protected EnableAutoLoading() as it is not there anymore in latest ROOT (22.0.18 and beyond)
+	* Fixes for pyhton3 laser time studies.
+	* Moved script for laser DQ plots to use rel22
+
+2020-08-12 Henric <Henric.Wilkens@cern.ch>
+	* fixed prints and type checking in writting to DB.
+
+2020-07-21 Henric <Henric.Wilkens@cern.ch>
+	* moved MbiasFunctions.py from workers to scripts: It is not a worker!
+	* moved AtlasStyle.C to root_macros directory
+
+2020-07-17 Ellie Rath <elerath@mit.edu>
+	* Ran 2to3 on all scripts - this changes print statements, exceptions etc.
+	* sorted(region.GetEvents()) -> sorted(region.GetEvents(), key=lambda x: x.run.RunNumber).
+	py3 does not allow you to sort a list of tuples
+	* changed access to Use.py SQL access - This is probably the biggest change py2 has
+	_mysql (low level APIs) and mysqldb (high level APIs), py3 only have pymysql (high level APIs only).
+	Therefore i had to rewrite all SQL access which used _mysql functions to instead use pymysql/mysqldb functions.
+	* At the end of 2019, we decided to change the method for determining low cis constants.
+	The previous scripts used hardcoded cutoffs, but we wanted to change this to allow constants
+	to be equal to 1/2 the nominal, and set the threshold according to the equation (AVG - 3*RMS)/2,
+	where AVG and RMS are the average and rms of the distribution of non-problematic CIS channels.
+	Therefore, I added a new worker called SetLowCisThreshold.py in workers/cis/ to make this calculation.
+	This worker calculates the low constant threshold, then hads it off to CalculateDBCIS.
+	Previously, all of this work was done in CalculateDBCIS since we were only using a hardcoded cutoff.
+	I have left a copy of the old CalculateDBCIS (called workers/cis/CalculateDBCIS_oldcopy.py) for reference.
+
+2019-10-04 Henric <Henric.Wilkens@cern.ch>
+	* modified load.py for use with release 22
+
+2019-09-17 Henric <Henric.Wilkens@cern.ch>
+	* renaming GetPMTShift worker, to prepare phase out of old implementation
+	* added verbose argment to getPMTShiftsDirect creator
+        * fixed macro to make MBTS references
+
+2019-05-29 Henric <Henric.Wilkens@cern.ch>
+	* new worker to make Arely style plots
+	* rename do_fiber_plot
+
+2019-04-17 Henric <Henric.Wilkens@cern.ch>
+	* writing ps instead of eps files for some laser worker, and canvas size adjustment for A4.
+	* clean exist from load.py is ATLAS env wasn't set.
+	* canvas size options in MakeCanvas.
+	* removed do_fiber_plot.py will rename the newer version in a next step.
+
+2019-03-19 Henric <Henric.Wilkens@cern.ch>
+	* Moved the loading of AtlasStyle.C in the minbias workers inside the ProcessStop()
+	* Fixed declaration of runs global variable in laserGetOpts.
+	* Fixed subdir use GetPlotDir in laser time plots
+
+2017-07-27  Sanya Solodkov  <solodkov@pcatl03.cern.ch>
+
+	* Commiting latest changes in laser macros to GIT
+
+2017-07-21  Sanya Solodkov  <solodkov@pcatl03.cern.ch>
+
+	* SVN repository has been migrated to GIT on 21-Jul-2017
+	* Olg SVN tags became branches in GIT
+
+2017-06-21 Michael (Tres) Reid <michael.george.reid@cern.ch>
+
+	* macros/cis/StudyFlag.py: Modified flags "eventline" and "eventlabel"
+	to have multiple lines and lables adjusted the formatting. Added the
+	flag "runofinterest" to mark specific points. Added the "maxmin" flag
+	to mark the minimum and maximum point produced in the plot. 
+
+	* workers/cis/Use.py: Modified commselect for CIS. Ignores runs with
+	comments when using 2 dates as the date range. 
+
+	* workers/cis/SQLOutput.py: Modified to produce text file giving the number of
+	ADCs updated, how many are good, affected, and masked. How many have
+	over a 5% deviation. Which ADCs are included in the update and what
+	percent difference they have.
+
+	* macros/trigger/triggerTest.py: fixed to run with the fixed L1Calo
+	trigger scans
+
+	* macros/trigger/triggerHistory.py: Heavily modified to make a set of
+	time stability plots for the L1Calo trigger scans. 
+
+	* workers/trigger/PrintTriggerBadChannels: Added energy distribution
+	plots for L1Calo and Tile energies. Added L1Calo/Tile energy ratio
+	distribution plots
+
+	* workers/trigger/HistoryTrigger: Modified to procude time
+	stability plots and txt files stating which towers are bad (and how
+	many channels in the tower over a certain treshold), and which plots
+	only fail for a single run. Adjusted so that plots are sorted into
+	different directories depending on if they are bad in L1Calo, Tile or
+	both.
+
+	* workers/cis: General changes throughout several workers (ensure
+	nothing is missed)
+
+	* macros/cis: General changes throughout several macros (ensure
+	nothing is missed)
+
+2017-06-11  Karl Gellerstedt  <kageller@lxplus006.cern.ch>
+
+	* Tagging Tucs-00-00-35
+
+2017-06-10  Karl Gellerstedt  <kageller@lxplus076.cern.ch>
+
+	* workers/noise/ReadCellNoiseDB.py: Catch Exception (thrown from C++)
+
+	* macros/noise/MakeCellNoiseUpdate.py: Added modified version of MakeCellNoise.py
+
+2017-06-09  Karl Gellerstedt  <kageller@lxplus049.cern.ch>
+
+	* workers/noise/NoiseVsDB.py (NoiseVsDB.ProcessRegion): Minor fix in debug print
+
+2017-04-21  Karl Gellerstedt  <kageller@lxplus040.cern.ch>
+
+	* Tagging Tucs-00-00-34
+	* workers/noise/PedestalCompare2DB.py: Optionally override zero values
+	* macros/noise/MakePedestalUpdate.py: Added option keep_db_val_if_zero for overriding zero values, default false
+
+2017-04-07  Karl Gellerstedt  <kageller@lxplus078.cern.ch>
+
+	* Tagging Tucs-00-00-33
+	* macros/noise/DumpPedestalDB.py: supress_number_of_changed not required, arbitrary number of thresholds
+	* macros/noise/MakePedestalUpdate.py: Added options for DQMF source and server
+	* workers/noise/UseDQMF.py: Added parameters for DQMF source and server
+	* workers/noise/WriteCellNoiseDB.py: Use os.getlogin
+	* workers/noise/WriteChanNoiseDB.py: Use os.getlogin
+	* workers/noise/WriteOnlineADCNoiseDB.py: Use os.getlogin
+	* workers/noise/WriteDigiNoiseDB.py: Use os.getlogin
+	* src/load.py: Overide os.getlogin to be able to run in cron jobs
+
+2017-03-10  TileBeam  <tilebeam@pcatl01.cern.ch>
+
+	* Tagging Tucs-00-00-32
+
+2016-12-09  Karl Gellerstedt  <kageller@lxplus088.cern.ch>
+
+	* workers/noise/UseDB.py: Include region, warn when pedestal is below some threshold
+	* macros/noise/_NoiseCommon.py: Get list of pedestal run numbers in some run number interval
+	* macros/noise/DumpPedestalDB.py: More options for bad channel info
+	* workers/noise/PedestalDBStatistics.py: Added bad channel info
+
+2016-12-08  Karl Gellerstedt  <kageller@lxplus0026.cern.ch>
+
+	* macros/noise/DumpPedestalDB.py: Add option (print_stat) for printing update statistics
+	* workers/noise/PedestalDBStatistics.py: New worker for getting pedestal update statistics
+
+2016-11-28  Karl Gellerstedt  <kageller@lxplus019.cern.ch>
+
+	* workers/noise/UseDB.py : Worker for getting runs from COOL
+	* macros/noise/DumpPedestalDB.py: Added for debugging
+
+2016-11-18  Karl Gellerstedt  <kageller@lxplus0034.cern.ch>
+
+	* macros/noise/MakePedestalUpdate.py: Fix for ped from DQMF
+	* workers/noise/UseDQMF.py: Print to log file, handle dates for Run
+	* workers/noise/ReadDigiNoiseDQMF.py: Print to logfile
+
+2016-11-16  Karl Gellerstedt  <kageller@lxplus002.cern.ch>
+
+	* Tagging Tucs-00-00-30
+
+2016-11-07  Karl Gellerstedt  <kageller@lxplus018.cern.ch>
+
+	* macros/noise/_NoiseCommon.py: PatchBadValus default = False
+	* workers/noise/NoiseVsDB.py: Removed print, tag missing ADC:s
+	* workers/noise/PedestalCompare2DB.py: Print missing ADC:s and LG/HG differences
+	* workers/noise/PedestalComparison2D.py: Handle missing reference
+
+2016-07-24  Karl Gellerstedt  <kageller@lxplus024.cern.ch>
+
+	* Tagging Tucs-00-00-27
+	* workers/ReadBadChFromCool.py: set "isStatusBad" if the ADC is masked
+	* macros/noise/MakePedestalTimeEvolution.py: Flags to show IOV starts
+	* macros/noise/make2gausDigi.py: Major updates dor new MC noise
+	* macros/noise/MakeCellNoise.py: Updated tags
+	* macros/noise/MakePedestalUpdate.py: List of drawers to include/exclude, compare to latest or specific run
+	* workers/noise/CheckCellNoise.py: Checks and plots for cell noise
+	* workers/noise/PlotDigiNoise.py: Plots for ADC noise per cell type and varaible
+	* workers/noise/EnableCalibration.py: Enable reading of calibrations
+	* workers/noise/AddRun.py: Worker for adding a run
+	* workers/noise/ReadDigiNoiseFile.py: Enable reading of calibrations
+	* workers/noise/NoiseWorker.py: Determine cell type, navigate from ADC to cell
+	* workers/noise/ReadCellNoiseFile.py: Verbose mode, single or double gaus
+	* workers/noise/ReadDigiNoiseDB.py: Possible to read latest, handle tag
+	* workers/noise/ReadCellNoiseDB.py: Flag for verbose, handle MBTS
+	* workers/noise/PatchBadValues.py: Handle missing attributes and MBTS and tags
+	* workers/noise/PedestalCompare2DB.py: Count zeros, check absurd values, list of drawers to include
+	* workers/noise/MakeDigi2Gaus.py: Handle special cells and cells with masked ADC:s
+
+2016-07-16  Karl Gellerstedt  <kageller@lxplus105.cern.ch>
+
+	* workers/noise/MarkBadCells.py: New worker for tagging cells as bad(masked)
+	* workers/noise/CheckSpecialChannels.py: Check and tag cells with special types
+	* macros/noise/MakePedestalUpdate.py: Include/exclude drawers, specify DB comparison mode
+
+2016-05-12  Sanya Solodkov  <solodkov@pcatl03.cern.ch>
+
+	* import PyCintex correctly with ROOT6
+	* Tagging Tucs-00-00-25
+
+2016-04-13  Karl Gellerstedt  <kageller@lxplus060.cern.ch>
+
+	* src/region.py (Region.GetCellName): Added E1m and spc10, introduced argument to get special names
+
+2016-03-01  Karl Gellerstedt  <kageller@lxplus0074.cern.ch>
+
+	* Tagging Tucs-00-00-24
+
+	* macros/noise/_NoiseCommon.py: Default plot directory
+	* macros/noise/MakePedestalTimeEvolution.py: Time evolution for pedestal/noise
+	* workers/noise/PedestalTimeEvolution.py: Time evolution for pedestal/noise
+	* workers/noise/ReadPedestalFile.py: Read a set of files
+	* workers/noise/ReadDigiNoiseDB.py: Read IOVs
+
+2016-02-22  Karl Gellerstedt  <kageller@lxplus0099.cern.ch>
+
+	* macros/noise/MakePedestalUpdate.py: Print channels with large deviation
+	* workers/noise/PedestalCompare2DB.py: Print channels with large deviation, store JSON
+
+2016-02-09  Karl Gellerstedt  <kageller@lxplus045.cern.ch>
+
+	* workers/noise/PedestalWorker.py: Save canvases to ROOT file, fix for plot name
+	* workers/noise/PedestalComparison2D.py: Diff plot for entire tilecal, diff is always signed 
+	* macros/noise/MakePedestalUpdate.py: Moved common arguments
+	* macros/noise/_NoiseCommon.py: Added common arguments
+
+2016-02-02  Shannon Towey  <shannon.towey@cern.ch>
+
+	* Improvements to CIS output file structure in many CIS workers
+	* Tagging as Tucs-00-00-23
+
+2016-01-25  Karl Gellerstedt  <kageller@lxplus0102.cern.ch>
+
+	* Tagging Tucs-00-00-22
+
+	* workers/noise/PedestalComparison2D.py: Code cleanup
+	* workers/noise/PedestalCompare2DB.py: Correct key for partition
+
+2016-01-22  Karl Gellerstedt  <kageller@lxplus0053.cern.ch>
+
+	* macros/noise/MakePedestalUpdate.py: Option for noise comparison mode
+
+2016-01-20  Karl Gellerstedt  <kageller@lxplus0037.cern.ch>
+
+	* Tagging Tucs-00-00-21
+
+	* workers/noise/WriteDigiNoiseDB.py: Specify output directory
+ 	* workers/noise/PedestalComparison2D.py: New worker for plotting pedestal/noise comparisons
+	* workers/noise/PedestalWorker.py: New worker base class
+	* workers/noise/PedestalCompare2DB.py: Write output to ROOT
+	* macros/noise/_NoiseCommon.py: New class for encapsulating log file and ROOT file 
+	* macros/noise/MakePedestalUpdate.py: Added plots and ROOT output
+
+2015-12-03  Karl Gellerstedt  <kageller@lxplus0065.cern.ch>
+
+	* macros/noise/MakePedestalUpdate.py: Added options for reading noise from DQMF
+	* workers/noise/UseDQMF.py: Added worker for reading run info from DQMF
+	* workers/noise/ReadDigiNoiseDQMF.py: Added worker for reading noise from DQMF 
+
+2015-11-20  Karl Gellerstedt  <kageller@lxplus0159.cern.ch>
+
+	* PedestalComparison2D.py: Removed for now
+
+2015-11-13  Karl Gellerstedt  <kageller@lxplus0056.cern.ch>
+
+	* workers/noise/WriteDigiNoiseDB.py: Added option for writing only updated drawers
+	* workers/noise/PedestalCompare2DB.py: Fixed logging
+	* macros/noise/MakePedestalUpdate.py: Added attributes and logging
+
+2015-11-10  Karl Gellerstedt  <kageller@lxplus0056.cern.ch>
+
+	* workers/noise/PedestalCompare2DB.py: Added worker
+	* macros/noise/MakePedestalUpdate.py: Added macro
+	
+2015-09-07  Sanya Solodkov  <solodkov@lxplus0163.cern.ch>
+
+	* minor fixes in laser macros
+	* tagging new version as Tucs-00-00-19
+
+2015-08-27  Sanya Solodkov  <solodkov@pcatl03.cern.ch>
+
+	* tagging new version as Tucs-00-00-18
+
+2015-08-04 Henric <henric.wilkens@cern.ch>
+	* modified ReadLaser.py to have 2 diodes inputs.
+	* modified macros accordingly
+
+2015-05-12 Vikram Upadhyay <vikram.upadhyay@cern.ch>
+	* tagging new version as Tucs-00-00-17
+	* Grey updated a bunch of CIS workers in the past months
+        * creating a new tag to update the tile beam TUCS used for Tile-in-ONE
+
+2015-03-10  Sanya Solodkov  <solodkov@pcatl08.cern.ch>
+
+	* all cell noise macros updated to be able to work with 6 gain combinations
+	* by default only 4 gains are written to sqlite
+	* MakeCellNoise.py updated to read old constants from Oracle,
+	* i.e. no need to prepare sqlite file before running the macro
+	* tagging new version as Tucs-00-00-16
+
+2015-01-21 Vikram Upadhyay <vikram.upadhyay@cern.ch>
+	* tagging new version as Tucs-00-00-14
+	* Grey's new ReadBadChFromCool.py worker added
+
+2014-12-17 Vikram Upadhyay <vikram.upadhyay@cern.ch>
+	* tagging new version as Tucs-00-00-13
+	* global variable Use_date_list added to Use.py worker
+	* png outputs added for CIS time stability plots for TiO use
+
+2014-12-16 Vikram Upadhyay <vikram.upadhyay@cern.ch>
+	* tagging new version as Tucs-00-00-12
+	* TUCSRESULTS env var added for Tile-in-One use
+
+2014-12-16 Vikram Upadhyay <vikram.upadhyay@cern.ch>
+	* tagging new version as Tucs-00-00-11
+	* Minor fix from 00-00-10
+	* Did not fix the problem
+
+2014-12-16 Vikram Upadhyay <vikram.upadhyay@cern.ch>
+	* tagging new version as Tucs-00-00-10
+	* New CIS macro Performance.py added
+	* New CIS worker database_flag_hist.py added
+	* Created mainly for Tile-in-One purposes
+
+2014-11-20 Vikram Upadhyay <vikram.upadhyay@cern.ch>
+	* tagging new version as Tucs-00-00-09
+	* added a gain parameter in mbias readCoolConstants.py macro
+	* fixed plot titles in CIS, and .png files made available
+
+2014-11-19 Vikram Upadhyay <vikram.upadhyay@cern.ch>
+	* tagging new version as Tucs-00-00-08
+	* fixed date format in Use.py to accept yyyy-mm-dd format (mainly for Tile-in-One)
+
+2014-11-13 Cora Fischer <cora.fischer@cern.ch>
+	* tagging new version as Tucs-00-00-07
+
+2014-11-07 Cora Fischer <cora.fischer@cern.ch>
+	* minor changes to mbias macros/workers:
+	added options to execute macros from command line
+	without changing the macro itself manually (useful
+	for Tile-in-one integration)
+
+2014-10-31  Sanya Solodkov  <solodkov@pcatl03.cern.ch>
+
+	* massive update of all macros
+	& using TUCSPLOTS and TOCSRESULTS environment variables everywhere
+	* tagging Tucs-00-00-05
+
+2014-10-27  Sanya Solodkov  <solodkov@pcatl03.cern.ch>
+
+	* massive migration to CONDBR2 (some scripts may not work yet)
+	* tagging Tucs-00-00-04
+
+2014-10-22 Cora Fischer <cora.fischer@cern.ch>
+	* minimum bias workers and macros have been added
+	* and updated
+	* added to laser toolbox: getRegionName("Cellname")
+	* added comparison between cesium and mbias: macros/CompareCsMbias.py, workers/PlotCsMbias.py
+
+2014-10-15  Sanya Solodkov  <solodkov@pcatl03.cern.ch>
+
+	* creating output files in the directory defined by
+	* TUCSRESULTS environment variable
+	* tagging Tucs-00-00-03
+
+2014-10-14  Sanya Solodkov  <solodkov@pcatl03.cern.ch>
+
+	* changing logging.error -> logging.ERROR
+	* adding AtlasStyle.C to the package
+	* os.chdir(os.getenv('TUCS','.'))  added to all macros
+	* from now on, TUCS environment vaiable should be defined
+	* and points to TUCS top-level directory
+	* if in addition TUCSPLOTS environment variable is defined
+	* plots are created in $TUCSPLOTS/latest directory
+	* otherwise they are created in $TUCS/plots/latest
+	* tagging Tucs-00-00-02
+
+2014-08-28  Sanya Solodkov  <solodkov@pcatl03.cern.ch>
+
+	* tagging Tucs-00-00-01
+
+2013-12-15  Andrey Kamenshchikov  <akamensh@lxplus0605.cern.ch>
+
+	* Added cesium worker: ReadProblemChFromCool.py
+
+2013-11-23  Andrey Kamenshchikov  <akamensh@lxplus0614.cern.ch>
+
+	* Updated cesium part of WriteDBNew.py, Use.py
+	* Added cesium macros: update_cesium.py, CS_time_evolution.py
+	* Added cesium workers: time_evolution_plots.py, time_evolution_plots_mconvoluted.py
+
+2013-10-23  Andrey Kamenshchikov  <akamensh@lxplus0425.cern.ch>
+
+	* ReadCalFromCool.py - cesium part is updated
+	* WriteDB.py - updated
+	* CsQC.py - changed the principles of monitoring for problematic channels - cesium Db is designed
+
+2013-10-21  Andrey Kamenshchikov  <akamensh@lxplus0425.cern.ch>
+
+	* Cesium workers (chanlists.py
