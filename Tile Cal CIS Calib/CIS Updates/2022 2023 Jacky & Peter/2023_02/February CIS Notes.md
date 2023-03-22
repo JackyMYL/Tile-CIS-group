@@ -35,6 +35,8 @@ Final command:
 
 macros/cis/CIS_DB_Update.py --date 'February 01, 2023' 'February 28, 2023' --ldate 442620 442775 442791 442820 442935 443018 443364 443414 443831 443835 444001 444007 444633 --recalALL --updateThreshold 0.0
 
+for recording the run, add "|&tee results/FebCIS.txt" to end of command.
+
 Final runs:
 442620 442775 442791 442820 442935 443018 443364 443414 443831 443835 444001 444007 444633
 

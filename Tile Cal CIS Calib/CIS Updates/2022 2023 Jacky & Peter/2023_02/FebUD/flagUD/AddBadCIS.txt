@@ -1,0 +1,17 @@
+LBA_m02_c06_lowgain
+LBA_m02_c06_highgain
+LBA_m62_c26_highgain
+LBA_m35_c08_highgain
+LBA_m38_c46_lowgain
+LBC_m62_c08_highgain
+EBA_m16_c17_highgain
+EBC_m34_c41_lowgain
+LBA_m30_c13_lowgain
+LBC_m19_c26_highgain
+LBC_m57_c06_highgain
+EBA_m40_c35_highgain
+EBC_m20_c10_lowgain
+EBC_m23_c01_lowgain
+EBC_m34_c38_highgain
+LBA_m03_c17_lowgain
+LBA_m51_c12_highgain

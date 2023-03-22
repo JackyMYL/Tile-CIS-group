@@ -1,0 +1,18 @@
+ConstantUD:
+macros/cis/CIS_DB_Update.py --date 'February 01, 2023' 'February 28, 2023' --ldate 442620 442775 442791 442820 442935 443018 443364 443414 443831 443835 444001 444007 444633 --recalALL|&tee results/FebCIS.txt
+
+create file toRecalibrate.txt in results/
+
+[need to write explaination for this]
+macros/cis/Jacky.py --cistxt results/FebCIS.txt --cisupdate
+
+[need to further include this]
+~solodkov/scripts/calib_to_oracle CALIB/CIS/LIN tileSqlite.db
+
+FlagUD:
+
+[need to work on this]
+create file RemoveBadCIS.txt and AddBadCIS.txt
+cp update_flags.py from CIS_helpers
+
+WriteBchToCool.py --execfile=update_flags.py  --online --upd4

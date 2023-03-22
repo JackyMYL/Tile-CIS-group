@@ -1,3 +1,0 @@
-EBA_m12_c36_highgain
-EBC_m30_c11_highgain
-EBC_m30_c11_lowgain
