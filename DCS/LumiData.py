@@ -2,10 +2,9 @@
 #
 # Author: Peter Camporeale
 # Contact: peter.thomas.camporeale@cern.ch
-# Date: 2.11.2022
+# Date: 29.03.2023
 #
-# Description: Get luminosity and MB current data for 
-#              processing
+# Description: Getluminosity data and show LVPS trips
 # Dependencies: NA 
 #
 ########################################################
@@ -162,25 +161,6 @@ def integratedLuminosity(enddate,L_inst):
     # print("L_int=%f"%L_int)
     return L_int
 
-def integratedLuminosityStep(enddate,L_inst):
-    
-    L_int=0
-    enddate = dateTime(enddate)
-    in_time_period = None
-    for i,lumi in enumerate(L_inst):
-
-        if t_real[i]>=startdate and t_real[i+1]<= enddate:
-            delta = t_real[i+1]-t_real[i]
-            delta_sec = delta.total_seconds()
-            L_int+=delta_sec*lumi
-        else:
-            in_time_period = i
-            break
-    delta = enddate-t_real[in_time_period]
-    delta_sec = delta.total_seconds()
-    L_int+=delta_sec*lumi
-    # print("L_int=%f"%L_int)
-    return L_int
 
 # Read in luminosity data to create a fresh list each time
 L_inst=[]
@@ -201,7 +181,6 @@ with open(new_output_file,"r") as fileREAD:
                 t_sec.append(delta.total_seconds())
                 t_real.append(time)
         # print(data)
-print(len(t_real))
 print("\nReading trip data files: ...")
 
 
@@ -210,6 +189,7 @@ file_pattern = "LvpsThresMonitor_ATLTILLV0"
 path="./"
 files = [f for f in listdir(path) if isfile(join(path, f)) and file_pattern in f]
 t_trip=[]
+t_trip_real=[]
 L_trip=[]
 for f in files:
     print(f)
@@ -235,24 +215,18 @@ for f in files:
             if dateTime(time) >= startdate and dateTime(time) <= enddate:
                 
                 t_trip.append((dateTime(time)-startdate).total_seconds())
+                t_trip_real.append(dateTime(time))
                 L_trip.append(integratedLuminosity(time,L_inst))
-                # print(integratedLuminosity(time,L_inst))
-            #     LVPS_list.append(LVPS)
-            #     # Make a blank array if first instance of the module/partition
-            #     if module+LVPS not in threshold_dict:
-            #         threshold_dict[module+LVPS] = []
-            #     # Append to the array in other cases
-            #     threshold_dict[module+LVPS].append([time,I_threshold])
 
-    # # Keep onlyunique values 
-    # LVPS_list = list(set(LVPS_list))
-    # for LVPS in LVPS_list:
-    #     LVPS_data.append([module,LVPS])
+# Order increasing (in case not already)
 L_trip.sort()
 t_trip.sort()
+t_trip_real.sort()
 print(L_trip)
 N_trip = [i for i in range(len(L_trip))]
 
+
+### Begin plotting (chosen to plot with real date )
 fig, ax = plt.subplots()
 plt.rcParams['figure.figsize'] = [8,6]
 
@@ -260,11 +234,14 @@ plt.rcParams['figure.figsize'] = [8,6]
 # Twin the x-axis twice to make independent y-axes.
 axes = [ax, ax.twinx()]
 
-axes[0].plot(t_trip,N_trip, drawstyle="steps-post",label="Accumulated Trips", linestyle='-', color="black", marker="s")
-axes[0].set_ylabel("Accumulated Trips", color="black")
+# Plot 1: Count number of trips in time
+axes[0].plot(t_trip_real,N_trip, drawstyle="steps-post",label="Accumulated Trips", linestyle='-', color="black", marker="s")
+axes[0].set_ylabel("Accumulated Trips [-]", color="black")
 axes[0].tick_params(axis='y', colors="black")
 
-#Integrated luminosoty v. time 
+#Plot 2: Integrated luminosoty v. time 
+
+# Need to calculate integrated luminosity for each tme (expensive to do using integratedLuminosity() for each step)
 L_plot=[]
 L_int=0
 for i in range(len(t_real)-1):
@@ -272,17 +249,15 @@ for i in range(len(t_real)-1):
     dt=delta.total_seconds()
     L_int+=dt*L_inst[i]
     L_plot.append(L_int)
-axes[1].plot(t_sec[0:-1],L_plot,color="blue")
-axes[1].set_ylabel("Integrated Luminosity [$\\propto$b]", color="blue")
+axes[1].plot(t_real[0:-1],L_plot,color="blue")
+axes[1].set_ylabel("Integrated Luminosity [$10\\times fb^{-1}$]", color="blue")
 axes[1].tick_params(axis='y', colors="blue")
 
 # Final plot frmatting
-axes[0].set_xlabel("Time from Beginning of Run 3 [s]")
+axes[0].set_xlabel("Date [YYYY-MM-DD]")
+
 d = np.zeros(len(L_plot))
-axes[1].fill_between(t_sec[0:-1],L_plot, where=L_plot>=d, interpolate=True, color='blue',alpha=0.2)
-
-
-
+axes[1].fill_between(t_real[0:-1],L_plot, where=L_plot>=d, interpolate=True, color='blue',alpha=0.2)
 
 plt.grid()
 # plt.xlim([0,5e10])
