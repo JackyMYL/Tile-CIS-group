@@ -1,0 +1,6 @@
+EBA_m48_c37_highgain
+EBC_m30_c11_highgain
+EBC_m30_c11_lowgain
+EBC_m59_c32_lowgain
+LBA_m42_c07_highgain
+LBC_m20_c37_highgain
