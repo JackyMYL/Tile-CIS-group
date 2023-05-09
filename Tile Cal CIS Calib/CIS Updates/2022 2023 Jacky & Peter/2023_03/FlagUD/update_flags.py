@@ -60,4 +60,3 @@ if noCIS is not None:
                 comment+=("%s %d %d, " % (p, c, g))
             except:
                 pass
-
