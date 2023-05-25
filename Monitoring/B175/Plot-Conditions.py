@@ -6,6 +6,8 @@
 #
 # Description: Getluminosity data and show LVPS trips
 # Dependencies: NA 
+# Note: Before Running script, copy HISTORY folder 
+#       to the current working directory
 #
 ########################################################
 
@@ -30,7 +32,7 @@ import matplotlib.dates as mdates
 ### USER MAY EDIT ###
 # Date and time
 startdate_ = "2022.07.04 00:00:00.00"
-enddate_ = "2022.11.28 12:00:00.00"
+enddate_ = "2023.05.24 12:00:00.00"
 #####################
 
 startdate = datetime.strptime(startdate_, "%Y.%m.%d %H:%M:%S.%f")
@@ -41,14 +43,11 @@ enddate = datetime.strptime(enddate_, "%Y.%m.%d %H:%M:%S.%f")
 # Import files (should be downloaded ito the same directory as this script)
 file_pattern_start = "CH"
 file_pattern_end = "A"
-path="./data/"
+path="./HISTORY/"
 files = [path+f for f in listdir(path) if isfile(join(path, f)) and file_pattern_start in f]
 
 #Make plot directory
-plotpath = "plots"
-if plotpath not in listdir("."):
-    mkdir(plotpath)
-plotpath = "./"+plotpath+"/"
+plotpath = "."
 
 
 # Datetime formatting
@@ -127,10 +126,10 @@ ax.xaxis.set_major_locator(mdates.MonthLocator())
 ax.xaxis.set_minor_locator(mdates.DayLocator())
 plt.xlabel("Date [YYYY-MM]")
 #plt.ylabel("Temperature [$^{\\circ}C$]")
-plt.suptitle("B175 Temperature")
+plt.suptitle("B175 Temperature\n("+startdate_.split(" ")[0]+" to "+enddate_.split(" ")[0]+")")
 plt.legend(loc="upper left")
 plt.yticks(np.arange(ymin, ymax+1, 1.0))
-plt.savefig("./plots/Temperature.png")
+plt.savefig(plotpath+"./Temperature"+enddate_.split(" ")[0]+".png")
 plt.close()
 
 # Humidity plot
@@ -194,83 +193,7 @@ ax.xaxis.set_major_locator(mdates.MonthLocator())
 ax.xaxis.set_minor_locator(mdates.DayLocator())
 plt.xlabel("Date [YYYY-MM]")
 plt.ylabel("Humidity [%]")
-plt.suptitle("B175 Humidity")
+plt.suptitle("B175 Humidity\n("+startdate_.split(" ")[0]+" to "+enddate_.split(" ")[0]+")")
 plt.legend(loc="upper left")
 plt.yticks(np.arange(ymin, ymax+1, 1.0))
-plt.savefig("./plots/Humidity.png")
-plt.show()
-    
-
-exit()
-for line in file:
-        # Do not read the lines with just single values
-        # We want the lines that contain dates and thresholds
-        if len(line.split(", ")) > 1:
-            time = datetime.strptime(line.split(", ")[0], "%Y.%m.%d %H:%M:%S.%f")
-            LVPS = str(line.split(", ")[1][5:])
-            I_reading = float(line.split(", ")[2].split("= ")[1])
-            I_threshold = float(line.split(", ")[3].split("= ")[1])
-        
-            if time >= startdate and time <= enddate:
-                LVPS_list.append(LVPS)
-                # Make a blank array if first instance of the module/partition
-                if module+LVPS not in threshold_dict:
-                    threshold_dict[module+LVPS] = []
-                # Append to the array in other cases
-                threshold_dict[module+LVPS].append([time,I_threshold])
-
-
-# Retrieve data from online
-# Setup folder to feed in data
-datapath = "data"
-if datapath not in listdir(path):
-    mkdir(datapath)
-datapath = "./"+datapath+"/"
-
-# URL to retrieve data (do not touch)
-url = 'http://atlas-ddv.cern.ch:8089/multidata/getDataSafely'
-
-# Special function to split up time period to retrieve data
-def perdelta(start, end, delta):
-    curr = start
-    while curr < end:
-        yield curr, min(curr + delta, end)
-        curr += delta
-
-print("\nRetrieving data from DDV server: ...")
-
-filenames=[]
-counter=0
-new_output_file = "Luminosity.txt"
-start = datetime.strptime(startdate_.split(" ")[0], "%Y.%m.%d")
-end = datetime.strptime(enddate_.split(" ")[0], "%Y.%m.%d")
-
-# Check if file already exists; otherwise, go to the else statement 
-if new_output_file in listdir(datapath):
-    print(new_output_file+" already exists")
-    new_output_file = datapath+"Luminosity.txt"
-else:
-    new_output_file=datapath+new_output_file
-    for s, e in perdelta(date(2022, 7, 4), date(2022, 11, 28), timedelta(days=30)):
-        counter+=1
-        #Format retrieval parameters (temporary filename and LVPS for single digit)
-        output_file=datapath+"Luminosity_"+str(counter)+".txt"
-
-        cmd = 'wget --post-data "queryInfo=atlas_pvssDCS, comment_, LHC Luminosity InstantaneousLuminosity ATLAS, ' + s.strftime("%d-%m-%Y") + ' 13:55, ' + e.strftime("%d-%m-%Y") + ' 13:55, , , , , ,no, , +2!" ' + url 
-        system(cmd)
-
-        #Output file formatting
-        if counter==1:
-            output_file="getDataSafely"
-        else:
-            output_file="getDataSafely."+str(int(counter-1))
-        filenames.append(output_file)
-
-    with open(new_output_file, 'w') as outfile:
-        for fname in filenames:
-            with open(fname) as infile:
-                for line in infile:
-                    outfile.write(line+", ")
-            remove(fname)
-
-
+plt.savefig(plotpath+"/Humidity"+enddate_.split(" ")[0]+".png")
