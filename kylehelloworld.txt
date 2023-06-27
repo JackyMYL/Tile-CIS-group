@@ -1,0 +1,17 @@
+#create files
+type nul > filename.txt
+
+#adding to git hub checkpoint for the commit
+get add filename.txt
+
+#commiting that the added files will be changed
+git commit -m "file_message"
+
+#to update the local github
+git pull
+
+#to upload to github
+git push
+
+#what changes have been made regarding to the previous checked point
+git status
