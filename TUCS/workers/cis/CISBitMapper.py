@@ -114,7 +114,7 @@ class CISBitMapper(GenericWorker):
     def ProcessStop(self):
         print('UNSTABLE CHANNELS:')
         for index in self.unstable:
-        	print(index)
+            print(index)
 
     def process_graph_timestab(self, graph, title, filename, graphDB=False,):
         "format and print a time stability graph"
@@ -281,13 +281,13 @@ class CISBitMapper(GenericWorker):
         pmt = region.GetHash(1)[16:19]
 
         for event in region.GetEvents(): #To print out a list of unstable channels
-        	if event.run.runType == 'CIS' and event.data['CIS_problems']['Fail Likely Calib.'] == False:
-        		calibs.append(event.data['calibration'])    
+            if event.run.runType == 'CIS' and event.data['CIS_problems']['Fail Likely Calib.'] == False:
+                calibs.append(event.data['calibration'])    
         if len(calibs) > 0:
-        	mean = ROOT.TMath.Mean(len(calibs), array('f', calibs))
-        	rms  = ROOT.TMath.RMS(len(calibs), array('f', calibs))
-        	if rms/mean*100 > 0.389059:
-        		self.unstable.append({"region":region.GetHash(), "rms/mean(%)":rms/mean*100})
+            mean = ROOT.TMath.Mean(len(calibs), array('f', calibs))
+            rms  = ROOT.TMath.RMS(len(calibs), array('f', calibs))
+            if rms/mean*100 > 0.389059:
+                self.unstable.append({"region":region.GetHash(), "rms/mean(%)":rms/mean*100})
         
         for event in region.GetEvents(): #loop through all events in specified time period
         

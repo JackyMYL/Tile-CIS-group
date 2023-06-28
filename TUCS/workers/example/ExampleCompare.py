@@ -21,17 +21,18 @@ class ExampleCompare(GenericWorker):
         # region.GetHash(1) if one wants the PMT number instead.
         print("Constants for %s" % region.GetHash())
         
+
         # Loop over all events associated with this region
         for event in region.GetEvents():
             # and only look at laser runs
-            if event.runType == 'Laser':
+            if event.run.runType == 'Las':
                 # Make sure the calibration constant exists to avoid crashes
-                if "calib_const" in event.data:
+                if "calibration" in event.data:
                     # then print the calibration constants
-                    print("\tLaser:",event.data['calib_const'])
+                    print("\tLaser:",event.data['calibration'])
 
         for event in region.GetEvents():
-            if event.runType == 'CIS':
+            if event.run.runType == 'CIS':
                 if "calibration" in event.data:
                     print("\tCIS:",event.data['calibration'])
 

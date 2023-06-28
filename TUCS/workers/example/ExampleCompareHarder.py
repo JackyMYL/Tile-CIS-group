@@ -48,17 +48,17 @@ class ExampleCompareHarder(GenericWorker):
         print("Constants for %s" % region.GetHash())
         
         for event in region.GetEvents():
-            if event.runType == 'Laser':
-                if "calib_const" in event.data:
-                    print("\tLaser:",event.data['calib_const'])
+            if event.run.runType == 'Las':
+                if "calibration" in event.data:
+                    print("\tLaser:",event.data['calibration'])
 
                     # Keep track of sum of constants and number of constants
                     # so we can compute an average in ProcessStop()   
-                    self.laser_sum += event.data['calib_const']
+                    self.laser_sum += event.data['calibration']
                     self.laser_n   += 1
 
         for event in region.GetEvents():
-            if event.runType == 'CIS':
+            if event.run.runType == 'CIS':
                 if "calibration" in event.data:
                     print("\tCIS:",event.data['calibration'])
 

@@ -31,7 +31,7 @@ class GetSamples(ReadGenericCalibration):
 
     def __init__(self,
                   processingDir=('root://castoratlas//castor/cern.ch/atlas/'
-                                 'atlascerngroupdisk/det-tile/2023/'), #{Tyear}
+                                 'atlascerngroupdisk/det-tile/{Tyear}/'), # if run into problems, try change Tyear into the year, eg: 2023
                   all=False, region='', print_amplitude=False, 
                   print_event=False, single_event=0, timing_option=False, flagtype=None, timing_discretion=True):
         self.processingDir = processingDir
@@ -137,12 +137,11 @@ class GetSamples(ReadGenericCalibration):
                 # load the ROOT file and h2000 tree into ftDict
                 if event.run.runNumber and event.run.runNumber not in self.ftDict:
                     if event.run.runNumber > 189319:
-                        self.processingDir = 'root://eosatlas///eos/atlas/atlascerngroupdisk/det-tile/2023/'
+                        self.processingDir = 'root://eosatlas///eos/atlas/atlascerngroupdisk/det-tile/{Tyear}/'
                     timeform = time.strptime(event.run.time, "%Y-%m-%d %H:%M:%S")
                     eventyear = time.strftime('%Y',timeform)
                     f = TFile.Open('{Tdir}tile_{Tnum}_CIS.0.aan.root'.format(Tdir=self.processingDir.format(
-                        Tyear=str(2023)), Tnum=str(event.run.runNumber)),"read") #Tyear=str(eventyear)
-                    print(f"Tyear = {str(eventyear)}")
+                        Tyear=str(eventyear)), Tnum=str(event.run.runNumber)),"read")
                     if f == None:
                         t = None
                         print('Failed to open a file.')

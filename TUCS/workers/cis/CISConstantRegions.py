@@ -3,6 +3,10 @@
 # August 17th 2011
 #
 # Yes, I know this code is inefficient, but it's easy enough to understand and allows for indivudal customization of the 8 outputted plots
+#
+# Modified: Peter Camporeale and Mengyang Li
+# Date: May 2023
+# Content: Added special graph for LBA 14, the demonstrator
 
 import os.path
 
@@ -25,7 +29,6 @@ class CISConstantRegions(src.ReadGenericCalibration.ReadGenericCalibration):
                                 'CISConstantsMaps')
         src.oscalls.createDir(self.dir)
         
-        outputdir = os.path.join(src.oscalls.getResultDirectory(),'output','cis','CISconregions')
         outputdir = os.path.join(src.oscalls.getResultDirectory(), 'results')
         #outputdir = getResultDirectory('cis/CISconregions')
         src.oscalls.createDir(outputdir)
@@ -41,6 +44,7 @@ class CISConstantRegions(src.ReadGenericCalibration.ReadGenericCalibration):
         self.hval5 = ROOT.TH2D('hval5', '', 64, 1, 65, 48, 0, 48)
         self.hval6 = ROOT.TH2D('hval6', '', 64, 1, 65, 48, 0, 48)
         self.hval7 = ROOT.TH2D('hval7', '', 64, 1, 65, 48, 0, 48)
+        #demonstrator
         self.hval8 = ROOT.TH2D('hval7', '', 64, 1, 65, 48, 0, 48)
 
         self.ChanList = []
@@ -94,7 +98,7 @@ class CISConstantRegions(src.ReadGenericCalibration.ReadGenericCalibration):
         self.c1.Print("%s/CISConstantsEBCLow.png" % self.dir)
 
 
-#LBA High Gain
+#LBA14 (demonstrator) High Gain
         self.Draw_Hist(self.hval8, 'LBA', 'high', mod=14)
         self.c1.Modified()
         self.c1.Print("%s/CISConstantsLBADemonstrator.png" % self.dir)

@@ -32,8 +32,8 @@ class Update_Needed(GenericWorker):
 		global mod_update_dict 
 		mod_update_dict = {}
 
-			
-		
+		#print("debug here!")	
+		#print(db_run_list)
 		self.last_run_all =  sorted(db_run_list)[-1]
 		if not self.multiple_iov:
 			mod_update_dict[self.last_run_all] = {}

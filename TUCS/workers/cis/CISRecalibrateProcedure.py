@@ -2,7 +2,9 @@
 # Updated:  Andrew Hard          <ahard@uchicago.edu>
 #
 # April 11, 2011
-
+# 
+# Modified: Jacky Li & Peter Camporeale
+# Date: May 2023
 
 from src.GenericWorker import *
 from src.oscalls import *
@@ -73,8 +75,8 @@ class CISRecalibrateProcedure(GenericWorker):
         self.hlo.SetLineColor(ROOT.kBlue)
         self.hlo.SetLineStyle(8)
         self.hhi.SetLineColor(ROOT.kRed)
-        #self.hlo.StatOverflows(ROOT.kTrue)
-        #self.hhi.StatOverflows(ROOT.kTrue)
+        self.hlo.StatOverflows(ROOT.kTRUE)
+        self.hhi.StatOverflows(ROOT.kTRUE)
  
 
     def ProcessStop(self):

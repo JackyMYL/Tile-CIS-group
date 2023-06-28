@@ -57,8 +57,8 @@ class CalculateDBCIS(src.GenericWorker.GenericWorker):
         if region.GetEvents() == set():
             return
         #Fix bug where data are not properly cleared out 
-        elif region.GetEvents() == [0.0]:
-            return
+        #elif region.GetEvents() == [0.0]:
+        #    return
         #NOW THAT YOU HAVE FOUND OLD DB VALS AND ALL THE CHANNELS WITH PROBLEMS, YOU CAN CALC THRESHHOLD VALUE:
         #Calculating the threshhold for determining "too low" cis constants - we do this by looking at the current database values
         #     and then doing cutoff = (mean - 3*rms)/2

@@ -1,5 +1,8 @@
 #Author: Noah Wasserman
 #August 6th, 2012
+# Modified: Peter Camporeale and Jacky Li
+# Date: May 2023
+
 
 # stlib imports
 import datetime
@@ -56,8 +59,8 @@ class DetectorTimeStability(ReadGenericCalibration):
         print(self.mindate)
         print(self.maxdate)
         self.hist = ROOT.TH2D("throw away histo", "", 1, self.mindate,self.maxdate,1,0,1)
-        # print(self.c1.GetTickx())
-        # print(self.c1.GetTicky())
+        print(self.c1.GetTickx())
+        print(self.c1.GetTicky())
 
     def ProcessStop(self):
         datahigh = self.rundicthighgain
@@ -257,15 +260,10 @@ class DetectorTimeStability(ReadGenericCalibration):
         elif timerange <= (21024000): # 8 months
             print('TIME3')
             nmonths = int(timerange/(2628000))
-            print("A")
             x_axis.SetNdivisions(nmonths, 5, 10, ROOT.kTRUE)
-            print("B")
             x_axis.SetTimeDisplay(1)
-            print("C")
             x_axis.SetTimeFormat('#splitline{%b}{%Y} %F1970-01-01 00:00:00')
-            print("D")
             x_axis.SetLabelOffset(0.025)
-            print("Z")
         else:
             ntwomonths = int((timerange/5256000))
             print('TIME4')
@@ -285,7 +283,7 @@ class DetectorTimeStability(ReadGenericCalibration):
         self.hist.SetBins(1, self.mindate, self.maxdate, 1, mean * 0.97, mean * 1.03)
         self.hist.Draw()
         self.hist.SetStats(0)
-        print("E")
+
 ##OLD VERSION
        # # format the graph
        # graph.SetMarkerStyle(20)
@@ -323,9 +321,7 @@ class DetectorTimeStability(ReadGenericCalibration):
 
  
         maintenance = False
-        
-        print("F")
-
+                    
         maintline = ROOT.TLine(1294614000.0, mean * .97, 1294614000.0, mean * 1.03)
         maintline.SetLineColor(ROOT.kRed+2)
         maintline.SetLineWidth(1)
@@ -343,8 +339,6 @@ class DetectorTimeStability(ReadGenericCalibration):
             maintline.Draw("same")
             maintenance = True
         
-        print("G")
-        
         maintlinestart = ROOT.TLine(1324508400.0, mean * .97, 1324508400.0, mean * 1.03)
         maintlinestart.SetLineColor(ROOT.kRed+2)
         maintlinestart.SetLineWidth(1)
@@ -360,10 +354,6 @@ class DetectorTimeStability(ReadGenericCalibration):
         if self.mindate <= 1328828400.0 and self.maxdate >= 1328828400.0:
             maintlineend.Draw("same")
             maintenance = True
-
-
-        
-        print("H")
         
         # add a legend
         leg2 = ROOT.TLegend(0.20, .230, 0.60, .280, "", "brNDC")
@@ -389,8 +379,6 @@ class DetectorTimeStability(ReadGenericCalibration):
             leg.AddEntry(graph, str(Nchannels)+" channel average (RMS=0.04%)", "p")
             leg.AddEntry(graphsing, "Typical Channel (Demonstrator Module, LBA 14) (RMS=0.03%)", "ep")
         leg.Draw("same")
-
-        print("I")
         '''
         titletext = ROOT.TLatex()
         titletext.SetTextAlign(12)
@@ -444,6 +432,7 @@ class DetectorTimeStability(ReadGenericCalibration):
     def ProcessRegion(self, region):
         # print("test proces region")
         # Sample Channel: Module = 20 (14), Channel = 33
+        # I believe the sample channels are randomly choosen?
 
         runinfohigh=[]
         runinfolow=[]

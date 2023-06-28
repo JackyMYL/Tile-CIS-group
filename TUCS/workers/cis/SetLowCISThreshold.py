@@ -56,22 +56,20 @@ class SetLowCISThreshold(src.GenericWorker.GenericWorker):
         lg_old_cis = [] 
 
     def ProcessStop(self):
+        global hi_threshold, lo_threshold
         if len(hg_old_cis):
             hi_old_avg = ROOT.TMath.Mean(len(hg_old_cis), array('f', hg_old_cis))
-            hi_old_rms = ROOT.TMath.RMS(len(hg_old_cis), array('f', hg_old_cis))
+            hi_old_rms = ROOT.TMath.RMS(len(hg_old_cis), array('f', hg_old_cis))    
+            hi_threshold = (hi_old_avg - 3*hi_old_rms)/2
         else:
-            hi_old_avg = 0
-            hi_old_rms = 0
+            hi_threshold = 0
+        
         if len(lg_old_cis):
             lo_old_avg = ROOT.TMath.Mean(len(lg_old_cis), array('f', lg_old_cis))
             lo_old_rms = ROOT.TMath.RMS(len(lg_old_cis), array('f', lg_old_cis))
+            lo_threshold = (lo_old_avg - 3*lo_old_rms)/2
         else:
-            lo_old_avg = 0
-            lo_old_rms = 0
-        
-        global hi_threshold, lo_threshold
-        hi_threshold = (hi_old_avg - 3*hi_old_rms)/2
-        lo_threshold = (lo_old_avg - 3*lo_old_rms)/2
+            lo_threshold = 0
 
         print("high gain threshold: ", hi_threshold)
         print("low gain threshold: ", lo_threshold)
@@ -100,6 +98,12 @@ class SetLowCISThreshold(src.GenericWorker.GenericWorker):
         calib_list = [] #for calculating RMS
         for event in sorted(region.GetEvents(), key = lambda x: x.run.runNumber):
             if event.run.runType == 'CIS' and "calibration" in event.data:
+                
+                # Filter out when particular channel doesn't see the charge, and slope is zero
+                if event.data['calibration'] == 0:
+                   print("Filtered out calibration of 0 at "+gh)
+                   continue
+
                 run_count += 1
                 calib_dict[gh][event.run.runNumber] = event.data['calibration']
                 calib_list.append(event.data['calibration'])
@@ -128,11 +132,6 @@ class SetLowCISThreshold(src.GenericWorker.GenericWorker):
             calib_list.pop(calib_list.index(max(calib_list)))
             calib_list.pop(calib_list.index(min(calib_list)))
             mean_trunc = ROOT.TMath.Mean(len(calib_list), array('f', calib_list))
-            #### Problem here when dividing by mean_trunc = 0 ??? Patch this as well ???
-            if mean_trunc == 0:
-                mean_trunc = 1
-                print(f"Problem with mean_trunc in SetLowCISThreshold.py ({gh})")
-            ####
             rms_trunc = ROOT.TMath.RMS(len(calib_list), array('f', calib_list))
             if 100*(float(rms_trunc) / float(mean_trunc)) > 0.389:
                 plot_list.append(gh)
@@ -155,7 +154,7 @@ class SetLowCISThreshold(src.GenericWorker.GenericWorker):
         n_channels = 0
         if gh not in plot_list:
             #print(old_db_dict[gh])
-            if len(old_db_dict[gh]) != 0:
+            if len(old_db_dict[gh]):
                 last_run = sorted(old_db_dict[gh])[-1]
                 old_cis = old_db_dict[gh][last_run]
                     

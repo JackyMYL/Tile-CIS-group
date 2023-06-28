@@ -17,7 +17,11 @@ exec(open('src/load.py').read(), globals()) # don't remove this!
 # So for this example, we're going to set a variable to equal this
 # region name, then the "Use" worker below will be passed this
 # variable as an argument.
-selected_region = "EBA_m13_c01_p01_highgain"
+
+selected_region = "EBA_m13_c01_highgain" 
+# Notice that c01 is p02, so the above selected region also equals to the following:
+# selected_region = "EBA_m13_p02_highgain"
+
 
 Go([ 
     Use(run=309701, region=selected_region),  # Tell Use() to only use our selected region

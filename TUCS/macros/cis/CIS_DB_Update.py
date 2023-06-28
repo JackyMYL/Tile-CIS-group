@@ -2,7 +2,7 @@
 #
 # Author : Grey Wilburn
 # Date   : September 2014
-#
+# Modified : Jacky Li and Peter Camporeale @ June 2023
 #"""
 #This macro calculates updated CIS DB constants
 #and puts them into an SQLite file called
@@ -205,7 +205,7 @@ else:
 #################################################################
 
 Go([
-	u,\
+        u,\
         ReadCIS(),\
         CleanCIS(), \
         readbchfromcool,\
@@ -215,7 +215,7 @@ Go([
         cdb,\
         updateneeded,\
         writedb,\
-	sqlo,\
+	    sqlo,\
         stuckbit], 
         memdebug=mdebug)
 

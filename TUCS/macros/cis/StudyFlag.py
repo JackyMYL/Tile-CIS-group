@@ -322,6 +322,8 @@ if args.meandevthreshold != '0':
     MeanDevThresh = float(args.meandevthreshold[0])
 else:
     MeanDevThresh = 0.005
+
+
 if PlotTimeStab > 1:
     PlotTimeStab = False
     StabThreshold = False
@@ -361,9 +363,8 @@ if args.flaglist:
 #################### For MapFlagFailure and SortFlag Modules ###################
 if args.qflag:
     if args.qflag[0] not in flaglist:
-        print('\n \n \
-WARNING: SELECTED CIS QUALITY FLAG IS NOT IN THE ACCEPTED FLAG LIST. \n \
-DEFAULTING TO \'DB Deviation\' \n \n ')
+        print('\n \n \ WARNING: SELECTED CIS QUALITY FLAG IS NOT IN THE ACCEPTED FLAG LIST. \n \
+                DEFAULTING TO \'DB Deviation\' \n \n ')
         flag = 'DB Deviation'
     flag     = args.qflag[0]
 else:
@@ -392,8 +393,8 @@ if PlotTimeStab:
     Print_Time_Stability = True
     if Use_Calibration_Type not in caltype_list:
         print('\n \n \
-WARNING: SELECTED CALIBRATION TYPE NOT IN ACCEPTED LIST. \n \
-DEFAULTING TO \'composite\'\n \n')
+                WARNING: SELECTED CALIBRATION TYPE NOT IN ACCEPTED LIST. \n \
+                DEFAULTING TO \'composite\'\n \n')
         Use_Calibration_Type = 'composite'
     if Print_Option == print_list[0]:
         Print_All = True
@@ -403,8 +404,8 @@ DEFAULTING TO \'composite\'\n \n')
         Only_Chosen_Flag = True
     else:
         print('\n \n \
-WARNING: CHOSEN PRINT TYPE NOT IN ACCEPTED LIST. \n \
-DEFAULTING TO \'Only_Chosen_Flag\' \n \n')
+                WARNING: CHOSEN PRINT TYPE NOT IN ACCEPTED LIST. \n \
+                DEFAULTING TO \'Only_Chosen_Flag\' \n \n')
         Print_Option = 'Only_Chosen_Flag'
 else:
     Print_Time_Stability = False
@@ -612,7 +613,6 @@ else:
     if flag == 'all':
         if FirstPath:
             print('\nIn Loop 6\n')
-            #print 'Entering loop 1'
             Go([
                 u,\
                 ReadCIS(),\
@@ -635,7 +635,6 @@ else:
                 memdebug=mdebug)
         
         else:
-            #print 'Entering loop 2'
             print('\nIn Loop 7\n')
             Go([
                 u,\
@@ -661,7 +660,6 @@ else:
     else:
 
         if FirstPath:
-            #print 'Entering loop 3'
             print('\nIn Loop 8\n')
             Go([
                 u,\
@@ -684,7 +682,6 @@ else:
                 memdebug=mdebug)
         else:
             print('\nIn Loop 9\n')
-            #print 'Entering loop 4'
             Go([
                 u,\
                 ReadCIS(),\

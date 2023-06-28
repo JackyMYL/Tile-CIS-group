@@ -1,0 +1,7 @@
+._*
+*.sqlite
+*.pyc
+*.db
+output/*
+plots/*
+results/*

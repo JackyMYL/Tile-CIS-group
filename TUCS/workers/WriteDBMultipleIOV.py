@@ -6,7 +6,8 @@
 # Edited heavily by A. Solodkov <Sanya.Solodkov@cern.ch>
 # Date: November 2014
 #
-#
+# Edited by Mengyang Li & Peter Camporeale
+# Date: May 2023
 
 from src.ReadGenericCalibration import *
 
@@ -188,6 +189,16 @@ class WriteDBMultipleIOV(ReadGenericCalibration):
 		author   = "%s" % os.getlogin()					
 		last_run = sorted(db_run_list)[-1]
 
+		def partName(x):
+			if x == 1:
+				return "LBA"
+			elif x == 2:
+				return "LBC"
+			elif x == 3:
+				return "EBA"
+			elif x == 4:
+				return "EBC"
+
 		#Now we will write the information stored in mod_update_dict into our SQLite file, one run at a time
 		#A. Solodkov made this bit work...
 		blobWriters = []
@@ -236,7 +247,7 @@ class WriteDBMultipleIOV(ReadGenericCalibration):
 					if first:
 						first = False
 						if 'drawerBlob' not in parent_drawer.data:  # Create a drawer BLob for writing
-							print(("reading old constants from DB", parent_drawer))
+							print(("reading old constants from DB", partName(part), parent_drawer))
 							readerDrawerBlob = self.blobReader.getDrawer(part, drawer, iov_since)
 							if type(readerDrawerBlob)==type(None):
 								print(("Error! Couldn't retreive blob from", self.input_schema))

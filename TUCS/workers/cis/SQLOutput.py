@@ -3,7 +3,7 @@
 #Author: Grey Wilburn
 #Date: An Autumn afternoon in 2014...
 #
-#
+# Modified: Jacky Li @ May 2023
 
 from src.GenericWorker import *
 import os
@@ -211,7 +211,7 @@ class SQLOutput(GenericWorker):
 		cool_list_adc = []
 		adc_bad = False
 		adc_aff = False
-		print("line 214 here we are")
+		#print("line 214 here we are")
 		calib_list = []
 
 		#Fill the TGraphs
@@ -268,9 +268,9 @@ class SQLOutput(GenericWorker):
 		#Get mean and RMS values
 		mean = ROOT.TMath.Mean(len(ylist), array('f', ylist))
 		rms = ROOT.TMath.RMS(len(ylist), array('f', ylist))
-		if mean == 0 :
-			print("MEAN ALARM")
-			mean = 1
+		# if mean == 0 :
+		# 	print("MEAN ALARM")
+		# 	mean = 1
 
 		rmsDBO = graphDBO.GetRMS(2)
 		meanDBO = graphDBO.GetMean(2)
@@ -291,19 +291,6 @@ class SQLOutput(GenericWorker):
 		y_axis = graph.GetYaxis()
 		ymin = sorted(ylist)[0]
 		ymax = sorted(ylist)[-1]
-
-		# Patch
-		if ymax == 0:
-			ymax = 1
-			ymin = 1
-			print(f"Module {mod_name} has ymax = 0 ({gh})")
-			print(f"Calibration values:{ylist}")
-		if mod_name == "LBC_m52":
-			print(f"LBC_m52 {ylist}")
-		if mod_name == "LBA_m01":
-			print(f"LBA_m01 {ylist}")
-		# 
-
 		if ((ymax - ymin) / ymax) > 0.9:
 			ylist_new = []
 			for point in ylist:
@@ -444,6 +431,6 @@ class SQLOutput(GenericWorker):
 				latex.DrawLatex(x_pos, 0.02, problem)
 				x_pos += 0.15 
 		#Save Plot
-		# filename = "CISUpdate_%s.png" % gh	
-		# savename = "%s/%s" % (self.pdir,filename)		
-		# self.c1.Print(savename)
+		filename = "CISUpdate_%s.png" % gh	
+		savename = "%s/%s" % (self.pdir,filename)		
+		self.c1.Print(savename)
