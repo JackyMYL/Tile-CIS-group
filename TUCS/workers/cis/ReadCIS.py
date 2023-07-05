@@ -119,7 +119,7 @@ class ReadCIS(ReadGenericCalibration):
             qflag = getattr(t, 'qflag')
             chi2 = getattr(t, 'chi2')
             nDigitalErrors = getattr(t, 'nDigitalErrors')
-            #BitStatus = getattr(t, 'BitStatus')
+            BitStatus = getattr(t, 'BitStatus')
 
     
             for event in self.run_dict[run.runNumber]:     
@@ -146,17 +146,17 @@ class ReadCIS(ReadGenericCalibration):
                 one_index = self.get_bit_index(x, y-1, z, w, 1)
                 bit_status_dict = {zero_index: [], one_index: []}
 
-#                for bit_index in [zero_index, one_index]:
-#                    bitstat = BitStatus[bit_index]
-#                    if bitstat != 0:
-#                        bitstat_binary = '{0:010b}'.format(BitStatus[bit_index])
-#                        bitstat_list = list(bitstat_binary)
-#                        for i in range(0,10):
-#                            if bitstat_list[i] == '1':
-#                                bit_status_dict[bit_index].append(9-int(i))
+                for bit_index in [zero_index, one_index]:
+                    bitstat = BitStatus[bit_index]
+                    if bitstat != 0:
+                        bitstat_binary = '{0:010b}'.format(BitStatus[bit_index])
+                        bitstat_list = list(bitstat_binary)
+                        for i in range(0,10):
+                            if bitstat_list[i] == '1':
+                                bit_status_dict[bit_index].append(9-int(i))
                 event.data['StuckBits'] = {}
-                event.data['StuckBits']['AtZero'] = 0 #bit_status_dict[zero_index]
-                event.data['StuckBits']['AtOne'] = 0 #bit_status_dict[one_index]
+                event.data['StuckBits']['AtZero'] = bit_status_dict[zero_index]
+                event.data['StuckBits']['AtOne'] = bit_status_dict[one_index]
                
                 # See if there were even injections
                 if int(qflag[index]) & 3  != 3:

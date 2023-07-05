@@ -149,11 +149,11 @@ class GetScans(ReadGenericCalibration):
         
             newevents.add(event)
 
-        outfile = open('/afs/cern.ch/user/p/pcampore/Tucs/CISPulse/chi2_data','wb')
+        outfile = open('~/CISPulse/chi2_data','wb')
         pkl.dump(self.data,outfile)
         outfile.close()
 
-        outfile = open('/afs/cern.ch/user/p/pcampore/Tucs/CISPulse/fit_datapoints','wb')
+        outfile = open('~/CISPulse/fit_datapoints','wb')
         pkl.dump(self.raw_fit_data,outfile)
         outfile.close()
         region.SetEvents(newevents)
