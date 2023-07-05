@@ -19,7 +19,7 @@ import workers.cis.common as common
 class PlotPulseShape(ReadGenericCalibration):
     "Use the injections at various phases to map out the injected pulse shape for a given DAC setting in a particluar channel during one run."
 
-    def __init__(self, processingDir='root://castoratlas//castor/cern.ch/atlas/atlascerngroupdisk/det-tile/{Tyear}/', # if run into problems, make {Tyear} directly 2023
+    def __init__(self, processingDir='root://castoratlas//castor/cern.ch/atlas/atlascerngroupdisk/det-tile/{Tyear}/', #{Tyear}
                 all=False, region='', discretion=False):
         self.discretion = discretion
         self.processingDir = processingDir
@@ -104,13 +104,14 @@ class PlotPulseShape(ReadGenericCalibration):
                 if not self.all and not event.data['moreInfo']:
                     continue
                 foundEventToProcess = True
+                print("runNUmber", event.run.runNumber)
                 if event.run.runNumber and event.run.runNumber not in self.ftDict:
                     timeform = time.strptime(event.run.time, "%Y-%m-%d %H:%M:%S")
                     eventyear = time.strftime('%Y',timeform)
                     if event.run.runNumber > 189319:
-                        self.processingDir = 'root://eosatlas///eos/atlas/atlascerngroupdisk/det-tile/{Tyear}/'
+                        self.processingDir = 'root://eosatlas///eos/atlas/atlascerngroupdisk/det-tile/{Tyear}/' #{TYear}
                     f = TFile.Open('{Tdir}tile_{Tnum}_CIS.0.aan.root'.format(Tdir=self.processingDir.format(
-                        Tyear=str(eventyear)), Tnum=str(event.run.runNumber)),"read")
+                        Tyear=str(eventyear)), Tnum=str(event.run.runNumber)),"read") #str(eventyear)
 
                     if f == None:
                         print('Failed to open a file.')
