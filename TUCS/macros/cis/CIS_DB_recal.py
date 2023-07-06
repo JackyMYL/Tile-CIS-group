@@ -293,7 +293,7 @@ for key in D:
 
 f.close()
 # Making the bashfile able to be run
-os.chmod(args.bashfile, 0o777)
+os.chmod(args.bashfile, 0o755)
 
 print("about to run recal commands")
 os.system("bash results/RecalCommands.sh")
