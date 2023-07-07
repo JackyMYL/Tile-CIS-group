@@ -363,9 +363,10 @@ class RMSPlots(GenericWorker):
                         mean_sum += calib
                 mean = mean_sum / len(calib_list)
                 ## Patch
+                ## uncomment to produce log files showing which channels gavce high RMS/mean
                 if mean == 0:
-                        with open(os.path.join(src.oscalls.getResultDirectory(),'output/cis/RMS/RMSMeanErrors.log'), 'a') as error_logfile:
-                                error_logfile.write("{}\t{}\n".format(gh,mean))
+                        # with open(os.path.join(src.oscalls.getResultDirectory(),'output/cis/RMS/RMSMeanErrors.log'), 'a') as error_logfile:
+                        #         error_logfile.write("{}\t{}\n".format(gh,mean))
                         mean = 0.00001
                         # print(f"RMS Error in {gh}")
 
@@ -379,9 +380,9 @@ class RMSPlots(GenericWorker):
                 rms = sqrt( rms_sum / len(calib_list))
                 print(gh, mean, rms, rms/mean)
 
-                if rms/mean >0.3:
-                        with open(os.path.join(src.oscalls.getResultDirectory(),'output/cis/RMS/HighRMS.log'), 'a') as rms_logfile:
-                                rms_logfile.write("{}\t{}\n".format(gh,rms/mean))
+                # if rms/mean >0.3:
+                #         with open(os.path.join(src.oscalls.getResultDirectory(),'output/cis/RMS/HighRMS.log'), 'a') as rms_logfile:
+                #                 rms_logfile.write("{}\t{}\n".format(gh,rms/mean))
                         # print("High RMS/Mean in {}:\t {:.2}%".format(gh, rms/mean))
                 #print "Calib:" + str(calib) + " | " + "Cum. RMS " + str(rms_now)  
                 #print("\n")
