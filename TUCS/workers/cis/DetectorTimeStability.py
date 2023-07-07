@@ -454,7 +454,7 @@ class DetectorTimeStability(ReadGenericCalibration):
                     if 'highgain' in region.GetHash() and "LBA_m14" not in region.GetHash():
                         runinfohigh.append((event.run.time_in_seconds,event.data['calibration']))
                          
-                        if 'LBC_m25_c25' in region.GetHash():
+                        if 'LBC_m03_c25' in region.GetHash():
                             self.singchanhi.append((event.run.time_in_seconds, event.data['calibration']))
                         
                         #print("HG")
@@ -463,7 +463,7 @@ class DetectorTimeStability(ReadGenericCalibration):
                     if 'lowgain' in region.GetHash() and "LBA_m14" not in region.GetHash():     
                         runinfolow.append((event.run.time_in_seconds,event.data['calibration']))
                         
-                        if 'LBC_m25_c25' in region.GetHash():
+                        if 'LBC_m03_c25' in region.GetHash():
                             self.singchanlo.append((event.run.time_in_seconds, event.data['calibration']))
                         
                         #print("LG")
@@ -471,7 +471,7 @@ class DetectorTimeStability(ReadGenericCalibration):
                     if "highgain" in region.GetHash() and "LBA_m14" in region.GetHash():
                         runinfodem.append((event.run.time_in_seconds,event.data['calibration']))
                         
-                        if 'LBC_m25_c25' in region.GetHash():
+                        if 'LBA_m14_c00' in region.GetHash():
                             self.singchandem.append((event.run.time_in_seconds, event.data['calibration']))
                         
                         # print("DEM")
