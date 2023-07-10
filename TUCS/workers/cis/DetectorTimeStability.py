@@ -26,11 +26,13 @@ class DetectorTimeStability(ReadGenericCalibration):
 
         self.rundictlowgain={}
         self.rundicthighgain={}
-        self.rundictdem={}
+        self.rundictdemlow={}
+        self.rundictdemhigh={}
 
         self.singchanlo=[]
         self.singchanhi=[]
-        self.singchandem=[]
+        self.singchandemlo=[]
+        self.singchandemhi=[]
 
         self.dateLabel = dateLabel
         self.date_format = '%m/%d/%y'
@@ -65,11 +67,13 @@ class DetectorTimeStability(ReadGenericCalibration):
     def ProcessStop(self):
         datahigh = self.rundicthighgain
         datalow = self.rundictlowgain
-        datadem = self.rundictdem
+        datademlow = self.rundictdemlow
+        datademhigh = self.rundictdemhigh
         
         highgainaverages = []
         lowgainaverages = []
-        demaverages = []
+        demlowaverages = []
+        demhighaverages = []
 
         for run in self.rundicthighgain:
         
@@ -79,9 +83,14 @@ class DetectorTimeStability(ReadGenericCalibration):
         
             lowgainaverages.append((run, float(datalow[run][0])/float(datalow[run][1]), datalow[run][1]))
         
-        for run in self.rundictdem:
+        for run in self.rundictdemlow:
         
-            demaverages.append((run, float(datadem[run][0])/float(datadem[run][1]), datadem[run][1]))
+            demlowaverages.append((run, float(datademlow[run][0])/float(datademlow[run][1]), datademlow[run][1]))
+
+
+        for run in self.rundictdemlow:
+        
+            demhighaverages.append((run, float(datademhigh[run][0])/float(datademhigh[run][1]), datademhigh[run][1]))
         # print(self.rundictdem)
         # print(self.rundictlowgain)
         # print(self.rundicthighgain)
@@ -169,51 +178,45 @@ class DetectorTimeStability(ReadGenericCalibration):
 
     
         # Demonstrator
-        calibs = []
-        runs1 = []
-        ey = []
-        ex = []
-        Nchan = []
-        # print("demaverages")
-        # print(demaverages)
-        for number, entry in enumerate(sorted(demaverages)):
-            if number%2 == 0:
-                if (entry[0] > 1330000000.0) or (entry[0] < 1324508400.0 and entry[0] > 1294614000.0): # What does this do
-                    calibs.append(entry[1])
-                    runs1.append(entry[0])
-                    ex.append(0)
-                    ey.append(0)   
-                    Nchan.append(entry[2])
-        # print("TESTTTTTT")
-        # print(calibs)
-        # print(len(calibs))
-        # print(array('f', calibs))
-        # #mean = ROOT.TMath.Mean(len(calibs), array('f', calibs))
-        # print("MORE TESTTTTTT")
-        minrun = sorted(demaverages)[0][0]
-             
-        #self.graphdem = ROOT.TGraphErrors(len(calibs), array('f', runs1), array('f', calibs), array('f', ex),array('f',ey))
+        # Low gain
+        # runs1 = []
+        # calibs = []
+        # ey = []
+        # ex = []
+        # Nchan = []
         
-        calibs = []
-        ey = []
-        ex = []
-        runs2 = []
+        # for number, entry in enumerate(sorted(demlowaverages)):
+        #     if number%2 == 0:
+        #         runs1.append(entry[0])
+        #         calibs.append(entry[1])
+        #         ey.append(0)
+        #         ex.append(0)
+        #         Nchan.append(entry[2])   
+        # mean = ROOT.TMath.Mean(len(calibs), array('f', calibs))
+        # minrun = sorted(lowgainaverages)[0][0]
         
-        for singentry in sorted(self.singchandem):
+
+        # self.graphdemlo = ROOT.TGraphErrors(len(calibs), array('f', runs1), array('f', calibs), array('f',ex), array('f', ey))
+        
+        # calibs = []
+        # ey = []
+        # ex = []
+        # runs2 = []
+        
+        # for singentry in sorted(self.singchandemlo):
             
-            if singentry[0] in runs1:
-                calibs.append(singentry[1])
-                runs2.append(singentry[0])
-                ey.append(singentry[1]*.007)
-                ex.append(0)                
-        # Problem with plotting for demonstrator
-        
-        #self.graphdemsing = ROOT.TGraphErrors(len(calibs), array('f', runs2),array('f', calibs),array('f', ex),array('f', ey))
-        
-        #title = '#bf{Average High-gain CIS Stability: Oct-Dec 2014}'
-        title = '#bf{Demonstrator CIS Stability}'
-        Nchanmax = max(Nchan)
-        #self.process_graph(self.graphdem, self.graphdemsing, title, 'HighgainDetAvg', Nchanmax, mean, minrun)
+        #     if singentry[0] in runs1:
+        #         calibs.append(singentry[1])
+        #         runs2.append(singentry[0])
+        #         ey.append(singentry[1]*.007)
+        #         ex.append(0)  
+                              
+
+        # self.graphdemlowsing = ROOT.TGraphErrors(len(calibs), array('f', runs2),array('f', calibs),array('f', ex),array('f', ey)) 
+        # #title = '#bf{Average Low-gain CIS Stability: Oct-Dec 2014}'
+        # title = '#bf{Average Low-gain CIS Stability}'
+        # Nchanmax = max(Nchan)
+        # self.process_graph(self.graphdemlo, self.graphdemlowsing, title, 'LowgainDetAvg', Nchanmax, mean, minrun)
 
             
     def process_graph(self, graph, graphsing, title, filename, Nchannels, mean, min):
@@ -451,7 +454,7 @@ class DetectorTimeStability(ReadGenericCalibration):
                     if 'highgain' in region.GetHash() and "LBA_m14" not in region.GetHash():
                         runinfohigh.append((event.run.time_in_seconds,event.data['calibration']))
                          
-                        if 'LBC_m25_c40' in region.GetHash():
+                        if 'LBC_m03_c25' in region.GetHash():
                             self.singchanhi.append((event.run.time_in_seconds, event.data['calibration']))
                         
                         #print("HG")
@@ -460,7 +463,7 @@ class DetectorTimeStability(ReadGenericCalibration):
                     if 'lowgain' in region.GetHash() and "LBA_m14" not in region.GetHash():     
                         runinfolow.append((event.run.time_in_seconds,event.data['calibration']))
                         
-                        if 'LBC_m25_c40' in region.GetHash():
+                        if 'LBC_m03_c25' in region.GetHash():
                             self.singchanlo.append((event.run.time_in_seconds, event.data['calibration']))
                         
                         #print("LG")
@@ -468,7 +471,7 @@ class DetectorTimeStability(ReadGenericCalibration):
                     if "highgain" in region.GetHash() and "LBA_m14" in region.GetHash():
                         runinfodem.append((event.run.time_in_seconds,event.data['calibration']))
                         
-                        if 'LBA_m14_c33' in region.GetHash():
+                        if 'LBA_m14_c00' in region.GetHash():
                             self.singchandem.append((event.run.time_in_seconds, event.data['calibration']))
                         
                         # print("DEM")

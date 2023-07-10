@@ -45,7 +45,7 @@ class FlagPlots(GenericWorker):
 		#Set of the rest of the TGraphs
 		FLC_graph = self.Fill_Graph('Fail Likely Calib.', ROOT.kGreen+3, 23)
 		FMP_graph = self.Fill_Graph('Fail Max. Point', ROOT.kBlue, 23)
-		LC2_graph = self.Fill_Graph('High Chi2', ROOT.kGreen-4, 23)
+		LC2_graph = self.Fill_Graph('Low Chi2', ROOT.kGreen-4, 23)
 		NR_graph = self.Fill_Graph('No Response', ROOT.kYellow+1, 23)
 		DER_graph = self.Fill_Graph('Digital Errors', ROOT. kOrange+7, 23)
 		LIR_graph = self.Fill_Graph('Large Injection RMS', ROOT.kMagenta, 23)
