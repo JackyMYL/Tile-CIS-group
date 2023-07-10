@@ -406,8 +406,7 @@ class TimeStability(src.GenericWorker.GenericWorker):
         else:
             mean = 0
             rms = 0
-
-        
+            roilist1 = roilist
 
         # check if there's anything to look at in the region
         found    = 0
