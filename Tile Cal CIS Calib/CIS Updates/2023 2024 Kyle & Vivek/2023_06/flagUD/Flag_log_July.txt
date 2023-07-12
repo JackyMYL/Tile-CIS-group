@@ -1,0 +1,90 @@
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: oracle://ATLAS_COOLPROD;schema=ATLAS_COOLOFL_TILE;dbname=CONDBR2
+TileCalibTools : INFO     - mode: READONLY
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     Resolved CURRENT ES globalTag to 'CONDBR2-ES1PA-2023-02'
+TileCalibTools : INFO     Resolved globalTag 'CONDBR2-ES1PA-2023-02' to folderTag 'TileOfl02StatusAdc-RUN2-HLT-UPD1-00'
+WriteBchToCool : INFO     Initializing bad channels from oracle://ATLAS_COOLPROD;schema=ATLAS_COOLOFL_TILE;dbname=CONDBR2 folder /TILE/OFL02/STATUS/ADC with tag UPD1
+WriteBchToCool : WARNING  Run number is not specified, using current run number 456319
+WriteBchToCool : INFO     Initializing for run 456319, lumiblock 0
+WriteBchToCool : INFO     
+TileBchMgr     : INFO     Initializing from database, resetting all changes!
+TileBchMgr     : INFO     Updating dictionary from 'CONDBR2'
+TileBchMgr     : INFO     ... using tag 'TileOfl02StatusAdc-RUN2-HLT-UPD1-00', run-lumi=(456319, 0)
+TileBchMgr     : INFO     ... comment: Sanya Solodkov (Wed Jul  5 15:54:35 2023): Masking whole EBC30 with NoHV flag
+TileBchMgr     : INFO     Updating TileBchStatus::isBad() definition from DB
+TileBchMgr     : INFO     Updating TileBchStatus::isBadTiming() definition from DB
+WriteBchToCool : INFO     
+WriteBchToCool : INFO     Masking new bad channels, including file macros/cis/update_flags.py
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: sqlite://;schema=tileSqlite.db;dbname=CONDBR2
+TileCalibTools : INFO     - mode: RECREATE
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+WriteBchToCool : INFO     Updating IOV (456319, 0)
+TileBchMgr     : INFO     Using previous bad channel list from input DB
+TileBchMgr     : INFO     And comparing it with new list of bad channels
+TileBchMgr     : INFO     Committing changes to DB 'sqlite://;schema=tileSqlite.db;dbname=CONDBR2'
+TileBchMgr     : INFO     ... using tag 'TileOfl02StatusAdc-RUN2-HLT-UPD1-00' and [run,lumi] range: [456319,0] - [2147483647,4294967295]
+TileBchMgr     : INFO     ... author : 'vsasse'
+TileBchMgr     : INFO     ... comment: 'REMOVING BADCIS FOR: LBA04 44 1, LBA04 44 0, LBA30 13 0, ADDING BADCIS FOR: EBC15 16 1, EBC55 1 1, LBC35 45 1, LBC35 45 0, LBC44 34 0, '
+TileBchMgr     : WARNING  No drawer modifications detected, ignoring commit request
+WriteBchToCool : INFO     
+WriteBchToCool : INFO     ============================================================== 
+WriteBchToCool : INFO     
+WriteBchToCool : INFO     creating DB with CURRENT UPD4 tag
+TileCalibTools : INFO     Resolved CURRENT globalTag to 'CONDBR2-BLKPA-2023-02'
+TileCalibTools : INFO     Resolved globalTag 'CONDBR2-BLKPA-2023-02' to folderTag 'TileOfl02StatusAdc-RUN2-UPD4-23'
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: sqlite://;schema=tileSqlite_upd4.db;dbname=CONDBR2
+TileCalibTools : INFO     - mode: RECREATE
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileBchMgr     : INFO     Using previous bad channel list from input DB
+TileBchMgr     : INFO     And comparing it with new list of bad channels
+TileBchMgr     : INFO     Committing changes to DB 'sqlite://;schema=tileSqlite_upd4.db;dbname=CONDBR2'
+TileBchMgr     : INFO     ... using tag 'TileOfl02StatusAdc-RUN2-UPD4-23' and [run,lumi] range: [456319,0] - [2147483647,4294967295]
+TileBchMgr     : INFO     ... author : 'vsasse'
+TileBchMgr     : INFO     ... comment: 'REMOVING BADCIS FOR: LBA04 44 1, LBA04 44 0, LBA30 13 0, ADDING BADCIS FOR: EBC15 16 1, EBC55 1 1, LBC35 45 1, LBC35 45 0, LBC44 34 0, '
+TileBchMgr     : INFO     Drawer EBA61 reset to GOOD
+TileBchMgr     : INFO     Drawer EBA63 reset to GOOD
+TileBchMgr     : INFO     Attempting to register 2 modified drawers...
+TileBlobWriter : INFO     Registering folder /TILE/OFL02/STATUS/ADC with tag "TileOfl02StatusAdc-RUN2-UPD4-23"
+TileBlobWriter : INFO     ... with IOV          : [456319,0] - [2147483647,4294967295]
+TileBlobWriter : INFO     ... with comment field: "vsasse (Tue Jul 11 17:36:54 2023): REMOVING BADCIS FOR: LBA04 44 1, LBA04 44 0, LBA30 13 0, ADDING BADCIS FOR: EBC15 16 1, EBC55 1 1, LBC35 45 1, LBC35 45 0, LBC44 34 0, "
+TileBlobWriter : INFO     ... 3 cool channels have been written in total (including comment field)
+WriteBchToCool : INFO     
+WriteBchToCool : INFO     ============================================================== 
+WriteBchToCool : INFO     
+WriteBchToCool : INFO     creating DB with ONLINE status
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: oracle://ATLAS_COOLPROD;schema=ATLAS_COOLONL_TILE;dbname=CONDBR2
+TileCalibTools : INFO     - mode: READONLY
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileBchMgr     : INFO     Initializing from database, resetting all changes!
+TileBchMgr     : INFO     Updating dictionary from 'CONDBR2'
+TileBchMgr     : INFO     ... using tag '', run-lumi=(456319, 0)
+TileBchMgr     : INFO     ... comment: Sanya Solodkov (Wed Jul  5 15:54:44 2023): Masking whole EBC30 with NoHV flag
+TileBchMgr     : INFO     Updating TileBchStatus::isBad() definition from DB
+TileBchMgr     : INFO     No TileBchStatus::isBad() definition found in DB, using defaults
+TileBchMgr     : INFO     Updating TileBchStatus::isBadTiming() definition from DB
+TileBchMgr     : INFO     No TileBchStatus::isBadTiming() definition found in DB, using defaults
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: sqlite://;schema=tileSqlite_onl.db;dbname=CONDBR2
+TileCalibTools : INFO     - mode: RECREATE
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileBchMgr     : INFO     Using previous bad channel list from input DB
+TileBchMgr     : INFO     And comparing it with new list of bad channels
+TileBchMgr     : INFO     Committing changes to DB 'sqlite://;schema=tileSqlite_onl.db;dbname=CONDBR2'
+TileBchMgr     : INFO     ... using tag '' and [run,lumi] range: [456319,0] - [2147483647,4294967295]
+TileBchMgr     : INFO     ... author : 'vsasse'
+TileBchMgr     : INFO     ... comment: 'REMOVING BADCIS FOR: LBA04 44 1, LBA04 44 0, LBA30 13 0, ADDING BADCIS FOR: EBC15 16 1, EBC55 1 1, LBC35 45 1, LBC35 45 0, LBC44 34 0, '
+TileBchMgr     : WARNING  No drawer modifications detected, ignoring commit request

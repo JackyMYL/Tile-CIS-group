@@ -1,7 +1,7 @@
 # Katie Hughes Oct. 2021
 
-removeBad = '../../results/RemoveBadCIS.txt'
-addBad = '../../AddBadCIS.txt'
+removeBad = './results/RemoveBadCIS.txt'
+addBad = './results/AddBadCIS.txt'
 noCIS = None
 
 def ChannelIDs(line):

@@ -1,0 +1,117 @@
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: sqlite://;schema=./results/tileSqlite.db;dbname=CONDBR2
+TileCalibTools : INFO     - mode: READONLY
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     Resolved CURRENT ES globalTag to 'CONDBR2-ES1PA-2023-02'
+TileCalibTools : WARNING  const string cool::IHvsNode::resolveTag(const string& ancestorTagName) =>
+    TagNotFound: Tag 'CONDBR2-ES1PA-2023-02' not found in any node
+TileCalibTools : WARNING  Using COOLOFL_TILE/CONDBR2 to resolve globalTag
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: oracle://ATLAS_COOLPROD;schema=ATLAS_COOLOFL_TILE;dbname=CONDBR2
+TileCalibTools : INFO     - mode: READONLY
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     Resolved globalTag 'CONDBR2-ES1PA-2023-02' to folderTag 'TileOfl02CalibCisLin-RUN2-HLT-UPD1-00'
+ReadCalibFrCool: INFO     Initializing folder /TILE/OFL02/CALIB/CIS/LIN with tag TileOfl02CalibCisLin-RUN2-HLT-UPD1-00
+ReadCalibFrCool: INFO     Initializing for run 2147483647, lumiblock 0
+ReadCalibFrCool: INFO     Blob type: 10  Version: 1  Nchannels: 48  Ngains: 2  Nval: 1
+ReadCalibFrCool: INFO     Comment: vsasse (Tue Jul 11 14:12:57 2023): Updated CIS constants for ['TILECAL_EBA_m42_c30_highgain', 'TILECAL_EBA_m49_c00_highgain', 'TILECAL_EBA_m07_c31_lowgain', 'TILECAL_EBA_m50_c20_highgain', 'TILECAL_EBA_m12_c36_highgain', 'TILECAL_EBA_m16_c17_highgain', 'TILECAL_EBC_m01_c21_highgain', 'TILECAL_EBC_m46_c07_lowgain', 'TILECAL_EBC_m13_c03_lowgain', 'TILECAL_EBC_m56_c41_lowgain', 'TILECAL_EBC_m61_c08_lowgain', 'TILECAL_EBC_m20_c10_lowgain', 'TILECAL_EBC_m22_c16_lowgain', 'TILECAL_EBC_m30_c00_highgain', 'TILECAL_EBC_m30_c01_highgain', 'TILECAL_EBC_m30_c02_highgain', 'TILECAL_EBC_m30_c03_highgain', 'TILECAL_EBC_m30_c04_highgain', 'TILECAL_EBC_m30_c05_highgain', 'TILECAL_EBC_m30_c06_highgain', 'TILECAL_EBC_m30_c07_highgain', 'TILECAL_EBC_m30_c08_highgain', 'TILECAL_EBC_m30_c09_highgain', 'TILECAL_EBC_m30_c10_highgain', 'TILECAL_EBC_m30_c12_highgain', 'TILECAL_EBC_m30_c13_highgain', 'TILECAL_EBC_m30_c14_highgain', 'TILECAL_EBC_m30_c15_highgain', 'TILECAL_EBC_m30_c16_highgain', 'TILECAL_EBC_m30_c17_highgain', 'TILECAL_EBC_m30_c20_highgain', 'TILECAL_EBC_m30_c21_highgain', 'TILECAL_EBC_m30_c22_highgain', 'TILECAL_EBC_m30_c22_lowgain', 'TILECAL_EBC_m30_c23_highgain', 'TILECAL_LBA_m54_c06_highgain', 'TILECAL_LBA_m64_c29_highgain', 'TILECAL_LBA_m29_c25_highgain', 'TILECAL_LBA_m35_c08_highgain', 'TILECAL_LBA_m38_c46_lowgain', 'TILECAL_LBC_m44_c12_highgain', 'TILECAL_LBC_m46_c04_highgain', 'TILECAL_LBC_m47_c35_lowgain', 'TILECAL_LBC_m48_c00_lowgain', 'TILECAL_LBC_m08_c03_lowgain', 'TILECAL_LBC_m52_c18_highgain', 'TILECAL_LBC_m10_c37_highgain', 'TILECAL_LBC_m12_c11_lowgain', 'TILECAL_LBC_m57_c06_highgain', 'TILECAL_LBC_m62_c08_highgain', 'TILECAL_LBC_m20_c37_lowgain', 'TILECAL_LBC_m20_c37_highgain', 'TILECAL_LBC_m23_c20_lowgain', 'TILECAL_LBC_m28_c04_lowgain']
+ReadCalibFrCool: INFO     
+
+results/RecalCommands.sh: line 2: macros/cis/CIS_DB_Update.py: Permission denied
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: sqlite://;schema=tileSqlite.db;dbname=CONDBR2
+TileCalibTools : INFO     - mode: READONLY
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : DEBUG    shared_ptr<cool::IDatabase> cool::IDatabaseSvc::openDatabase(const string& dbId, bool readOnly = true) =>
+    exception: std::exception
+TileCalibTools : CRITICAL Could not connect to sqlite://;schema=tileSqlite.db;dbname=CONDBR2
+TileCalibTools : INFO     Resolved CURRENT ES globalTag to 'CONDBR2-ES1PA-2023-02'
+TileCalibTools : WARNING  'NoneType' object has no attribute 'getFolder'
+TileCalibTools : WARNING  Using COOLOFL_TILE/CONDBR2 to resolve globalTag
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: oracle://ATLAS_COOLPROD;schema=ATLAS_COOLOFL_TILE;dbname=CONDBR2
+TileCalibTools : INFO     - mode: READONLY
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     Resolved globalTag 'CONDBR2-ES1PA-2023-02' to folderTag 'TileOfl02CalibCisLin-RUN2-HLT-UPD1-00'
+ReadCalibFrCool: INFO     Initializing folder /TILE/OFL02/CALIB/CIS/LIN with tag TileOfl02CalibCisLin-RUN2-HLT-UPD1-00
+TileBlobReader : CRITICAL 'NoneType' object has no attribute 'getFolder'
+Traceback (most recent call last):
+  File "/cvmfs/atlas.cern.ch/repo/sw/software/22.0/Athena/22.0.46/InstallArea/x86_64-centos7-gcc8-opt/bin/ReadCalibFromCool.py", line 183, in <module>
+    blobReader = TileCalibTools.TileBlobReader(db,folderPath, folderTag)
+  File "/cvmfs/atlas.cern.ch/repo/sw/software/22.0/Athena/22.0.46/InstallArea/x86_64-centos7-gcc8-opt/python/TileCalibBlobPython/TileCalibTools.py", line 720, in __init__
+    self.__folder = self.__db.getFolder(folder) # CoraCoolFolder
+AttributeError: 'NoneType' object has no attribute 'getFolder'
+rm: cannot remove 'tileSqlite.db': No such file or directory
+rm: cannot remove 'CIS_DB_update.txt': No such file or directory
+results/RecalCommands.sh: line 12: macros/cis/CIS_DB_Update.py: Permission denied
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: sqlite://;schema=tileSqlite.db;dbname=CONDBR2
+TileCalibTools : INFO     - mode: READONLY
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : DEBUG    shared_ptr<cool::IDatabase> cool::IDatabaseSvc::openDatabase(const string& dbId, bool readOnly = true) =>
+    exception: std::exception
+TileCalibTools : CRITICAL Could not connect to sqlite://;schema=tileSqlite.db;dbname=CONDBR2
+TileCalibTools : INFO     Resolved CURRENT ES globalTag to 'CONDBR2-ES1PA-2023-02'
+TileCalibTools : WARNING  'NoneType' object has no attribute 'getFolder'
+TileCalibTools : WARNING  Using COOLOFL_TILE/CONDBR2 to resolve globalTag
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: oracle://ATLAS_COOLPROD;schema=ATLAS_COOLOFL_TILE;dbname=CONDBR2
+TileCalibTools : INFO     - mode: READONLY
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     Resolved globalTag 'CONDBR2-ES1PA-2023-02' to folderTag 'TileOfl02CalibCisLin-RUN2-HLT-UPD1-00'
+ReadCalibFrCool: INFO     Initializing folder /TILE/OFL02/CALIB/CIS/LIN with tag TileOfl02CalibCisLin-RUN2-HLT-UPD1-00
+TileBlobReader : CRITICAL 'NoneType' object has no attribute 'getFolder'
+Traceback (most recent call last):
+  File "/cvmfs/atlas.cern.ch/repo/sw/software/22.0/Athena/22.0.46/InstallArea/x86_64-centos7-gcc8-opt/bin/ReadCalibFromCool.py", line 183, in <module>
+    blobReader = TileCalibTools.TileBlobReader(db,folderPath, folderTag)
+  File "/cvmfs/atlas.cern.ch/repo/sw/software/22.0/Athena/22.0.46/InstallArea/x86_64-centos7-gcc8-opt/python/TileCalibBlobPython/TileCalibTools.py", line 720, in __init__
+    self.__folder = self.__db.getFolder(folder) # CoraCoolFolder
+AttributeError: 'NoneType' object has no attribute 'getFolder'
+rm: cannot remove 'tileSqlite.db': No such file or directory
+rm: cannot remove 'CIS_DB_update.txt': No such file or directory
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: sqlite://;schema=./results/tileSqlite.db;dbname=CONDBR2
+TileCalibTools : INFO     - mode: READONLY
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: sqlite://;schema=./results/tileSqlite.db;dbname=CONDBR2
+TileCalibTools : INFO     - mode: UPDATE
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     Resolved CURRENT ES globalTag to 'CONDBR2-ES1PA-2023-02'
+TileCalibTools : WARNING  const string cool::IHvsNode::resolveTag(const string& ancestorTagName) =>
+    TagNotFound: Tag 'CONDBR2-ES1PA-2023-02' not found in any node
+TileCalibTools : WARNING  Using COOLOFL_TILE/CONDBR2 to resolve globalTag
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: oracle://ATLAS_COOLPROD;schema=ATLAS_COOLOFL_TILE;dbname=CONDBR2
+TileCalibTools : INFO     - mode: READONLY
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     Resolved globalTag 'CONDBR2-ES1PA-2023-02' to folderTag 'TileOfl02CalibCisLin-RUN2-HLT-UPD1-00'
+...eCalibToCool: INFO     Initializing folder /TILE/OFL02/CALIB/CIS/LIN with tag TileOfl02CalibCisLin-RUN2-HLT-UPD1-00
+...eCalibToCool: INFO     Initializing for run 455913, lumiblock 0
+...eCalibToCool: INFO     Blob type: 10  version: 1  Nchannels: 48  Ngains: 2  Nval: 1
+...eCalibToCool: INFO     Comment: vsasse (Tue Jul 11 14:12:57 2023): Updated CIS constants for ['TILECAL_EBA_m42_c30_highgain', 'TILECAL_EBA_m49_c00_highgain', 'TILECAL_EBA_m07_c31_lowgain', 'TILECAL_EBA_m50_c20_highgain', 'TILECAL_EBA_m12_c36_highgain', 'TILECAL_EBA_m16_c17_highgain', 'TILECAL_EBC_m01_c21_highgain', 'TILECAL_EBC_m46_c07_lowgain', 'TILECAL_EBC_m13_c03_lowgain', 'TILECAL_EBC_m56_c41_lowgain', 'TILECAL_EBC_m61_c08_lowgain', 'TILECAL_EBC_m20_c10_lowgain', 'TILECAL_EBC_m22_c16_lowgain', 'TILECAL_EBC_m30_c00_highgain', 'TILECAL_EBC_m30_c01_highgain', 'TILECAL_EBC_m30_c02_highgain', 'TILECAL_EBC_m30_c03_highgain', 'TILECAL_EBC_m30_c04_highgain', 'TILECAL_EBC_m30_c05_highgain', 'TILECAL_EBC_m30_c06_highgain', 'TILECAL_EBC_m30_c07_highgain', 'TILECAL_EBC_m30_c08_highgain', 'TILECAL_EBC_m30_c09_highgain', 'TILECAL_EBC_m30_c10_highgain', 'TILECAL_EBC_m30_c12_highgain', 'TILECAL_EBC_m30_c13_highgain', 'TILECAL_EBC_m30_c14_highgain', 'TILECAL_EBC_m30_c15_highgain', 'TILECAL_EBC_m30_c16_highgain', 'TILECAL_EBC_m30_c17_highgain', 'TILECAL_EBC_m30_c20_highgain', 'TILECAL_EBC_m30_c21_highgain', 'TILECAL_EBC_m30_c22_highgain', 'TILECAL_EBC_m30_c22_lowgain', 'TILECAL_EBC_m30_c23_highgain', 'TILECAL_LBA_m54_c06_highgain', 'TILECAL_LBA_m64_c29_highgain', 'TILECAL_LBA_m29_c25_highgain', 'TILECAL_LBA_m35_c08_highgain', 'TILECAL_LBA_m38_c46_lowgain', 'TILECAL_LBC_m44_c12_highgain', 'TILECAL_LBC_m46_c04_highgain', 'TILECAL_LBC_m47_c35_lowgain', 'TILECAL_LBC_m48_c00_lowgain', 'TILECAL_LBC_m08_c03_lowgain', 'TILECAL_LBC_m52_c18_highgain', 'TILECAL_LBC_m10_c37_highgain', 'TILECAL_LBC_m12_c11_lowgain', 'TILECAL_LBC_m57_c06_highgain', 'TILECAL_LBC_m62_c08_highgain', 'TILECAL_LBC_m20_c37_lowgain', 'TILECAL_LBC_m20_c37_highgain', 'TILECAL_LBC_m23_c20_lowgain', 'TILECAL_LBC_m28_c04_lowgain']
+...eCalibToCool: INFO     
+
+...ASCIIParser2: INFO     Parsing file ./results/in_update.txt
+...eCalibToCool: INFO     Updating IOV (455913, 0)
+...eCalibToCool: INFO     0/0 old channels*gains/values have been read from database
+...eCalibToCool: INFO     0/0 new channels*gains/values have been read from input ascii file
+...eCalibToCool: WARNING  Nothing to update
