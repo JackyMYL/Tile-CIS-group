@@ -1,0 +1,935 @@
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: sqlite://;schema=./results/tileSqlite.db;dbname=CONDBR2
+TileCalibTools : INFO     - mode: READONLY
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     Resolved CURRENT ES globalTag to 'CONDBR2-ES1PA-2023-02'
+TileCalibTools : WARNING  const string cool::IHvsNode::resolveTag(const string& ancestorTagName) =>
+    TagNotFound: Tag 'CONDBR2-ES1PA-2023-02' not found in any node
+TileCalibTools : WARNING  Using COOLOFL_TILE/CONDBR2 to resolve globalTag
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: oracle://ATLAS_COOLPROD;schema=ATLAS_COOLOFL_TILE;dbname=CONDBR2
+TileCalibTools : INFO     - mode: READONLY
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     Resolved globalTag 'CONDBR2-ES1PA-2023-02' to folderTag 'TileOfl02CalibCisLin-RUN2-HLT-UPD1-00'
+ReadCalibFrCool: INFO     Initializing folder /TILE/OFL02/CALIB/CIS/LIN with tag TileOfl02CalibCisLin-RUN2-HLT-UPD1-00
+ReadCalibFrCool: INFO     Initializing for run 2147483647, lumiblock 0
+ReadCalibFrCool: INFO     Blob type: 10  Version: 1  Nchannels: 48  Ngains: 2  Nval: 1
+ReadCalibFrCool: INFO     Comment: vsasse (Tue Jul 11 15:28:57 2023): Updated CIS constants for ['TILECAL_EBC_m46_c07_lowgain', 'TILECAL_EBC_m13_c03_lowgain', 'TILECAL_EBC_m56_c41_lowgain', 'TILECAL_EBC_m61_c08_lowgain', 'TILECAL_EBC_m20_c10_lowgain', 'TILECAL_EBC_m22_c16_lowgain', 'TILECAL_EBC_m30_c00_highgain', 'TILECAL_EBC_m30_c01_highgain', 'TILECAL_EBC_m30_c02_highgain', 'TILECAL_EBC_m30_c03_highgain', 'TILECAL_EBC_m30_c04_highgain', 'TILECAL_EBC_m30_c05_highgain', 'TILECAL_EBC_m30_c06_highgain', 'TILECAL_EBC_m30_c07_highgain', 'TILECAL_EBC_m30_c08_highgain', 'TILECAL_EBC_m30_c09_highgain', 'TILECAL_EBC_m30_c10_highgain', 'TILECAL_EBC_m30_c12_highgain', 'TILECAL_EBC_m30_c13_highgain', 'TILECAL_EBC_m30_c14_highgain', 'TILECAL_EBC_m30_c15_highgain', 'TILECAL_EBC_m30_c16_highgain', 'TILECAL_EBC_m30_c17_highgain', 'TILECAL_EBC_m30_c20_highgain', 'TILECAL_EBC_m30_c21_highgain', 'TILECAL_EBC_m30_c22_lowgain', 'TILECAL_EBC_m30_c22_highgain', 'TILECAL_EBC_m30_c23_highgain', 'TILECAL_EBC_m01_c21_highgain', 'TILECAL_LBA_m38_c46_lowgain', 'TILECAL_LBA_m54_c06_highgain', 'TILECAL_LBA_m64_c29_highgain', 'TILECAL_LBA_m29_c25_highgain', 'TILECAL_LBA_m35_c08_highgain', 'TILECAL_EBA_m42_c30_highgain', 'TILECAL_EBA_m49_c00_highgain', 'TILECAL_EBA_m07_c31_lowgain', 'TILECAL_EBA_m50_c20_highgain', 'TILECAL_EBA_m12_c36_highgain', 'TILECAL_EBA_m16_c17_highgain', 'TILECAL_LBC_m44_c12_highgain', 'TILECAL_LBC_m46_c04_highgain', 'TILECAL_LBC_m47_c35_lowgain', 'TILECAL_LBC_m48_c00_lowgain', 'TILECAL_LBC_m08_c03_lowgain', 'TILECAL_LBC_m52_c18_highgain', 'TILECAL_LBC_m10_c37_highgain', 'TILECAL_LBC_m12_c11_lowgain', 'TILECAL_LBC_m57_c06_highgain', 'TILECAL_LBC_m62_c08_highgain', 'TILECAL_LBC_m20_c37_lowgain', 'TILECAL_LBC_m20_c37_highgain', 'TILECAL_LBC_m23_c20_lowgain', 'TILECAL_LBC_m28_c04_lowgain']
+ReadCalibFrCool: INFO     
+
+updateThreshold= 0.005
+runWindow={10.000000}
+Setting root in batch mode
+[455563, 455913]
+Use runs input is a int or list
+Starting mysql service
+done
+In run 455563 , modules in readout:  255
+In run 455913 , modules in readout:  255
+('output schema ', 'sqlite://;schema=results/tileSqlite.db;dbname=CONDBR2')
+Welcome to TUCS (pid 12480).  Building detector tree... 
+Constructing TileCal detector tree: 
+	RUN2: MBTS mapping is enabled, AFAIK, Henric
+	Special mapping in EBA15 and EBC18 enabled
+done!
+
+Entering worker loop:
+Running Use - Select runs for TUCS to use.
+Use: Only using region(s) ['EBA_m19_c41_highgain', 'EBA_m40_c35_highgain', 'LBA_m54_c06_highgain', 'LBC_m28_c04_lowgain', 'LBC_m48_c00_lowgain']
+run  [455563, 'CIS', '2023-06-27 08:21:03,2023-06-27 08:22:15']
+run  [455913, 'CIS', '2023-07-04 16:13:54,2023-07-04 16:15:04']
+Running ReadCIS - Read in CIS calibration factors and quality flags from CIS calibration ntuples
+- ProcessStop -
+tileCalibCIS_455563_CIS.0.root
+tileCalibCIS_455913_CIS.0.root
+Running CleanCIS - Clear out all events where is no valid data
+Running ReadBadChFromCool - 
+    Read bad channels from COOL
+    
+ReadBadChFromCool True False DATA /TILE/OFL02/STATUS/ADC UPD4
+RUN2 Channel Statuses from 
+ schema: COOLOFL_TILE/CONDBR2
+ folder: /TILE/OFL02/STATUS/ADC 
+ tag: TileOfl02StatusAdc-RUN2-UPD4-23
+ 
+Running ReadCalibFromCool - 
+    Read database calibration constants from COOL
+    
+Creating RUN 2 Blob reader for
+ schema: COOLOFL_TILE/CONDBR2
+ folder: /TILE/OFL02/CALIB/CIS/LIN
+ tag:  TileOfl02CalibCisLin-RUN2-HLT-UPD1-00
+ 
+Running MoreInfo - Adding Edge, Next to Edge, No Response, and Outlier information to event.data[moreInfo]
+Edge Samples 0
+Next To Edge Samples 0
+No Response 0
+Outliers 0
+Running SetLowCISThreshold - Calculate a threshold for deciding low CIS constants, using distribution of current databases values
+high gain threshold:  39.898380279541016
+low gain threshold:  0.6428220868110657
+Running CalculateDBCIS - Recalibrates the DB CIS const. values using time averages w/ various data quality cuts
+now running new calulateDBCIS.py
+db_update:  5
+DONEZO!
+Running Update_Needed - Determines which ADC's need databasecalibration constant updates          by comparing current and newly-calculated DB constants
+(455913, 'passed the last run cut')
+(455913, 'passed the last run cut')
+(455913, 'passed the last run cut')
+(455913, 'passed the last run cut')
+(455913, 'passed the last run cut')
+TileBlobWriter : INFO     Registering folder /TILE/OFL02/CALIB/CIS/LIN with tag "TileOfl02CalibCisLin-RUN2-HLT-UPD1-00"
+TileBlobWriter : INFO     ... with IOV          : [455913,0] - [2147483647,4294967295]
+TileBlobWriter : INFO     ... with comment field: "vsasse (Tue Jul 11 15:37:24 2023): Updated CIS constants for ['TILECAL_LBC_m48_c00_lowgain', 'TILECAL_LBC_m28_c04_lowgain', 'TILECAL_EBA_m40_c35_highgain']"
+TileBlobWriter : INFO     ... 4 cool channels have been written in total (including comment field)
+Running WriteDBMultipleIOV - Writeout database constants sorted by UpdateNeeded.py
+OFL
+('/TILE/OFL02/CALIB/CIS/LIN', 'TileOfl02CalibCisLin-RUN2-UPD4-19')
+455913
+++++++++++++++++++++++++++++
+(455913, 0)
+----------------------------
+Run range:[214557, 216523]
+Run range:[216523, 219160]
+Run range:[219160, 220920]
+Run range:[220920, 231597]
+Run range:[231597, 231959]
+Run range:[231959, 237767]
+Run range:[237767, 240600]
+Run range:[240600, 245335]
+Run range:[245335, 257800]
+Run range:[257800, 268842]
+Run range:[268842, 273758]
+Run range:[273758, 296388]
+Run range:[296388, 317200]
+Run range:[317200, 342550]
+Run range:[342550, 348441]
+Run range:[348441, 348725]
+Run range:[348725, 352782]
+Run range:[352782, 354198]
+Run range:[354198, 405127]
+Run range:[405127, 407582]
+Run range:[407582, 410039]
+Run range:[410039, 418169]
+Run range:[418169, 448519]
+Run range:[448519, 2147483647]
+('reading old constants from DB', 'LBC', m48)
+----------------------------
+Run range:[214557, 216523]
+Run range:[216523, 219160]
+Run range:[219160, 221041]
+Run range:[221041, 231597]
+Run range:[231597, 231959]
+Run range:[231959, 237767]
+Run range:[237767, 240600]
+Run range:[240600, 245335]
+Run range:[245335, 257800]
+Run range:[257800, 263977]
+Run range:[263977, 266265]
+Run range:[266265, 268104]
+Run range:[268104, 268572]
+Run range:[268572, 271720]
+Run range:[271720, 272482]
+Run range:[272482, 273414]
+Run range:[273414, 274806]
+Run range:[274806, 275331]
+Run range:[275331, 276427]
+Run range:[276427, 277046]
+Run range:[277046, 277642]
+Run range:[277642, 281743]
+Run range:[281743, 283203]
+Run range:[283203, 286118]
+Run range:[286118, 309736]
+Run range:[309736, 317186]
+Run range:[317186, 317200]
+Run range:[317200, 317213]
+Run range:[317213, 323275]
+Run range:[323275, 329491]
+Run range:[329491, 333302]
+Run range:[333302, 336207]
+Run range:[336207, 336878]
+Run range:[336878, 337351]
+Run range:[337351, 342550]
+Run range:[342550, 343004]
+Run range:[343004, 343786]
+Run range:[343786, 344986]
+Run range:[344986, 348037]
+Run range:[348037, 348577]
+Run range:[348577, 349359]
+Run range:[349359, 349544]
+Run range:[349544, 350306]
+Run range:[350306, 355356]
+Run range:[355356, 355891]
+Run range:[355891, 405218]
+Run range:[405218, 410039]
+Run range:[410039, 413266]
+Run range:[413266, 417488]
+Run range:[417488, 418169]
+Run range:[418169, 418412]
+Run range:[418412, 428588]
+Run range:[428588, 429890]
+Run range:[429890, 448519]
+Run range:[448519, 449908]
+Run range:[449908, 450800]
+Run range:[450800, 451140]
+Run range:[451140, 2147483647]
+('reading old constants from DB', 'LBC', m28)
+----------------------------
+Run range:[214557, 216523]
+Run range:[216523, 219160]
+Run range:[219160, 231597]
+Run range:[231597, 231959]
+Run range:[231959, 237767]
+Run range:[237767, 240600]
+Run range:[240600, 245335]
+Run range:[245335, 257800]
+Run range:[257800, 268842]
+Run range:[268842, 273758]
+Run range:[273758, 296388]
+Run range:[296388, 317186]
+Run range:[317186, 317200]
+Run range:[317200, 342550]
+Run range:[342550, 405127]
+Run range:[405127, 407582]
+Run range:[407582, 410039]
+Run range:[410039, 418169]
+Run range:[418169, 448519]
+Run range:[448519, 449908]
+Run range:[449908, 450800]
+Run range:[450800, 451140]
+Run range:[451140, 2147483647]
+('reading old constants from DB', 'EBA', m40)
+============================
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: sqlite://;schema=results/tileSqlite.db;dbname=CONDBR2
+TileCalibTools : INFO     - mode: READONLY
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     Resolved localTag 'RUN2-HLT-UPD1-00' to folderTag 'TileOfl02CalibCisLin-RUN2-HLT-UPD1-00'
+ReadCalibFrCool: INFO     Initializing folder /TILE/OFL02/CALIB/CIS/LIN with tag TileOfl02CalibCisLin-RUN2-HLT-UPD1-00
+ReadCalibFrCool: INFO     Initializing for run 455913, lumiblock 0
+ReadCalibFrCool: INFO     Blob type: 10  Version: 1  Nchannels: 48  Ngains: 2  Nval: 1
+ReadCalibFrCool: INFO     Comment: vsasse (Tue Jul 11 15:37:24 2023): Updated CIS constants for ['TILECAL_LBC_m48_c00_lowgain', 'TILECAL_LBC_m28_c04_lowgain', 'TILECAL_EBA_m40_c35_highgain']
+ReadCalibFrCool: INFO     
+
+Running SQLOutput - A worker for plotting the output of CIS SQLite update files
+Running StuckBitHistory - Creates plots showing the stuck behavior of bits over time
+
+TUCS finished in: 0:00:50.889879
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: sqlite://;schema=tileSqlite.db;dbname=CONDBR2
+TileCalibTools : INFO     - mode: READONLY
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     Resolved CURRENT ES globalTag to 'CONDBR2-ES1PA-2023-02'
+TileCalibTools : WARNING  const string cool::IHvsNode::resolveTag(const string& ancestorTagName) =>
+    TagNotFound: Tag 'CONDBR2-ES1PA-2023-02' not found in any node
+TileCalibTools : WARNING  Using COOLOFL_TILE/CONDBR2 to resolve globalTag
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: oracle://ATLAS_COOLPROD;schema=ATLAS_COOLOFL_TILE;dbname=CONDBR2
+TileCalibTools : INFO     - mode: READONLY
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     Resolved globalTag 'CONDBR2-ES1PA-2023-02' to folderTag 'TileOfl02CalibCisLin-RUN2-HLT-UPD1-00'
+ReadCalibFrCool: INFO     Initializing folder /TILE/OFL02/CALIB/CIS/LIN with tag TileOfl02CalibCisLin-RUN2-HLT-UPD1-00
+ReadCalibFrCool: INFO     Initializing for run 2147483647, lumiblock 0
+ReadCalibFrCool: INFO     Blob type: 10  Version: 1  Nchannels: 48  Ngains: 2  Nval: 1
+ReadCalibFrCool: INFO     Comment: vsasse (Tue Jul 11 15:37:24 2023): Updated CIS constants for ['TILECAL_LBC_m48_c00_lowgain', 'TILECAL_LBC_m28_c04_lowgain', 'TILECAL_EBA_m40_c35_highgain']
+ReadCalibFrCool: INFO     
+
+updateThreshold= 0.005
+runWindow={10.000000}
+Setting root in batch mode
+[455913]
+Use runs input is a int or list
+Starting mysql service
+done
+In run 455913 , modules in readout:  255
+('output schema ', 'sqlite://;schema=results/tileSqlite.db;dbname=CONDBR2')
+Welcome to TUCS (pid 21102).  Building detector tree... 
+Constructing TileCal detector tree: 
+	RUN2: MBTS mapping is enabled, AFAIK, Henric
+	Special mapping in EBA15 and EBC18 enabled
+done!
+
+Entering worker loop:
+Running Use - Select runs for TUCS to use.
+Use: Only using region(s) ['EBC_m56_c41_lowgain', 'LBC_m20_c37_highgain', 'LBC_m20_c37_lowgain']
+run  [455913, 'CIS', '2023-07-04 16:13:54,2023-07-04 16:15:04']
+Running ReadCIS - Read in CIS calibration factors and quality flags from CIS calibration ntuples
+- ProcessStop -
+tileCalibCIS_455913_CIS.0.root
+Running CleanCIS - Clear out all events where is no valid data
+Running ReadBadChFromCool - 
+    Read bad channels from COOL
+    
+ReadBadChFromCool True False DATA /TILE/OFL02/STATUS/ADC UPD4
+RUN2 Channel Statuses from 
+ schema: COOLOFL_TILE/CONDBR2
+ folder: /TILE/OFL02/STATUS/ADC 
+ tag: TileOfl02StatusAdc-RUN2-UPD4-23
+ 
+Running ReadCalibFromCool - 
+    Read database calibration constants from COOL
+    
+Creating RUN 2 Blob reader for
+ schema: COOLOFL_TILE/CONDBR2
+ folder: /TILE/OFL02/CALIB/CIS/LIN
+ tag:  TileOfl02CalibCisLin-RUN2-HLT-UPD1-00
+ 
+Running MoreInfo - Adding Edge, Next to Edge, No Response, and Outlier information to event.data[moreInfo]
+Edge Samples 0
+Next To Edge Samples 0
+No Response 0
+Outliers 0
+Running SetLowCISThreshold - Calculate a threshold for deciding low CIS constants, using distribution of current databases values
+high gain threshold:  0
+low gain threshold:  0.6350654363632202
+Running CalculateDBCIS - Recalibrates the DB CIS const. values using time averages w/ various data quality cuts
+now running new calulateDBCIS.py
+db_update:  3
+DONEZO!
+Running Update_Needed - Determines which ADC's need databasecalibration constant updates          by comparing current and newly-calculated DB constants
+(455913, 'passed the last run cut')
+(455913, 'passed the last run cut')
+(455913, 'passed the last run cut')
+TileBlobWriter : INFO     Registering folder /TILE/OFL02/CALIB/CIS/LIN with tag "TileOfl02CalibCisLin-RUN2-HLT-UPD1-00"
+TileBlobWriter : INFO     ... with IOV          : [455913,0] - [2147483647,4294967295]
+TileBlobWriter : INFO     ... with comment field: "vsasse (Tue Jul 11 15:39:32 2023): Updated CIS constants for ['TILECAL_EBC_m56_c41_lowgain']"
+TileBlobWriter : INFO     ... 2 cool channels have been written in total (including comment field)
+Running WriteDBMultipleIOV - Writeout database constants sorted by UpdateNeeded.py
+OFL
+('/TILE/OFL02/CALIB/CIS/LIN', 'TileOfl02CalibCisLin-RUN2-UPD4-19')
+455913
+++++++++++++++++++++++++++++
+(455913, 0)
+----------------------------
+Run range:[214557, 216523]
+Run range:[216523, 219160]
+Run range:[219160, 231597]
+Run range:[231597, 231959]
+Run range:[231959, 237767]
+Run range:[237767, 240600]
+Run range:[240600, 245335]
+Run range:[245335, 257800]
+Run range:[257800, 263977]
+Run range:[263977, 266265]
+Run range:[266265, 268572]
+Run range:[268572, 286118]
+Run range:[286118, 298618]
+Run range:[298618, 303392]
+Run range:[303392, 305352]
+Run range:[305352, 308993]
+Run range:[308993, 317186]
+Run range:[317186, 317200]
+Run range:[317200, 317213]
+Run range:[317213, 318995]
+Run range:[318995, 321386]
+Run range:[321386, 323474]
+Run range:[323474, 329327]
+Run range:[329327, 331098]
+Run range:[331098, 334684]
+Run range:[334684, 335862]
+Run range:[335862, 337076]
+Run range:[337076, 338667]
+Run range:[338667, 340219]
+Run range:[340219, 340234]
+Run range:[340234, 342550]
+Run range:[342550, 343004]
+Run range:[343004, 343092]
+Run range:[343092, 343734]
+Run range:[343734, 344218]
+Run range:[344218, 344714]
+Run range:[344714, 346726]
+Run range:[346726, 353347]
+Run range:[353347, 355191]
+Run range:[355191, 357213]
+Run range:[357213, 360565]
+Run range:[360565, 361907]
+Run range:[361907, 362925]
+Run range:[362925, 366834]
+Run range:[366834, 405127]
+Run range:[405127, 407582]
+Run range:[407582, 410039]
+Run range:[410039, 417488]
+Run range:[417488, 418169]
+Run range:[418169, 418412]
+Run range:[418412, 426084]
+Run range:[426084, 428271]
+Run range:[428271, 436813]
+Run range:[436813, 448519]
+Run range:[448519, 451140]
+Run range:[451140, 454666]
+Run range:[454666, 2147483647]
+('reading old constants from DB', 'EBC', m56)
+============================
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: sqlite://;schema=results/tileSqlite.db;dbname=CONDBR2
+TileCalibTools : INFO     - mode: READONLY
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     Resolved localTag 'RUN2-HLT-UPD1-00' to folderTag 'TileOfl02CalibCisLin-RUN2-HLT-UPD1-00'
+ReadCalibFrCool: INFO     Initializing folder /TILE/OFL02/CALIB/CIS/LIN with tag TileOfl02CalibCisLin-RUN2-HLT-UPD1-00
+ReadCalibFrCool: INFO     Initializing for run 455913, lumiblock 0
+ReadCalibFrCool: INFO     Blob type: 10  Version: 1  Nchannels: 48  Ngains: 2  Nval: 1
+ReadCalibFrCool: INFO     Comment: vsasse (Tue Jul 11 15:39:32 2023): Updated CIS constants for ['TILECAL_EBC_m56_c41_lowgain']
+ReadCalibFrCool: INFO     
+
+Running SQLOutput - A worker for plotting the output of CIS SQLite update files
+Running StuckBitHistory - Creates plots showing the stuck behavior of bits over time
+
+TUCS finished in: 0:00:44.018266
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: sqlite://;schema=tileSqlite.db;dbname=CONDBR2
+TileCalibTools : INFO     - mode: READONLY
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     Resolved CURRENT ES globalTag to 'CONDBR2-ES1PA-2023-02'
+TileCalibTools : WARNING  const string cool::IHvsNode::resolveTag(const string& ancestorTagName) =>
+    TagNotFound: Tag 'CONDBR2-ES1PA-2023-02' not found in any node
+TileCalibTools : WARNING  Using COOLOFL_TILE/CONDBR2 to resolve globalTag
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: oracle://ATLAS_COOLPROD;schema=ATLAS_COOLOFL_TILE;dbname=CONDBR2
+TileCalibTools : INFO     - mode: READONLY
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     Resolved globalTag 'CONDBR2-ES1PA-2023-02' to folderTag 'TileOfl02CalibCisLin-RUN2-HLT-UPD1-00'
+ReadCalibFrCool: INFO     Initializing folder /TILE/OFL02/CALIB/CIS/LIN with tag TileOfl02CalibCisLin-RUN2-HLT-UPD1-00
+ReadCalibFrCool: INFO     Initializing for run 2147483647, lumiblock 0
+ReadCalibFrCool: INFO     Blob type: 10  Version: 1  Nchannels: 48  Ngains: 2  Nval: 1
+ReadCalibFrCool: INFO     Comment: vsasse (Tue Jul 11 15:39:32 2023): Updated CIS constants for ['TILECAL_EBC_m56_c41_lowgain']
+ReadCalibFrCool: INFO     
+
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: sqlite://;schema=./results/tileSqlite.db;dbname=CONDBR2
+TileCalibTools : INFO     - mode: READONLY
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: sqlite://;schema=./results/tileSqlite.db;dbname=CONDBR2
+TileCalibTools : INFO     - mode: UPDATE
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     Resolved CURRENT ES globalTag to 'CONDBR2-ES1PA-2023-02'
+TileCalibTools : WARNING  const string cool::IHvsNode::resolveTag(const string& ancestorTagName) =>
+    TagNotFound: Tag 'CONDBR2-ES1PA-2023-02' not found in any node
+TileCalibTools : WARNING  Using COOLOFL_TILE/CONDBR2 to resolve globalTag
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: oracle://ATLAS_COOLPROD;schema=ATLAS_COOLOFL_TILE;dbname=CONDBR2
+TileCalibTools : INFO     - mode: READONLY
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     Resolved globalTag 'CONDBR2-ES1PA-2023-02' to folderTag 'TileOfl02CalibCisLin-RUN2-HLT-UPD1-00'
+...eCalibToCool: INFO     Initializing folder /TILE/OFL02/CALIB/CIS/LIN with tag TileOfl02CalibCisLin-RUN2-HLT-UPD1-00
+...eCalibToCool: INFO     Initializing for run 455913, lumiblock 0
+...eCalibToCool: INFO     Blob type: 10  version: 1  Nchannels: 48  Ngains: 2  Nval: 1
+...eCalibToCool: INFO     Comment: vsasse (Tue Jul 11 15:28:57 2023): Updated CIS constants for ['TILECAL_EBC_m46_c07_lowgain', 'TILECAL_EBC_m13_c03_lowgain', 'TILECAL_EBC_m56_c41_lowgain', 'TILECAL_EBC_m61_c08_lowgain', 'TILECAL_EBC_m20_c10_lowgain', 'TILECAL_EBC_m22_c16_lowgain', 'TILECAL_EBC_m30_c00_highgain', 'TILECAL_EBC_m30_c01_highgain', 'TILECAL_EBC_m30_c02_highgain', 'TILECAL_EBC_m30_c03_highgain', 'TILECAL_EBC_m30_c04_highgain', 'TILECAL_EBC_m30_c05_highgain', 'TILECAL_EBC_m30_c06_highgain', 'TILECAL_EBC_m30_c07_highgain', 'TILECAL_EBC_m30_c08_highgain', 'TILECAL_EBC_m30_c09_highgain', 'TILECAL_EBC_m30_c10_highgain', 'TILECAL_EBC_m30_c12_highgain', 'TILECAL_EBC_m30_c13_highgain', 'TILECAL_EBC_m30_c14_highgain', 'TILECAL_EBC_m30_c15_highgain', 'TILECAL_EBC_m30_c16_highgain', 'TILECAL_EBC_m30_c17_highgain', 'TILECAL_EBC_m30_c20_highgain', 'TILECAL_EBC_m30_c21_highgain', 'TILECAL_EBC_m30_c22_lowgain', 'TILECAL_EBC_m30_c22_highgain', 'TILECAL_EBC_m30_c23_highgain', 'TILECAL_EBC_m01_c21_highgain', 'TILECAL_LBA_m38_c46_lowgain', 'TILECAL_LBA_m54_c06_highgain', 'TILECAL_LBA_m64_c29_highgain', 'TILECAL_LBA_m29_c25_highgain', 'TILECAL_LBA_m35_c08_highgain', 'TILECAL_EBA_m42_c30_highgain', 'TILECAL_EBA_m49_c00_highgain', 'TILECAL_EBA_m07_c31_lowgain', 'TILECAL_EBA_m50_c20_highgain', 'TILECAL_EBA_m12_c36_highgain', 'TILECAL_EBA_m16_c17_highgain', 'TILECAL_LBC_m44_c12_highgain', 'TILECAL_LBC_m46_c04_highgain', 'TILECAL_LBC_m47_c35_lowgain', 'TILECAL_LBC_m48_c00_lowgain', 'TILECAL_LBC_m08_c03_lowgain', 'TILECAL_LBC_m52_c18_highgain', 'TILECAL_LBC_m10_c37_highgain', 'TILECAL_LBC_m12_c11_lowgain', 'TILECAL_LBC_m57_c06_highgain', 'TILECAL_LBC_m62_c08_highgain', 'TILECAL_LBC_m20_c37_lowgain', 'TILECAL_LBC_m20_c37_highgain', 'TILECAL_LBC_m23_c20_lowgain', 'TILECAL_LBC_m28_c04_lowgain']
+...eCalibToCool: INFO     
+
+...ASCIIParser2: INFO     Parsing file ./results/in_update.txt
+...eCalibToCool: INFO     Updating IOV (455913, 0)
+...eCalibToCool: INFO     Initializing drawer LBC28
+...eCalibToCool: DEBUG    2/27/ 0/0: old data[0] = 1.289176
+...eCalibToCool: DEBUG    2/27/ 0/1: old data[0] = 82.494194
+...eCalibToCool: DEBUG    2/27/ 1/0: old data[0] = 1.288899
+...eCalibToCool: DEBUG    2/27/ 1/1: old data[0] = 82.567505
+...eCalibToCool: DEBUG    2/27/ 2/0: old data[0] = 1.271545
+...eCalibToCool: DEBUG    2/27/ 2/1: old data[0] = 81.287750
+...eCalibToCool: DEBUG    2/27/ 3/0: old data[0] = 1.285658
+...eCalibToCool: DEBUG    2/27/ 3/1: old data[0] = 80.765350
+...eCalibToCool: DEBUG    2/27/ 4/0: old data[0] = 1.227652
+...eCalibToCool: DEBUG    2/27/ 4/1: old data[0] = 79.665634
+...eCalibToCool: DEBUG    2/27/ 5/0: old data[0] = 1.292647
+...eCalibToCool: DEBUG    2/27/ 5/1: old data[0] = 80.407288
+...eCalibToCool: DEBUG    2/27/ 6/0: old data[0] = 1.302487
+...eCalibToCool: DEBUG    2/27/ 6/1: old data[0] = 82.139748
+...eCalibToCool: DEBUG    2/27/ 7/0: old data[0] = 1.247705
+...eCalibToCool: DEBUG    2/27/ 7/1: old data[0] = 79.698738
+...eCalibToCool: DEBUG    2/27/ 8/0: old data[0] = 1.248509
+...eCalibToCool: DEBUG    2/27/ 8/1: old data[0] = 80.535385
+...eCalibToCool: DEBUG    2/27/ 9/0: old data[0] = 1.275486
+...eCalibToCool: DEBUG    2/27/ 9/1: old data[0] = 81.346458
+...eCalibToCool: DEBUG    2/27/10/0: old data[0] = 1.277230
+...eCalibToCool: DEBUG    2/27/10/1: old data[0] = 79.885124
+...eCalibToCool: DEBUG    2/27/11/0: old data[0] = 1.295932
+...eCalibToCool: DEBUG    2/27/11/1: old data[0] = 82.566650
+...eCalibToCool: DEBUG    2/27/12/0: old data[0] = 1.290645
+...eCalibToCool: DEBUG    2/27/12/1: old data[0] = 84.021370
+...eCalibToCool: DEBUG    2/27/13/0: old data[0] = 1.310336
+...eCalibToCool: DEBUG    2/27/13/1: old data[0] = 82.018944
+...eCalibToCool: DEBUG    2/27/14/0: old data[0] = 1.301684
+...eCalibToCool: DEBUG    2/27/14/1: old data[0] = 80.137848
+...eCalibToCool: DEBUG    2/27/15/0: old data[0] = 1.272594
+...eCalibToCool: DEBUG    2/27/15/1: old data[0] = 82.431236
+...eCalibToCool: DEBUG    2/27/16/0: old data[0] = 1.324074
+...eCalibToCool: DEBUG    2/27/16/1: old data[0] = 81.126419
+...eCalibToCool: DEBUG    2/27/17/0: old data[0] = 1.329210
+...eCalibToCool: DEBUG    2/27/17/1: old data[0] = 80.554436
+...eCalibToCool: DEBUG    2/27/18/0: old data[0] = 1.323136
+...eCalibToCool: DEBUG    2/27/18/1: old data[0] = 83.219566
+...eCalibToCool: DEBUG    2/27/19/0: old data[0] = 1.276556
+...eCalibToCool: DEBUG    2/27/19/1: old data[0] = 82.107101
+...eCalibToCool: DEBUG    2/27/20/0: old data[0] = 1.300401
+...eCalibToCool: DEBUG    2/27/20/1: old data[0] = 80.986404
+...eCalibToCool: DEBUG    2/27/21/0: old data[0] = 1.244995
+...eCalibToCool: DEBUG    2/27/21/1: old data[0] = 79.476631
+...eCalibToCool: DEBUG    2/27/22/0: old data[0] = 1.287550
+...eCalibToCool: DEBUG    2/27/22/1: old data[0] = 79.671722
+...eCalibToCool: DEBUG    2/27/23/0: old data[0] = 1.259606
+...eCalibToCool: DEBUG    2/27/23/1: old data[0] = 79.283897
+...eCalibToCool: DEBUG    2/27/24/0: old data[0] = 1.286877
+...eCalibToCool: DEBUG    2/27/24/1: old data[0] = 81.436775
+...eCalibToCool: DEBUG    2/27/25/0: old data[0] = 1.327443
+...eCalibToCool: DEBUG    2/27/25/1: old data[0] = 81.047295
+...eCalibToCool: DEBUG    2/27/26/0: old data[0] = 1.290886
+...eCalibToCool: DEBUG    2/27/26/1: old data[0] = 82.568420
+...eCalibToCool: DEBUG    2/27/27/0: old data[0] = 1.266146
+...eCalibToCool: DEBUG    2/27/27/1: old data[0] = 80.179756
+...eCalibToCool: DEBUG    2/27/28/0: old data[0] = 1.282232
+...eCalibToCool: DEBUG    2/27/28/1: old data[0] = 81.122452
+...eCalibToCool: DEBUG    2/27/29/0: old data[0] = 1.316144
+...eCalibToCool: DEBUG    2/27/29/1: old data[0] = 82.338562
+...eCalibToCool: DEBUG    2/27/30/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    2/27/30/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    2/27/31/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    2/27/31/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    2/27/32/0: old data[0] = 1.309919
+...eCalibToCool: DEBUG    2/27/32/1: old data[0] = 80.957314
+...eCalibToCool: DEBUG    2/27/33/0: old data[0] = 1.296544
+...eCalibToCool: DEBUG    2/27/33/1: old data[0] = 82.270859
+...eCalibToCool: DEBUG    2/27/34/0: old data[0] = 1.316288
+...eCalibToCool: DEBUG    2/27/34/1: old data[0] = 82.966148
+...eCalibToCool: DEBUG    2/27/35/0: old data[0] = 1.246414
+...eCalibToCool: DEBUG    2/27/35/1: old data[0] = 80.774475
+...eCalibToCool: DEBUG    2/27/36/0: old data[0] = 1.298198
+...eCalibToCool: DEBUG    2/27/36/1: old data[0] = 81.949715
+...eCalibToCool: DEBUG    2/27/37/0: old data[0] = 1.269354
+...eCalibToCool: DEBUG    2/27/37/1: old data[0] = 81.729256
+...eCalibToCool: DEBUG    2/27/38/0: old data[0] = 1.287538
+...eCalibToCool: DEBUG    2/27/38/1: old data[0] = 79.419495
+...eCalibToCool: DEBUG    2/27/39/0: old data[0] = 1.308407
+...eCalibToCool: DEBUG    2/27/39/1: old data[0] = 79.144020
+...eCalibToCool: DEBUG    2/27/40/0: old data[0] = 1.310820
+...eCalibToCool: DEBUG    2/27/40/1: old data[0] = 84.902832
+...eCalibToCool: DEBUG    2/27/41/0: old data[0] = 1.282631
+...eCalibToCool: DEBUG    2/27/41/1: old data[0] = 82.734711
+...eCalibToCool: DEBUG    2/27/42/0: old data[0] = 1.321613
+...eCalibToCool: DEBUG    2/27/42/1: old data[0] = 80.809235
+...eCalibToCool: DEBUG    2/27/43/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    2/27/43/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    2/27/44/0: old data[0] = 1.274901
+...eCalibToCool: DEBUG    2/27/44/1: old data[0] = 80.645760
+...eCalibToCool: DEBUG    2/27/45/0: old data[0] = 1.295393
+...eCalibToCool: DEBUG    2/27/45/1: old data[0] = 82.278389
+...eCalibToCool: DEBUG    2/27/46/0: old data[0] = 1.306480
+...eCalibToCool: DEBUG    2/27/46/1: old data[0] = 81.274879
+...eCalibToCool: DEBUG    2/27/47/0: old data[0] = 1.285312
+...eCalibToCool: DEBUG    2/27/47/1: old data[0] = 81.315239
+...eCalibToCool: DEBUG    2/27/ 4/0: new data[0] = 1.213496
+...eCalibToCool: INFO     Initializing drawer LBC48
+...eCalibToCool: DEBUG    2/47/ 0/0: old data[0] = 1.276256
+...eCalibToCool: DEBUG    2/47/ 0/1: old data[0] = 78.130821
+...eCalibToCool: DEBUG    2/47/ 1/0: old data[0] = 1.318768
+...eCalibToCool: DEBUG    2/47/ 1/1: old data[0] = 81.622604
+...eCalibToCool: DEBUG    2/47/ 2/0: old data[0] = 1.282151
+...eCalibToCool: DEBUG    2/47/ 2/1: old data[0] = 81.752754
+...eCalibToCool: DEBUG    2/47/ 3/0: old data[0] = 1.276563
+...eCalibToCool: DEBUG    2/47/ 3/1: old data[0] = 82.427628
+...eCalibToCool: DEBUG    2/47/ 4/0: old data[0] = 1.276194
+...eCalibToCool: DEBUG    2/47/ 4/1: old data[0] = 81.258461
+...eCalibToCool: DEBUG    2/47/ 5/0: old data[0] = 1.308657
+...eCalibToCool: DEBUG    2/47/ 5/1: old data[0] = 81.707588
+...eCalibToCool: DEBUG    2/47/ 6/0: old data[0] = 1.287852
+...eCalibToCool: DEBUG    2/47/ 6/1: old data[0] = 79.814636
+...eCalibToCool: DEBUG    2/47/ 7/0: old data[0] = 1.307550
+...eCalibToCool: DEBUG    2/47/ 7/1: old data[0] = 82.826042
+...eCalibToCool: DEBUG    2/47/ 8/0: old data[0] = 1.293059
+...eCalibToCool: DEBUG    2/47/ 8/1: old data[0] = 81.290657
+...eCalibToCool: DEBUG    2/47/ 9/0: old data[0] = 1.306916
+...eCalibToCool: DEBUG    2/47/ 9/1: old data[0] = 81.888092
+...eCalibToCool: DEBUG    2/47/10/0: old data[0] = 1.311110
+...eCalibToCool: DEBUG    2/47/10/1: old data[0] = 79.939629
+...eCalibToCool: DEBUG    2/47/11/0: old data[0] = 1.301302
+...eCalibToCool: DEBUG    2/47/11/1: old data[0] = 82.788399
+...eCalibToCool: DEBUG    2/47/12/0: old data[0] = 1.292370
+...eCalibToCool: DEBUG    2/47/12/1: old data[0] = 83.563103
+...eCalibToCool: DEBUG    2/47/13/0: old data[0] = 1.316291
+...eCalibToCool: DEBUG    2/47/13/1: old data[0] = 80.289734
+...eCalibToCool: DEBUG    2/47/14/0: old data[0] = 1.293187
+...eCalibToCool: DEBUG    2/47/14/1: old data[0] = 79.784210
+...eCalibToCool: DEBUG    2/47/15/0: old data[0] = 1.293575
+...eCalibToCool: DEBUG    2/47/15/1: old data[0] = 81.324806
+...eCalibToCool: DEBUG    2/47/16/0: old data[0] = 1.281062
+...eCalibToCool: DEBUG    2/47/16/1: old data[0] = 81.939522
+...eCalibToCool: DEBUG    2/47/17/0: old data[0] = 1.279039
+...eCalibToCool: DEBUG    2/47/17/1: old data[0] = 83.043709
+...eCalibToCool: DEBUG    2/47/18/0: old data[0] = 1.282550
+...eCalibToCool: DEBUG    2/47/18/1: old data[0] = 83.850830
+...eCalibToCool: DEBUG    2/47/19/0: old data[0] = 1.304304
+...eCalibToCool: DEBUG    2/47/19/1: old data[0] = 80.757553
+...eCalibToCool: DEBUG    2/47/20/0: old data[0] = 1.330975
+...eCalibToCool: DEBUG    2/47/20/1: old data[0] = 83.184723
+...eCalibToCool: DEBUG    2/47/21/0: old data[0] = 1.284501
+...eCalibToCool: DEBUG    2/47/21/1: old data[0] = 82.593781
+...eCalibToCool: DEBUG    2/47/22/0: old data[0] = 1.330751
+...eCalibToCool: DEBUG    2/47/22/1: old data[0] = 82.085762
+...eCalibToCool: DEBUG    2/47/23/0: old data[0] = 1.296048
+...eCalibToCool: DEBUG    2/47/23/1: old data[0] = 79.497910
+...eCalibToCool: DEBUG    2/47/24/0: old data[0] = 1.284566
+...eCalibToCool: DEBUG    2/47/24/1: old data[0] = 79.826660
+...eCalibToCool: DEBUG    2/47/25/0: old data[0] = 1.264478
+...eCalibToCool: DEBUG    2/47/25/1: old data[0] = 82.467422
+...eCalibToCool: DEBUG    2/47/26/0: old data[0] = 1.305865
+...eCalibToCool: DEBUG    2/47/26/1: old data[0] = 78.734413
+...eCalibToCool: DEBUG    2/47/27/0: old data[0] = 1.330037
+...eCalibToCool: DEBUG    2/47/27/1: old data[0] = 80.914833
+...eCalibToCool: DEBUG    2/47/28/0: old data[0] = 1.292634
+...eCalibToCool: DEBUG    2/47/28/1: old data[0] = 80.328644
+...eCalibToCool: DEBUG    2/47/29/0: old data[0] = 1.230695
+...eCalibToCool: DEBUG    2/47/29/1: old data[0] = 83.448898
+...eCalibToCool: DEBUG    2/47/30/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    2/47/30/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    2/47/31/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    2/47/31/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    2/47/32/0: old data[0] = 1.272655
+...eCalibToCool: DEBUG    2/47/32/1: old data[0] = 80.659477
+...eCalibToCool: DEBUG    2/47/33/0: old data[0] = 1.309823
+...eCalibToCool: DEBUG    2/47/33/1: old data[0] = 80.784256
+...eCalibToCool: DEBUG    2/47/34/0: old data[0] = 1.296012
+...eCalibToCool: DEBUG    2/47/34/1: old data[0] = 80.666725
+...eCalibToCool: DEBUG    2/47/35/0: old data[0] = 1.287235
+...eCalibToCool: DEBUG    2/47/35/1: old data[0] = 81.418442
+...eCalibToCool: DEBUG    2/47/36/0: old data[0] = 1.298922
+...eCalibToCool: DEBUG    2/47/36/1: old data[0] = 80.300598
+...eCalibToCool: DEBUG    2/47/37/0: old data[0] = 1.303603
+...eCalibToCool: DEBUG    2/47/37/1: old data[0] = 81.880287
+...eCalibToCool: DEBUG    2/47/38/0: old data[0] = 1.292017
+...eCalibToCool: DEBUG    2/47/38/1: old data[0] = 82.336670
+...eCalibToCool: DEBUG    2/47/39/0: old data[0] = 1.276662
+...eCalibToCool: DEBUG    2/47/39/1: old data[0] = 81.578468
+...eCalibToCool: DEBUG    2/47/40/0: old data[0] = 1.276937
+...eCalibToCool: DEBUG    2/47/40/1: old data[0] = 81.013779
+...eCalibToCool: DEBUG    2/47/41/0: old data[0] = 1.274285
+...eCalibToCool: DEBUG    2/47/41/1: old data[0] = 80.106445
+...eCalibToCool: DEBUG    2/47/42/0: old data[0] = 1.237962
+...eCalibToCool: DEBUG    2/47/42/1: old data[0] = 78.524200
+...eCalibToCool: DEBUG    2/47/43/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    2/47/43/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    2/47/44/0: old data[0] = 1.271350
+...eCalibToCool: DEBUG    2/47/44/1: old data[0] = 78.737358
+...eCalibToCool: DEBUG    2/47/45/0: old data[0] = 1.251618
+...eCalibToCool: DEBUG    2/47/45/1: old data[0] = 80.101524
+...eCalibToCool: DEBUG    2/47/46/0: old data[0] = 1.291409
+...eCalibToCool: DEBUG    2/47/46/1: old data[0] = 81.621727
+...eCalibToCool: DEBUG    2/47/47/0: old data[0] = 1.319202
+...eCalibToCool: DEBUG    2/47/47/1: old data[0] = 78.673363
+...eCalibToCool: DEBUG    2/47/ 0/0: new data[0] = 1.274486
+...eCalibToCool: INFO     Initializing drawer EBC56
+...eCalibToCool: DEBUG    4/55/ 0/0: old data[0] = 1.276045
+...eCalibToCool: DEBUG    4/55/ 0/1: old data[0] = 82.708611
+...eCalibToCool: DEBUG    4/55/ 1/0: old data[0] = 1.309538
+...eCalibToCool: DEBUG    4/55/ 1/1: old data[0] = 81.738510
+...eCalibToCool: DEBUG    4/55/ 2/0: old data[0] = 1.254044
+...eCalibToCool: DEBUG    4/55/ 2/1: old data[0] = 82.557167
+...eCalibToCool: DEBUG    4/55/ 3/0: old data[0] = 1.259125
+...eCalibToCool: DEBUG    4/55/ 3/1: old data[0] = 82.840233
+...eCalibToCool: DEBUG    4/55/ 4/0: old data[0] = 1.278141
+...eCalibToCool: DEBUG    4/55/ 4/1: old data[0] = 81.186279
+...eCalibToCool: DEBUG    4/55/ 5/0: old data[0] = 1.250688
+...eCalibToCool: DEBUG    4/55/ 5/1: old data[0] = 79.270203
+...eCalibToCool: DEBUG    4/55/ 6/0: old data[0] = 1.305276
+...eCalibToCool: DEBUG    4/55/ 6/1: old data[0] = 81.710564
+...eCalibToCool: DEBUG    4/55/ 7/0: old data[0] = 1.308224
+...eCalibToCool: DEBUG    4/55/ 7/1: old data[0] = 81.545807
+...eCalibToCool: DEBUG    4/55/ 8/0: old data[0] = 1.269583
+...eCalibToCool: DEBUG    4/55/ 8/1: old data[0] = 81.688431
+...eCalibToCool: DEBUG    4/55/ 9/0: old data[0] = 1.304753
+...eCalibToCool: DEBUG    4/55/ 9/1: old data[0] = 81.833870
+...eCalibToCool: DEBUG    4/55/10/0: old data[0] = 1.305893
+...eCalibToCool: DEBUG    4/55/10/1: old data[0] = 82.299576
+...eCalibToCool: DEBUG    4/55/11/0: old data[0] = 1.310858
+...eCalibToCool: DEBUG    4/55/11/1: old data[0] = 80.433868
+...eCalibToCool: DEBUG    4/55/12/0: old data[0] = 1.302271
+...eCalibToCool: DEBUG    4/55/12/1: old data[0] = 80.762825
+...eCalibToCool: DEBUG    4/55/13/0: old data[0] = 1.290298
+...eCalibToCool: DEBUG    4/55/13/1: old data[0] = 80.107048
+...eCalibToCool: DEBUG    4/55/14/0: old data[0] = 1.259614
+...eCalibToCool: DEBUG    4/55/14/1: old data[0] = 81.292267
+...eCalibToCool: DEBUG    4/55/15/0: old data[0] = 1.291201
+...eCalibToCool: DEBUG    4/55/15/1: old data[0] = 81.787697
+...eCalibToCool: DEBUG    4/55/16/0: old data[0] = 1.288313
+...eCalibToCool: DEBUG    4/55/16/1: old data[0] = 80.355782
+...eCalibToCool: DEBUG    4/55/17/0: old data[0] = 1.272971
+...eCalibToCool: DEBUG    4/55/17/1: old data[0] = 81.895065
+...eCalibToCool: DEBUG    4/55/18/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    4/55/18/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    4/55/19/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    4/55/19/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    4/55/20/0: old data[0] = 1.282973
+...eCalibToCool: DEBUG    4/55/20/1: old data[0] = 83.467751
+...eCalibToCool: DEBUG    4/55/21/0: old data[0] = 1.263013
+...eCalibToCool: DEBUG    4/55/21/1: old data[0] = 81.542580
+...eCalibToCool: DEBUG    4/55/22/0: old data[0] = 1.274161
+...eCalibToCool: DEBUG    4/55/22/1: old data[0] = 80.887047
+...eCalibToCool: DEBUG    4/55/23/0: old data[0] = 1.281184
+...eCalibToCool: DEBUG    4/55/23/1: old data[0] = 81.474770
+...eCalibToCool: DEBUG    4/55/24/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    4/55/24/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    4/55/25/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    4/55/25/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    4/55/26/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    4/55/26/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    4/55/27/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    4/55/27/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    4/55/28/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    4/55/28/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    4/55/29/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    4/55/29/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    4/55/30/0: old data[0] = 1.323012
+...eCalibToCool: DEBUG    4/55/30/1: old data[0] = 83.356079
+...eCalibToCool: DEBUG    4/55/31/0: old data[0] = 1.283055
+...eCalibToCool: DEBUG    4/55/31/1: old data[0] = 83.225082
+...eCalibToCool: DEBUG    4/55/32/0: old data[0] = 1.301615
+...eCalibToCool: DEBUG    4/55/32/1: old data[0] = 81.997635
+...eCalibToCool: DEBUG    4/55/33/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    4/55/33/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    4/55/34/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    4/55/34/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    4/55/35/0: old data[0] = 1.300012
+...eCalibToCool: DEBUG    4/55/35/1: old data[0] = 81.169456
+...eCalibToCool: DEBUG    4/55/36/0: old data[0] = 1.271943
+...eCalibToCool: DEBUG    4/55/36/1: old data[0] = 81.631493
+...eCalibToCool: DEBUG    4/55/37/0: old data[0] = 1.297535
+...eCalibToCool: DEBUG    4/55/37/1: old data[0] = 81.933716
+...eCalibToCool: DEBUG    4/55/38/0: old data[0] = 1.301720
+...eCalibToCool: DEBUG    4/55/38/1: old data[0] = 78.601273
+...eCalibToCool: DEBUG    4/55/39/0: old data[0] = 1.319961
+...eCalibToCool: DEBUG    4/55/39/1: old data[0] = 81.810448
+...eCalibToCool: DEBUG    4/55/40/0: old data[0] = 1.265492
+...eCalibToCool: DEBUG    4/55/40/1: old data[0] = 81.264595
+...eCalibToCool: DEBUG    4/55/41/0: old data[0] = 1.085641
+...eCalibToCool: DEBUG    4/55/41/1: old data[0] = 81.404106
+...eCalibToCool: DEBUG    4/55/42/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    4/55/42/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    4/55/43/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    4/55/43/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    4/55/44/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    4/55/44/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    4/55/45/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    4/55/45/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    4/55/46/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    4/55/46/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    4/55/47/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    4/55/47/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    4/55/41/0: new data[0] = 1.087006
+...eCalibToCool: INFO     288/288 old channels*gains/values have been read from database
+...eCalibToCool: INFO     3/3 new channels*gains/values have been read from input ascii file
+...eCalibToCool: INFO     285/285 old channels*gains/values remain unchanged
+...eCalibToCool: INFO     Updating IOV (455913, 0)
+TileBlobWriter : INFO     Registering folder /TILE/OFL02/CALIB/CIS/LIN with tag "TileOfl02CalibCisLin-RUN2-HLT-UPD1-00"
+TileBlobWriter : INFO     ... with IOV          : [455913,0] - [2147483647,4294967295]
+TileBlobWriter : INFO     ... with comment field: "vsasse (Tue Jul 11 15:40:25 2023): Update for run 455913 from file ./results/in_update.txt"
+TileBlobWriter : INFO     ... 4 cool channels have been written in total (including comment field)
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: oracle://ATLAS_COOLPROD;schema=ATLAS_COOLOFL_TILE;dbname=CONDBR2
+TileCalibTools : INFO     - mode: READONLY
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: sqlite://;schema=./results/tileSqlite.db;dbname=CONDBR2
+TileCalibTools : INFO     - mode: UPDATE
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     Resolved CURRENT ES globalTag to 'CONDBR2-ES1PA-2023-02'
+TileCalibTools : INFO     Resolved globalTag 'CONDBR2-ES1PA-2023-02' to folderTag 'TileOfl02CalibCisLin-RUN2-HLT-UPD1-00'
+...eCalibToCool: INFO     Initializing folder /TILE/OFL02/CALIB/CIS/LIN with tag TileOfl02CalibCisLin-RUN2-HLT-UPD1-00
+...eCalibToCool: INFO     Initializing for run 455913, lumiblock 0
+...eCalibToCool: INFO     Blob type: 10  version: 1  Nchannels: 48  Ngains: 2  Nval: 1
+...eCalibToCool: INFO     Comment: mengyang (Mon Jun 19 16:53:02 2023): Update for run 454106 from file ./results/add_to_update.txt
+...eCalibToCool: INFO     
+
+...ASCIIParser2: INFO     Parsing file ./results/add_to_update.txt
+...eCalibToCool: INFO     Updating IOV (455913, 0)
+...eCalibToCool: INFO     Initializing drawer EBA40
+...eCalibToCool: DEBUG    3/39/ 0/0: old data[0] = 1.287935
+...eCalibToCool: DEBUG    3/39/ 0/1: old data[0] = 81.198235
+...eCalibToCool: DEBUG    3/39/ 1/0: old data[0] = 1.293956
+...eCalibToCool: DEBUG    3/39/ 1/1: old data[0] = 79.317604
+...eCalibToCool: DEBUG    3/39/ 2/0: old data[0] = 1.293537
+...eCalibToCool: DEBUG    3/39/ 2/1: old data[0] = 79.515800
+...eCalibToCool: DEBUG    3/39/ 3/0: old data[0] = 1.280274
+...eCalibToCool: DEBUG    3/39/ 3/1: old data[0] = 81.241524
+...eCalibToCool: DEBUG    3/39/ 4/0: old data[0] = 1.277817
+...eCalibToCool: DEBUG    3/39/ 4/1: old data[0] = 80.392960
+...eCalibToCool: DEBUG    3/39/ 5/0: old data[0] = 1.297662
+...eCalibToCool: DEBUG    3/39/ 5/1: old data[0] = 80.624298
+...eCalibToCool: DEBUG    3/39/ 6/0: old data[0] = 1.311739
+...eCalibToCool: DEBUG    3/39/ 6/1: old data[0] = 80.523720
+...eCalibToCool: DEBUG    3/39/ 7/0: old data[0] = 1.300332
+...eCalibToCool: DEBUG    3/39/ 7/1: old data[0] = 81.141411
+...eCalibToCool: DEBUG    3/39/ 8/0: old data[0] = 1.291330
+...eCalibToCool: DEBUG    3/39/ 8/1: old data[0] = 81.155434
+...eCalibToCool: DEBUG    3/39/ 9/0: old data[0] = 1.317918
+...eCalibToCool: DEBUG    3/39/ 9/1: old data[0] = 80.793022
+...eCalibToCool: DEBUG    3/39/10/0: old data[0] = 1.313957
+...eCalibToCool: DEBUG    3/39/10/1: old data[0] = 80.244377
+...eCalibToCool: DEBUG    3/39/11/0: old data[0] = 1.276568
+...eCalibToCool: DEBUG    3/39/11/1: old data[0] = 82.523392
+...eCalibToCool: DEBUG    3/39/12/0: old data[0] = 1.311679
+...eCalibToCool: DEBUG    3/39/12/1: old data[0] = 81.673019
+...eCalibToCool: DEBUG    3/39/13/0: old data[0] = 1.282919
+...eCalibToCool: DEBUG    3/39/13/1: old data[0] = 80.889328
+...eCalibToCool: DEBUG    3/39/14/0: old data[0] = 1.311685
+...eCalibToCool: DEBUG    3/39/14/1: old data[0] = 80.957062
+...eCalibToCool: DEBUG    3/39/15/0: old data[0] = 1.281491
+...eCalibToCool: DEBUG    3/39/15/1: old data[0] = 81.574684
+...eCalibToCool: DEBUG    3/39/16/0: old data[0] = 1.270736
+...eCalibToCool: DEBUG    3/39/16/1: old data[0] = 80.853493
+...eCalibToCool: DEBUG    3/39/17/0: old data[0] = 1.295166
+...eCalibToCool: DEBUG    3/39/17/1: old data[0] = 81.927544
+...eCalibToCool: DEBUG    3/39/18/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    3/39/18/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    3/39/19/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    3/39/19/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    3/39/20/0: old data[0] = 1.281731
+...eCalibToCool: DEBUG    3/39/20/1: old data[0] = 81.816246
+...eCalibToCool: DEBUG    3/39/21/0: old data[0] = 1.284530
+...eCalibToCool: DEBUG    3/39/21/1: old data[0] = 81.111893
+...eCalibToCool: DEBUG    3/39/22/0: old data[0] = 1.275328
+...eCalibToCool: DEBUG    3/39/22/1: old data[0] = 80.257805
+...eCalibToCool: DEBUG    3/39/23/0: old data[0] = 1.271335
+...eCalibToCool: DEBUG    3/39/23/1: old data[0] = 81.363258
+...eCalibToCool: DEBUG    3/39/24/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    3/39/24/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    3/39/25/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    3/39/25/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    3/39/26/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    3/39/26/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    3/39/27/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    3/39/27/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    3/39/28/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    3/39/28/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    3/39/29/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    3/39/29/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    3/39/30/0: old data[0] = 1.274042
+...eCalibToCool: DEBUG    3/39/30/1: old data[0] = 83.587296
+...eCalibToCool: DEBUG    3/39/31/0: old data[0] = 1.285481
+...eCalibToCool: DEBUG    3/39/31/1: old data[0] = 82.982452
+...eCalibToCool: DEBUG    3/39/32/0: old data[0] = 1.276251
+...eCalibToCool: DEBUG    3/39/32/1: old data[0] = 79.877060
+...eCalibToCool: DEBUG    3/39/33/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    3/39/33/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    3/39/34/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    3/39/34/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    3/39/35/0: old data[0] = 1.309152
+...eCalibToCool: DEBUG    3/39/35/1: old data[0] = 77.892990
+...eCalibToCool: DEBUG    3/39/36/0: old data[0] = 1.312157
+...eCalibToCool: DEBUG    3/39/36/1: old data[0] = 80.922569
+...eCalibToCool: DEBUG    3/39/37/0: old data[0] = 1.259166
+...eCalibToCool: DEBUG    3/39/37/1: old data[0] = 82.293213
+...eCalibToCool: DEBUG    3/39/38/0: old data[0] = 1.292426
+...eCalibToCool: DEBUG    3/39/38/1: old data[0] = 82.541245
+...eCalibToCool: DEBUG    3/39/39/0: old data[0] = 1.304705
+...eCalibToCool: DEBUG    3/39/39/1: old data[0] = 81.717979
+...eCalibToCool: DEBUG    3/39/40/0: old data[0] = 1.350591
+...eCalibToCool: DEBUG    3/39/40/1: old data[0] = 82.687691
+...eCalibToCool: DEBUG    3/39/41/0: old data[0] = 1.279414
+...eCalibToCool: DEBUG    3/39/41/1: old data[0] = 78.169113
+...eCalibToCool: DEBUG    3/39/42/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    3/39/42/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    3/39/43/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    3/39/43/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    3/39/44/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    3/39/44/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    3/39/45/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    3/39/45/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    3/39/46/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    3/39/46/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    3/39/47/0: old data[0] = 1.278750
+...eCalibToCool: DEBUG    3/39/47/1: old data[0] = 81.839996
+...eCalibToCool: DEBUG    3/39/35/1: new data[0] = 79.139496
+...eCalibToCool: INFO     96/96 old channels*gains/values have been read from database
+...eCalibToCool: INFO     1/1 new channels*gains/values have been read from input ascii file
+...eCalibToCool: INFO     95/95 old channels*gains/values remain unchanged
+...eCalibToCool: INFO     Updating IOV (455913, 0)
+TileBlobWriter : INFO     Registering folder /TILE/OFL02/CALIB/CIS/LIN with tag "TileOfl02CalibCisLin-RUN2-HLT-UPD1-00"
+TileBlobWriter : INFO     ... with IOV          : [455913,0] - [2147483647,4294967295]
+TileBlobWriter : INFO     ... with comment field: "vsasse (Tue Jul 11 15:40:54 2023): Update for run 455913 from file ./results/add_to_update.txt"
+TileBlobWriter : INFO     ... 2 cool channels have been written in total (including comment field)
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: sqlite://;schema=./results/tileSqlite.db;dbname=CONDBR2
+TileCalibTools : INFO     - mode: READONLY
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     Resolved CURRENT ES globalTag to 'CONDBR2-ES1PA-2023-02'
+TileCalibTools : WARNING  const string cool::IHvsNode::resolveTag(const string& ancestorTagName) =>
+    TagNotFound: Tag 'CONDBR2-ES1PA-2023-02' not found in any node
+TileCalibTools : WARNING  Using COOLOFL_TILE/CONDBR2 to resolve globalTag
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: oracle://ATLAS_COOLPROD;schema=ATLAS_COOLOFL_TILE;dbname=CONDBR2
+TileCalibTools : INFO     - mode: READONLY
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     Resolved globalTag 'CONDBR2-ES1PA-2023-02' to folderTag 'TileOfl02CalibCisLin-RUN2-HLT-UPD1-00'
+ReadCalibFrCool: INFO     Initializing folder /TILE/OFL02/CALIB/CIS/LIN with tag TileOfl02CalibCisLin-RUN2-HLT-UPD1-00
+ReadCalibFrCool: INFO     Initializing for run 2147483647, lumiblock 0
+ReadCalibFrCool: INFO     Blob type: 10  Version: 1  Nchannels: 48  Ngains: 2  Nval: 1
+ReadCalibFrCool: INFO     Comment: vsasse (Tue Jul 11 15:40:54 2023): Update for run 455913 from file ./results/add_to_update.txt
+ReadCalibFrCool: INFO     
+
+Setting root in batch mode
+Run: 454849 	 Date: 2023-06-20
+Run: 455243 	 Date: 2023-06-23
+Run: 455563 	 Date: 2023-06-27
+Run: 455913 	 Date: 2023-07-04
+Channel ID: EBA_m19_c41_highgain 	 Recal Date: 2023-06-23
+Channel ID: EBA_m40_c35_highgain 	 Recal Date: 2023-06-23
+Channel ID: EBC_m56_c41_lowgain 	 Recal Date: 2023-06-27
+Channel ID: LBA_m54_c06_highgain 	 Recal Date: 2023-06-23
+Channel ID: LBC_m20_c37_highgain 	 Recal Date: 2023-06-27
+Channel ID: LBC_m20_c37_lowgain 	 Recal Date: 2023-06-27
+Channel ID: LBC_m28_c04_lowgain 	 Recal Date: 2023-06-23
+Channel ID: LBC_m48_c00_lowgain 	 Recal Date: 2023-06-23
+
+Starting from RUN # 455563 
+
+
+macros/cis/CIS_DB_Update.py --date '28 days' --region 'EBA_m19_c41_highgain' 'EBA_m40_c35_highgain' 'LBA_m54_c06_highgain' 'LBC_m28_c04_lowgain' 'LBC_m48_c00_lowgain' --ldate 455563 455913 
+
+
+Starting from RUN # 455913 
+
+
+macros/cis/CIS_DB_Update.py --date '28 days' --region 'EBC_m56_c41_lowgain' 'LBC_m20_c37_highgain' 'LBC_m20_c37_lowgain' --ldate 455913 
+
+
+about to run recal commands
+finished running recal commands
+
+EBA_m40_c35_highgain: NOT in the update
+LBC_m28_c04_lowgain: in the update
+LBC_m48_c00_lowgain: in the update
+EBC_m56_c41_lowgain: in the update
+
+3 recalibrated channels are in the update
+1 recalibrated channels are NOT in the update
+
+Txt files ./results/in_update.txt and ./results/add_to_update.txt successfully written to!
+
