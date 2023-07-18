@@ -48,7 +48,7 @@ void cis_charge_new(int run, const char *var=NULL, const char *cut=NULL, const c
   const char * type="CIS";
 
   const char * part[4] = {"LBA","LBC","EBA","EBC"};
-  const char * input="/eos/atlas/atlascerngroupdisk/det-tile/2022";
+  const char * input="/eos/atlas/atlascerngroupdisk/det-tile/2023";
   const char * output=".";
 
   if (!var) var = "eFit_lo[%d][][]/cispar[6]:Evt";
@@ -180,7 +180,7 @@ void check_all_runs(){
   //int runs[]{413287, 413579, 413594, 413976, 414257, 414464, 414513, 414763, 415169, 415434, 415531, 415564, 415914, 416099};
   //std::vector<int> runs = {423827, 424146, 424508, 424613, 424692, 424735, 425003, 425008, 425064, 425175, 425480, 425569, 425758, 426076, 426084, 426286, 426330, 426571, 426701};
   //std::vector<int> runs = {423827, 424146, 424508, 424613, 424692, 424735, 425003, 425008, 425064, 425175, 425480, 425569, 425758, 426076, 426084, 426286, 426330, 426571, 426701, 426816};
-  std::vector<int> runs = {426084, 426286, 426330, 426571, 426701, 426816, 426939, 426968, 427100, 427157, 427250, 427419, 427775, 427899, 427932, 427941};
+  std::vector<int> runs = {454529, 454849, 455243, 455563};
   for (unsigned int i=0; i<runs.size(); ++i){
     check_run(runs[i]);
   }

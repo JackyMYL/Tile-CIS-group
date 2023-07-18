@@ -1,7 +1,8 @@
 # Katie Hughes Oct. 2021
+# Jacky Li, May. 2023
 
-removeBad = '../../results/RemoveBadCIS.txt'
-addBad = '../../AddBadCIS.txt'
+removeBad = 'RemoveBadCIS.txt'
+addBad = 'AddBadCIS.txt'
 noCIS = None
 
 def ChannelIDs(line):

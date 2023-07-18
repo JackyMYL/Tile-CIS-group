@@ -254,4 +254,4 @@ class PlotPulseShape(ReadGenericCalibration):
                 else:
                     tl.DrawLatex(0.20,0.84,"DAC %d" % self.daclo)
                     
-                self.c1.Print("%s/Event_%s.png" % (self.dir, region.GetHash()))
+                self.c1.Print("%s/Event_%s_%s.png" % (self.dir, region.GetHash(),event.run.runNumber))
