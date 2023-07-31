@@ -1,0 +1,8 @@
+2022-03-31 Henric
+	* use b_long_f instead of b_long to send the TTC commands
+	* proper sending of lower and upper part ot the DAC setting
+	
+2020-09-22 Henric
+        * Removed cmt directory
+        * Changes for python 3 (Oleg & Humphry)
+
