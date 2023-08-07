@@ -64,6 +64,7 @@ void cis_charge_new(int run, const char *var=NULL, const char *cut=NULL, const c
   gStyle->SetStatH(0.4);
   gStyle->SetStatW(0.4);
   gStyle->SetOptStat(1100);
+  gStyle->SetImageScaling(3.0);
 
   TCanvas * c1 = new TCanvas();
   c1->Divide(2,2);
