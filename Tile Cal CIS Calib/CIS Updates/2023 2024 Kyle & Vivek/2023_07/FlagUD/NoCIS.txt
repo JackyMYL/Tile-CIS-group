@@ -1,0 +1,12 @@
+EBA_m18_ch10_highgain
+EBA_m18_ch10_lowgain
+EBC_m09_ch07_lowgain
+EBC_m09_ch07_highgain
+EBC_m16_ch11_lowgain
+EBC_m16_ch11_highgain
+EBC_m40_ch07_lowgain
+EBC_m40_ch07_highgain
+EBC_m57_ch00_lowgain
+EBC_m57_ch00_highgain
+EBC_m62_ch02_lowgain
+EBC_m62_ch02_highgain

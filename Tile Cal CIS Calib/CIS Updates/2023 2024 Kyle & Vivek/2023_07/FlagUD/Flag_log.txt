@@ -1,0 +1,87 @@
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: oracle://ATLAS_COOLPROD;schema=ATLAS_COOLOFL_TILE;dbname=CONDBR2
+TileCalibTools : INFO     - mode: READONLY
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     Resolved CURRENT ES globalTag to 'CONDBR2-ES1PA-2023-02'
+TileCalibTools : INFO     Resolved globalTag 'CONDBR2-ES1PA-2023-02' to folderTag 'TileOfl02StatusAdc-RUN2-HLT-UPD1-00'
+WriteBchToCool : INFO     Initializing bad channels from oracle://ATLAS_COOLPROD;schema=ATLAS_COOLOFL_TILE;dbname=CONDBR2 folder /TILE/OFL02/STATUS/ADC with tag UPD1
+WriteBchToCool : WARNING  Run number is not specified, using current run number 458151
+WriteBchToCool : INFO     Initializing for run 458151, lumiblock 0
+WriteBchToCool : INFO     
+TileBchMgr     : INFO     Initializing from database, resetting all changes!
+TileBchMgr     : INFO     Updating dictionary from 'CONDBR2'
+TileBchMgr     : INFO     ... using tag 'TileOfl02StatusAdc-RUN2-HLT-UPD1-00', run-lumi=(458151, 0)
+TileBchMgr     : INFO     ... comment: vsasse (Thu Aug 10 14:52:17 2023): REMOVING BADCIS FOR: EBA40 35 1, EBA48 37 1, EBC15 16 1, EBC23 1 0, LBA02 6 0, LBA02 6 1, LBA42 7 1, LBA51 12 1, LBA52 1 1, LBC20 37 1, LBC44 34 0, ADDING BADCIS FOR: EBA12 35 1, EBC23 31 0, LBC44 34 1, LBA58 25 1, 
+TileBchMgr     : INFO     Updating TileBchStatus::isBad() definition from DB
+TileBchMgr     : INFO     Updating TileBchStatus::isBadTiming() definition from DB
+WriteBchToCool : INFO     
+WriteBchToCool : INFO     Masking new bad channels, including file ../../macros/cis/update_flags.py
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: sqlite://;schema=tileSqlite.db;dbname=CONDBR2
+TileCalibTools : INFO     - mode: RECREATE
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+WriteBchToCool : INFO     Updating IOV (458151, 0)
+TileBchMgr     : INFO     Using previous bad channel list from input DB
+TileBchMgr     : INFO     And comparing it with new list of bad channels
+TileBchMgr     : INFO     Committing changes to DB 'sqlite://;schema=tileSqlite.db;dbname=CONDBR2'
+TileBchMgr     : INFO     ... using tag 'TileOfl02StatusAdc-RUN2-HLT-UPD1-00' and [run,lumi] range: [458151,0] - [2147483647,4294967295]
+TileBchMgr     : INFO     ... author : 'vsasse'
+TileBchMgr     : INFO     ... comment: 'REMOVING BADCIS FOR: EBA40 35 1, EBA48 37 1, EBC15 16 1, EBC23 1 0, LBA02 6 0, LBA02 6 1, LBA42 7 1, LBA51 12 1, LBA52 1 1, LBC20 37 1, LBC44 34 0, ADDING BADCIS FOR: EBA12 35 1, EBC23 31 0, LBC44 34 1, LBA58 25 1, SETTING NOCIS FOR: '
+TileBchMgr     : WARNING  No drawer modifications detected, ignoring commit request
+WriteBchToCool : INFO     
+WriteBchToCool : INFO     ============================================================== 
+WriteBchToCool : INFO     
+WriteBchToCool : INFO     creating DB with CURRENT UPD4 tag
+TileCalibTools : INFO     Resolved CURRENT globalTag to 'CONDBR2-BLKPA-2023-02'
+TileCalibTools : INFO     Resolved globalTag 'CONDBR2-BLKPA-2023-02' to folderTag 'TileOfl02StatusAdc-RUN2-UPD4-23'
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: sqlite://;schema=tileSqlite_upd4.db;dbname=CONDBR2
+TileCalibTools : INFO     - mode: RECREATE
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileBchMgr     : INFO     Using previous bad channel list from input DB
+TileBchMgr     : INFO     And comparing it with new list of bad channels
+TileBchMgr     : INFO     Committing changes to DB 'sqlite://;schema=tileSqlite_upd4.db;dbname=CONDBR2'
+TileBchMgr     : INFO     ... using tag 'TileOfl02StatusAdc-RUN2-UPD4-23' and [run,lumi] range: [458151,0] - [2147483647,4294967295]
+TileBchMgr     : INFO     ... author : 'vsasse'
+TileBchMgr     : INFO     ... comment: 'REMOVING BADCIS FOR: EBA40 35 1, EBA48 37 1, EBC15 16 1, EBC23 1 0, LBA02 6 0, LBA02 6 1, LBA42 7 1, LBA51 12 1, LBA52 1 1, LBC20 37 1, LBC44 34 0, ADDING BADCIS FOR: EBA12 35 1, EBC23 31 0, LBC44 34 1, LBA58 25 1, SETTING NOCIS FOR: '
+TileBchMgr     : INFO     Drawer EBA61 reset to GOOD
+TileBchMgr     : INFO     Applying  2 changes to drawer EBA63
+TileBchMgr     : ERROR    Comment string - 'REMOVING BADCIS FOR: EBA40 35 1, EBA48 37 1, EBC15 16 1, EBC23 1 0, LBA02 6 0, LBA02 6 1, LBA42 7 1, LBA51 12 1, LBA52 1 1, LBC20 37 1, LBC44 34 0, ADDING BADCIS FOR: EBA12 35 1, EBC23 31 0, LBC44 34 1, LBA58 25 1, SETTING NOCIS FOR: ' - doesn't contain drawer EBA63
+TileBchMgr     : ERROR    Aborting update due to errors in comment string
+WriteBchToCool : INFO     
+WriteBchToCool : INFO     ============================================================== 
+WriteBchToCool : INFO     
+WriteBchToCool : INFO     creating DB with ONLINE status
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: oracle://ATLAS_COOLPROD;schema=ATLAS_COOLONL_TILE;dbname=CONDBR2
+TileCalibTools : INFO     - mode: READONLY
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileBchMgr     : INFO     Initializing from database, resetting all changes!
+TileBchMgr     : INFO     Updating dictionary from 'CONDBR2'
+TileBchMgr     : INFO     ... using tag '', run-lumi=(458151, 0)
+TileBchMgr     : INFO     ... comment: Yuri Smirnov (Mon Jul 31 20:52:23 2023): Test EBC64 chn 47 Low and High del OnlineGeneralMaskAdc (UNDO after fixing online DB issue)
+TileBchMgr     : INFO     Updating TileBchStatus::isBad() definition from DB
+TileBchMgr     : INFO     No TileBchStatus::isBad() definition found in DB, using defaults
+TileBchMgr     : INFO     Updating TileBchStatus::isBadTiming() definition from DB
+TileBchMgr     : INFO     No TileBchStatus::isBadTiming() definition found in DB, using defaults
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileCalibTools : INFO     -------------------------- TileCalibTools.openDbConn ----------------------------
+TileCalibTools : INFO     - using COOL version 3.3.8
+TileCalibTools : INFO     - opening TileDb: sqlite://;schema=tileSqlite_onl.db;dbname=CONDBR2
+TileCalibTools : INFO     - mode: RECREATE
+TileCalibTools : INFO     ---------------------------------------------------------------------------------
+TileBchMgr     : INFO     Using previous bad channel list from input DB
+TileBchMgr     : INFO     And comparing it with new list of bad channels
+TileBchMgr     : INFO     Committing changes to DB 'sqlite://;schema=tileSqlite_onl.db;dbname=CONDBR2'
+TileBchMgr     : INFO     ... using tag '' and [run,lumi] range: [458151,0] - [2147483647,4294967295]
+TileBchMgr     : INFO     ... author : 'vsasse'
+TileBchMgr     : INFO     ... comment: 'REMOVING BADCIS FOR: EBA40 35 1, EBA48 37 1, EBC15 16 1, EBC23 1 0, LBA02 6 0, LBA02 6 1, LBA42 7 1, LBA51 12 1, LBA52 1 1, LBC20 37 1, LBC44 34 0, ADDING BADCIS FOR: EBA12 35 1, EBC23 31 0, LBC44 34 1, LBA58 25 1, SETTING NOCIS FOR: '
+TileBchMgr     : WARNING  No drawer modifications detected, ignoring commit request

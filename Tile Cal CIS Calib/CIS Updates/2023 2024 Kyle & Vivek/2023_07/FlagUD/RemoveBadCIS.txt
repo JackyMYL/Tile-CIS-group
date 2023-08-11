@@ -1,0 +1,13 @@
+EBA_m40_c35_highgain
+EBA_m48_c37_highgain
+EBC_m15_c16_highgain
+EBC_m23_c01_lowgain
+EBC_m34_c41_logwain
+LBA_m02_c06_lowgain
+LBA_m02_c06_highgain
+LBA_m42_c07_highgain
+LBA_m51_c12_highgain
+LBA_m52_c01_highgain
+LBC_m20_c37_highgain
+LBC_m44_c34_lowgain
+LBC_m63_c45_hihgain
